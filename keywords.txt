@@ -1,0 +1,10 @@
+keyword	keywordThesaurus
+primary production	LTER Core Research Areas
+net primary production	LTER Controlled Vocabulary
+oceanography	LTER Controlled Vocabulary
+seawater	LTER Controlled Vocabulary
+stable isotopes	LTER Controlled Vocabulary
+tracers	LTER Controlled Vocabulary
+phytoplankton	LTER Controlled Vocabulary
+particulate organic carbon	LTER Controlled Vocabulary
+Northeast U.S. Continental Shelf	NOAA Large Marine Ecosystems
