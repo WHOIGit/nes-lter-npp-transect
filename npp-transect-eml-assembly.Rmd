@@ -41,18 +41,28 @@ here("nes-lter-npp-transect")
 
 ```{r}
 
-# version1 August 2019-February 2020
-# version2 July-October 2020
-
 # identify version
-discrete_filename <- "npp_discrete_version1"
-integrated_filename <- "npp_integrated_version1"
+# version1 input data August 2019-February 2020
+# version2 input data July-October 2020
+#version <- 'version1'
+version <- 'v2'
 
-#discrete_filename <- "npp_discrete_version2"
-#integrated_filename <- "npp_integrated_version2"
+if (version == 'version1') {
+npp_discrete <- read_csv(paste0('npp_discrete_', version, '.csv'), show_col_types = FALSE) 
+npp_integrated <- read_csv(paste0('npp_integrated_', version, '.csv'), show_col_types = FALSE) 
+}
 
-npp_discrete <- read_csv(paste0(discrete_filename, '.csv'), show_col_types = FALSE) 
-npp_integrated <- read_csv(paste0(integrated_filename, '.csv'), show_col_types = FALSE) 
+if (version == 'v2') {
+npp_discrete_1 <- read_csv(paste0('npp_discrete_version1.csv'), show_col_types = FALSE) 
+npp_discrete_2 <- read_csv(paste0('npp_discrete_version2.csv'), show_col_types = FALSE) 
+npp_discrete <- rbind(npp_discrete_1, npp_discrete_2)
+npp_integrated_1 <- read_csv(paste0('npp_integrated_version1.csv'), show_col_types = FALSE) 
+npp_integrated_2 <- read_csv(paste0('npp_integrated_version2.csv'), show_col_types = FALSE) 
+npp_integrated <- rbind(npp_integrated_1, npp_integrated_2) 
+write.csv(npp_discrete, "nes-lter-npp-transect-discrete-v2.csv", row.names = FALSE)
+write.csv(npp_integrated, "nes-lter-npp-transect-integrated-v2.csv", row.names = FALSE)
+}
+
 
 ```
 
@@ -98,13 +108,19 @@ npp_integrated <- read_csv(paste0(integrated_filename, '.csv'), show_col_types =
 
 excel_template <- 'npp-transect-info.xlsx'
 
-sheet_to_tsv(excel_template, 'ColumnHeadersDiscrete', paste0('attributes_', discrete_filename, '.txt'))  
+if (version == 'version1') {
+sheet_to_tsv(excel_template, 'ColumnHeadersDiscrete', paste0('attributes_npp_discrete_', version, '.txt'))  
+sheet_to_tsv(excel_template, 'ColumnHeadersIntegrated', paste0('attributes_npp_integrated_', version, '.txt'))
+sheet_to_tsv(excel_template, 'CategoricalVariables', paste0('catvars_npp_discrete_', version, '.txt'))
+sheet_to_tsv(excel_template, 'CategoricalVariables', paste0('catvars_npp_integrated_', version, '.txt'))
+}
 
-sheet_to_tsv(excel_template, 'ColumnHeadersIntegrated', paste0('attributes_', integrated_filename, '.txt'))
-
-sheet_to_tsv(excel_template, 'CategoricalVariables', paste0('catvars_', discrete_filename, '.txt'))
-
-sheet_to_tsv(excel_template, 'CategoricalVariables', paste0('catvars_', integrated_filename, '.txt'))
+if (version == 'v2') {
+sheet_to_tsv(excel_template, 'ColumnHeadersDiscrete', paste0('attributes_nes-lter-npp-transect-discrete-', version, '.txt'))  
+sheet_to_tsv(excel_template, 'ColumnHeadersIntegrated', paste0('attributes_nes-lter-npp-transect-integrated-', version, '.txt'))
+sheet_to_tsv(excel_template, 'CategoricalVariables', paste0('catvars_nes-lter-npp-transect-discrete-', version, '.txt'))
+sheet_to_tsv(excel_template, 'CategoricalVariables', paste0('catvars_nes-lter-npp-transect-integrated-', version, '.txt'))
+}
 
 sheet_to_tsv(excel_template, 'Personnel', 'personnel.txt')
 
@@ -126,17 +142,26 @@ Generate the package and insert the parent project node into the resulting EML
 
 ```{r}
 
- if (discrete_filename == "npp_discrete_version1") {pkg_id <- 'knb-lter-nes.16.1'} else if (discrete_filename == "npp_discrete_version2") {pkg_id <- 'knb-lter-nes.16.2'}
-        
+ if (version == 'version1') {
+   pkg_id <- 'knb-lter-nes.16.1'
+   datatables <- c('npp_discrete_version1.csv', 'npp_integrated_version1.csv')
+   other <- c('raw_npp_data_version1.csv','HOBO_data.zip')
+   } 
+
+if (version == 'v2') {
+  pkg_id <- 'knb-lter-nes.16.2'
+  datatables <- c('nes-lter-npp-transect-discrete-v2.csv', 'nes-lter-npp-transect-integrated-v2.csv')
+  other <- c('raw_npp_data_version2.csv','HOBO_data.zip')
+  }
 
 make_eml(here(),
          dataset.title='Size-fractionated net primary productivity (NPP) estimates based on 13C uptake during cruises along the Northeast U.S. Shelf Long Term Ecological Research (NES-LTER) Transect, ongoing since 2019', 
-         data.table= c(paste0(discrete_filename, '.csv'), paste0(integrated_filename, '.csv')),  
+         data.table= datatables,  
          data.table.description= c('Discrete net primary productivity data', 'Integrated net primary productivity data'),
-         data.table.name = c('Discrete NPP', 'Integrated NPP'),
-         other.entity = c('raw_npp_data.csv','HOBO_data.zip'),
+         data.table.name = name <- c('Discrete NPP', 'Integrated NPP'),
+         other.entity = other,
          other.entity.name = c('Raw NPP data table','Raw temperature data files'),
-         other.entity.description = 'Raw data used to generate product data tables',
+         other.entity.description = c('Raw data used to generate product data tables', 'Raw temperature data'),
          temporal.coverage = temporal_coverage(append(npp_discrete$date_time_utc, npp_integrated$date_time_utc)),
          geographic.description = "NES-LTER",
          geographic.coordinates = geographic_coordinates(npp_discrete$latitude, npp_discrete$longitude),

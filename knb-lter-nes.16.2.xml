@@ -42,7 +42,7 @@
       <userId directory="https://orcid.org">https://orcid.org/0000-0002-2903-5851</userId>
       <role>metadata Provider</role>
     </associatedParty>
-    <pubDate>2022-03-17</pubDate>
+    <pubDate>2022-03-22</pubDate>
     <abstract>
       <para>This dataset consists of primary production measurements based on uptake of carbon-13 added  as 13C-bicarbonate during 24-h deckboard incubations of seawater. Sampling occurred on cruises along the Northeast U.S. Shelf Long Term Ecological Research (NES-LTER) Transect during summer, fall, and winter, starting in summer 2019. Net primary production (NPP) was determined from particulate organic carbon (POC) content and associated stable isotope enrichment. Two data tables are included: 1. depth-specific primary productivity based on fractional light levels of the surface irradiance with reference to the profile of photosynthetically active radiation (PAR), and 2. integrated primary productivity. The tables derive from the raw data tables included as other entities. </para>
       <para/>
@@ -236,16 +236,16 @@ Sample Collection</para>
       </funding>
     </project>
     <dataTable>
-      <entityName>Discrete NPP v1</entityName>
-      <entityDescription>Discrete net primary productivity data August 2019-February 2020</entityDescription>
+      <entityName>Discrete NPP</entityName>
+      <entityDescription>Discrete net primary productivity data</entityDescription>
       <physical>
-        <objectName>npp_discrete_version1.csv</objectName>
-        <size unit="bytes">23079</size>
-        <authentication method="MD5">392316d169b8500774a2bffc0b4a0999</authentication>
+        <objectName>nes-lter-npp-transect-discrete-v2.csv</objectName>
+        <size unit="bytes">43698</size>
+        <authentication method="MD5">49805d2ef59b3b293169946870d914fd</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>
-            <recordDelimiter>\n</recordDelimiter>
+            <recordDelimiter>\r\n</recordDelimiter>
             <attributeOrientation>column</attributeOrientation>
             <simpleDelimited>
               <fieldDelimiter>,</fieldDelimiter>
@@ -369,7 +369,7 @@ Sample Collection</para>
                 <numberType>real</numberType>
                 <bounds>
                   <minimum exclusive="false">-70.9017</minimum>
-                  <maximum exclusive="false">-70.775</maximum>
+                  <maximum exclusive="false">-70.7676</maximum>
                 </bounds>
               </numericDomain>
             </ratio>
@@ -574,7 +574,7 @@ Sample Collection</para>
                 <numberType>real</numberType>
                 <bounds>
                   <minimum exclusive="false">-0.108</minimum>
-                  <maximum exclusive="false">111.066</maximum>
+                  <maximum exclusive="false">132.653</maximum>
                 </bounds>
               </numericDomain>
             </ratio>
@@ -663,19 +663,19 @@ Sample Collection</para>
           </missingValueCode>
         </attribute>
       </attributeList>
-      <numberOfRecords>251</numberOfRecords>
+      <numberOfRecords>426</numberOfRecords>
     </dataTable>
     <dataTable>
-      <entityName>Integrated NPP v1</entityName>
-      <entityDescription>Integrated net primary productivity data August 2019-February 2020</entityDescription>
+      <entityName>Integrated NPP</entityName>
+      <entityDescription>Integrated net primary productivity data</entityDescription>
       <physical>
-        <objectName>npp_integrated_version1.csv</objectName>
-        <size unit="bytes">4602</size>
-        <authentication method="MD5">023fdb663d485c6f0540a03ed3cc60d9</authentication>
+        <objectName>nes-lter-npp-transect-integrated-v2.csv</objectName>
+        <size unit="bytes">7847</size>
+        <authentication method="MD5">a51a7f7e6632357cd0607f03a15b4d03</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>
-            <recordDelimiter>\n</recordDelimiter>
+            <recordDelimiter>\r\n</recordDelimiter>
             <attributeOrientation>column</attributeOrientation>
             <simpleDelimited>
               <fieldDelimiter>,</fieldDelimiter>
@@ -753,7 +753,7 @@ Sample Collection</para>
                 <numberType>real</numberType>
                 <bounds>
                   <minimum exclusive="false">-70.9006</minimum>
-                  <maximum exclusive="false">-70.775</maximum>
+                  <maximum exclusive="false">-70.7683</maximum>
                 </bounds>
               </numericDomain>
             </ratio>
@@ -915,7 +915,7 @@ Sample Collection</para>
                 <numberType>real</numberType>
                 <bounds>
                   <minimum exclusive="false">0.06</minimum>
-                  <maximum exclusive="false">0.22</maximum>
+                  <maximum exclusive="false">0.28</maximum>
                 </bounds>
               </numericDomain>
             </ratio>
@@ -938,7 +938,7 @@ Sample Collection</para>
                 <numberType>real</numberType>
                 <bounds>
                   <minimum exclusive="false">0.19</minimum>
-                  <maximum exclusive="false">0.87</maximum>
+                  <maximum exclusive="false">1.1</maximum>
                 </bounds>
               </numericDomain>
             </ratio>
@@ -972,754 +972,15 @@ Sample Collection</para>
           </missingValueCode>
         </attribute>
       </attributeList>
-      <numberOfRecords>57</numberOfRecords>
-    </dataTable>
-    <dataTable>
-      <entityName>Discrete NPP v2</entityName>
-      <entityDescription>Discrete net primary productivity data July-October 2020</entityDescription>
-      <physical>
-        <objectName>npp_discrete_version2.csv</objectName>
-        <size unit="bytes">16094</size>
-        <authentication method="MD5">b9400899b7a27545892a09ffc2790f1d</authentication>
-        <dataFormat>
-          <textFormat>
-            <numHeaderLines>1</numHeaderLines>
-            <recordDelimiter>\n</recordDelimiter>
-            <attributeOrientation>column</attributeOrientation>
-            <simpleDelimited>
-              <fieldDelimiter>,</fieldDelimiter>
-            </simpleDelimited>
-          </textFormat>
-        </dataFormat>
-      </physical>
-      <attributeList>
-        <attribute>
-          <attributeName>cruise</attributeName>
-          <attributeDefinition>Identifier for research cruise generally including abbreviation for research vessel and voyage number</attributeDefinition>
-          <storageType>string</storageType>
-          <measurementScale>
-            <nominal>
-              <nonNumericDomain>
-                <textDomain>
-                  <definition>Identifier for research cruise generally including abbreviation for research vessel and voyage number</definition>
-                </textDomain>
-              </nonNumericDomain>
-            </nominal>
-          </measurementScale>
-          <missingValueCode>
-            <code>NaN</code>
-            <codeExplanation>Missing value</codeExplanation>
-          </missingValueCode>
-        </attribute>
-        <attribute>
-          <attributeName>date_time_utc</attributeName>
-          <attributeDefinition>Date and time in UTC when rosette bottle closed</attributeDefinition>
-          <storageType>date</storageType>
-          <measurementScale>
-            <dateTime>
-              <formatString>YYYY-MM-DD hh:mm:ss</formatString>
-              <dateTimeDomain/>
-            </dateTime>
-          </measurementScale>
-          <missingValueCode>
-            <code>NaN</code>
-            <codeExplanation>Missing value</codeExplanation>
-          </missingValueCode>
-        </attribute>
-        <attribute>
-          <attributeName>cast</attributeName>
-          <attributeDefinition>CTD rosette cast number chronological per cruise</attributeDefinition>
-          <storageType>float</storageType>
-          <measurementScale>
-            <ratio>
-              <unit>
-                <standardUnit>dimensionless</standardUnit>
-              </unit>
-              <numericDomain>
-                <numberType>natural</numberType>
-                <bounds>
-                  <minimum exclusive="false">1</minimum>
-                  <maximum exclusive="false">17</maximum>
-                </bounds>
-              </numericDomain>
-            </ratio>
-          </measurementScale>
-          <missingValueCode>
-            <code>NaN</code>
-            <codeExplanation>Missing value</codeExplanation>
-          </missingValueCode>
-        </attribute>
-        <attribute>
-          <attributeName>niskin</attributeName>
-          <attributeDefinition>Rosette bottle position number</attributeDefinition>
-          <storageType>float</storageType>
-          <measurementScale>
-            <ratio>
-              <unit>
-                <standardUnit>dimensionless</standardUnit>
-              </unit>
-              <numericDomain>
-                <numberType>natural</numberType>
-                <bounds>
-                  <minimum exclusive="false">4</minimum>
-                  <maximum exclusive="false">23</maximum>
-                </bounds>
-              </numericDomain>
-            </ratio>
-          </measurementScale>
-          <missingValueCode>
-            <code>NaN</code>
-            <codeExplanation>Missing value</codeExplanation>
-          </missingValueCode>
-        </attribute>
-        <attribute>
-          <attributeName>latitude</attributeName>
-          <attributeDefinition>Ship's latitude when rosette bottle closed</attributeDefinition>
-          <storageType>float</storageType>
-          <measurementScale>
-            <ratio>
-              <unit>
-                <standardUnit>degree</standardUnit>
-              </unit>
-              <numericDomain>
-                <numberType>real</numberType>
-                <bounds>
-                  <minimum exclusive="false">39.7685</minimum>
-                  <maximum exclusive="false">41.2031</maximum>
-                </bounds>
-              </numericDomain>
-            </ratio>
-          </measurementScale>
-          <missingValueCode>
-            <code>NaN</code>
-            <codeExplanation>Missing value</codeExplanation>
-          </missingValueCode>
-        </attribute>
-        <attribute>
-          <attributeName>longitude</attributeName>
-          <attributeDefinition>Ship's longitude when rosette bottle closed</attributeDefinition>
-          <storageType>float</storageType>
-          <measurementScale>
-            <ratio>
-              <unit>
-                <standardUnit>degree</standardUnit>
-              </unit>
-              <numericDomain>
-                <numberType>real</numberType>
-                <bounds>
-                  <minimum exclusive="false">-70.8946</minimum>
-                  <maximum exclusive="false">-70.7676</maximum>
-                </bounds>
-              </numericDomain>
-            </ratio>
-          </measurementScale>
-          <missingValueCode>
-            <code>NaN</code>
-            <codeExplanation>Missing value</codeExplanation>
-          </missingValueCode>
-        </attribute>
-        <attribute>
-          <attributeName>depth</attributeName>
-          <attributeDefinition>Depth of sample below sea surface http://vocab.nerc.ac.uk/collection/P09/current/DEPH/</attributeDefinition>
-          <storageType>float</storageType>
-          <measurementScale>
-            <ratio>
-              <unit>
-                <standardUnit>meter</standardUnit>
-              </unit>
-              <numericDomain>
-                <numberType>real</numberType>
-                <bounds>
-                  <minimum exclusive="false">1.823</minimum>
-                  <maximum exclusive="false">86.124</maximum>
-                </bounds>
-              </numericDomain>
-            </ratio>
-          </measurementScale>
-          <missingValueCode>
-            <code>NaN</code>
-            <codeExplanation>Missing value</codeExplanation>
-          </missingValueCode>
-        </attribute>
-        <attribute>
-          <attributeName>alternate_sample_ID</attributeName>
-          <attributeDefinition>Identifer combining filter size with other information</attributeDefinition>
-          <storageType>string</storageType>
-          <measurementScale>
-            <nominal>
-              <nonNumericDomain>
-                <textDomain>
-                  <definition>Identifer combining filter size with other information</definition>
-                </textDomain>
-              </nonNumericDomain>
-            </nominal>
-          </measurementScale>
-        </attribute>
-        <attribute>
-          <attributeName>depth_category</attributeName>
-          <attributeDefinition>Category based on light extinction that describes where in water column sample was obtained</attributeDefinition>
-          <storageType>string</storageType>
-          <measurementScale>
-            <nominal>
-              <nonNumericDomain>
-                <enumeratedDomain>
-                  <codeDefinition>
-                    <code>Dark</code>
-                    <definition>samples collected from dark amber bottles to observe any light-independent carbon fixation</definition>
-                  </codeDefinition>
-                  <codeDefinition>
-                    <code>D1</code>
-                    <definition>deepest depth sampled based on light extinction</definition>
-                  </codeDefinition>
-                  <codeDefinition>
-                    <code>D2</code>
-                    <definition>second-deepest depth sampled based on light extinction</definition>
-                  </codeDefinition>
-                  <codeDefinition>
-                    <code>D3</code>
-                    <definition>where three depths are sampled at a station, the category for shallowest samples; where four depths are sampled, the category for second-shallowest samples</definition>
-                  </codeDefinition>
-                  <codeDefinition>
-                    <code>D4</code>
-                    <definition>where four depths are sampled at a station, the category for the shallowest samples</definition>
-                  </codeDefinition>
-                </enumeratedDomain>
-              </nonNumericDomain>
-            </nominal>
-          </measurementScale>
-        </attribute>
-        <attribute>
-          <attributeName>filter_size</attributeName>
-          <attributeDefinition>Size fraction with filter and when applicable prefilter pore size in micrometers</attributeDefinition>
-          <storageType>string</storageType>
-          <measurementScale>
-            <nominal>
-              <nonNumericDomain>
-                <enumeratedDomain>
-                  <codeDefinition>
-                    <code>&gt;0</code>
-                    <definition>Filtered on 0.7 micron filter</definition>
-                  </codeDefinition>
-                  <codeDefinition>
-                    <code>&gt;0&amp;&lt;20</code>
-                    <definition>Filtered on 0.7 micron filter with 20 micron prefilter</definition>
-                  </codeDefinition>
-                  <codeDefinition>
-                    <code>&gt;0&amp;&lt;5</code>
-                    <definition>Filtered on 0.7 micron filter with 5 micron prefilter</definition>
-                  </codeDefinition>
-                </enumeratedDomain>
-              </nonNumericDomain>
-            </nominal>
-          </measurementScale>
-        </attribute>
-        <attribute>
-          <attributeName>replicate</attributeName>
-          <attributeDefinition>Integer indicating replicate subsample drawn from the same Niskin</attributeDefinition>
-          <storageType>string</storageType>
-          <measurementScale>
-            <nominal>
-              <nonNumericDomain>
-                <textDomain>
-                  <definition>Integer indicating replicate subsample drawn from the same Niskin</definition>
-                </textDomain>
-              </nonNumericDomain>
-            </nominal>
-          </measurementScale>
-          <missingValueCode>
-            <code>NaN</code>
-            <codeExplanation>Missing value</codeExplanation>
-          </missingValueCode>
-        </attribute>
-        <attribute>
-          <attributeName>percent_surface_irradiance</attributeName>
-          <attributeDefinition>Light at sample location as a percent of surface photosynthetically active radiation (PAR), calculated based on light extinction coefficient for each station</attributeDefinition>
-          <storageType>string</storageType>
-          <measurementScale>
-            <nominal>
-              <nonNumericDomain>
-                <enumeratedDomain>
-                  <codeDefinition>
-                    <code>0.1</code>
-                    <definition>0.1 percent surface photosynthetically active radiation</definition>
-                  </codeDefinition>
-                  <codeDefinition>
-                    <code>1</code>
-                    <definition>1 percent surface photosynthetically active radiation</definition>
-                  </codeDefinition>
-                  <codeDefinition>
-                    <code>5</code>
-                    <definition>5 percent surface photosynthetically active radiation</definition>
-                  </codeDefinition>
-                  <codeDefinition>
-                    <code>10</code>
-                    <definition>10 percent surface photosynthetically active radiation</definition>
-                  </codeDefinition>
-                  <codeDefinition>
-                    <code>15</code>
-                    <definition>15 percent surface photosynthetically active radiation</definition>
-                  </codeDefinition>
-                  <codeDefinition>
-                    <code>20</code>
-                    <definition>20 percent surface photosynthetically active radiation</definition>
-                  </codeDefinition>
-                  <codeDefinition>
-                    <code>30</code>
-                    <definition>30 percent surface photosynthetically active radiation</definition>
-                  </codeDefinition>
-                  <codeDefinition>
-                    <code>40</code>
-                    <definition>40 percent surface photosynthetically active radiation</definition>
-                  </codeDefinition>
-                  <codeDefinition>
-                    <code>50</code>
-                    <definition>50 percent surface photosynthetically active radiation</definition>
-                  </codeDefinition>
-                  <codeDefinition>
-                    <code>65</code>
-                    <definition>65 percent surface photosynthetically active radiation</definition>
-                  </codeDefinition>
-                  <codeDefinition>
-                    <code>70</code>
-                    <definition>70 percent surface photosynthetically active radiation</definition>
-                  </codeDefinition>
-                  <codeDefinition>
-                    <code>75</code>
-                    <definition>75 percent surface photosynthetically active radiation</definition>
-                  </codeDefinition>
-                  <codeDefinition>
-                    <code>85</code>
-                    <definition>85percent surface photosynthetically active radiation</definition>
-                  </codeDefinition>
-                </enumeratedDomain>
-              </nonNumericDomain>
-            </nominal>
-          </measurementScale>
-          <missingValueCode>
-            <code>NaN</code>
-            <codeExplanation>Missing value</codeExplanation>
-          </missingValueCode>
-        </attribute>
-        <attribute>
-          <attributeName>npp_rate</attributeName>
-          <attributeDefinition>Net primary productivity in micrograms carbon per liter per day determined by uptake rate of labeled bicarbonate</attributeDefinition>
-          <storageType>float</storageType>
-          <measurementScale>
-            <ratio>
-              <unit>
-                <customUnit>microgramPerLiterPerDay</customUnit>
-              </unit>
-              <numericDomain>
-                <numberType>real</numberType>
-                <bounds>
-                  <minimum exclusive="false">0.04</minimum>
-                  <maximum exclusive="false">132.653</maximum>
-                </bounds>
-              </numericDomain>
-            </ratio>
-          </measurementScale>
-          <missingValueCode>
-            <code>NaN</code>
-            <codeExplanation>Missing value</codeExplanation>
-          </missingValueCode>
-        </attribute>
-        <attribute>
-          <attributeName>iode_quality_flag</attributeName>
-          <attributeDefinition>IODE Quality Flag primary level</attributeDefinition>
-          <storageType>string</storageType>
-          <measurementScale>
-            <nominal>
-              <nonNumericDomain>
-                <enumeratedDomain>
-                  <codeDefinition>
-                    <code>1</code>
-                    <definition>good</definition>
-                  </codeDefinition>
-                  <codeDefinition>
-                    <code>2</code>
-                    <definition>quality not evaluated, not available or unknown</definition>
-                  </codeDefinition>
-                  <codeDefinition>
-                    <code>3</code>
-                    <definition>questionable/suspect</definition>
-                  </codeDefinition>
-                  <codeDefinition>
-                    <code>4</code>
-                    <definition>bad</definition>
-                  </codeDefinition>
-                  <codeDefinition>
-                    <code>9</code>
-                    <definition>missing data</definition>
-                  </codeDefinition>
-                </enumeratedDomain>
-              </nonNumericDomain>
-            </nominal>
-          </measurementScale>
-          <missingValueCode>
-            <code>NaN</code>
-            <codeExplanation>Missing value</codeExplanation>
-          </missingValueCode>
-        </attribute>
-        <attribute>
-          <attributeName>nearest_station</attributeName>
-          <attributeDefinition>NES-LTER standard station nearest to the sample location</attributeDefinition>
-          <storageType>string</storageType>
-          <measurementScale>
-            <nominal>
-              <nonNumericDomain>
-                <textDomain>
-                  <definition>NES-LTER standard station nearest to the sample location</definition>
-                </textDomain>
-              </nonNumericDomain>
-            </nominal>
-          </measurementScale>
-          <missingValueCode>
-            <code>NaN</code>
-            <codeExplanation>Distance greater than 2 km from NES-LTER standard station</codeExplanation>
-          </missingValueCode>
-        </attribute>
-        <attribute>
-          <attributeName>distance</attributeName>
-          <attributeDefinition>Distance from sample location to nearest NES-LTER standard station</attributeDefinition>
-          <storageType>float</storageType>
-          <measurementScale>
-            <ratio>
-              <unit>
-                <standardUnit>kilometer</standardUnit>
-              </unit>
-              <numericDomain>
-                <numberType>real</numberType>
-                <bounds>
-                  <minimum exclusive="false">0.11</minimum>
-                  <maximum exclusive="false">1.9</maximum>
-                </bounds>
-              </numericDomain>
-            </ratio>
-          </measurementScale>
-          <missingValueCode>
-            <code>NaN</code>
-            <codeExplanation>Distance greater than 2 km from NES-LTER standard station</codeExplanation>
-          </missingValueCode>
-        </attribute>
-      </attributeList>
-      <numberOfRecords>175</numberOfRecords>
-    </dataTable>
-    <dataTable>
-      <entityName>Integrated NPP v2</entityName>
-      <entityDescription>Integrated net primary productivity data July-October 2020</entityDescription>
-      <physical>
-        <objectName>npp_integrated_version2.csv</objectName>
-        <size unit="bytes">2750</size>
-        <authentication method="MD5">d88a2433ec1966cfda4a77a6339e3bc0</authentication>
-        <dataFormat>
-          <textFormat>
-            <numHeaderLines>1</numHeaderLines>
-            <recordDelimiter>\n</recordDelimiter>
-            <attributeOrientation>column</attributeOrientation>
-            <simpleDelimited>
-              <fieldDelimiter>,</fieldDelimiter>
-            </simpleDelimited>
-          </textFormat>
-        </dataFormat>
-      </physical>
-      <attributeList>
-        <attribute>
-          <attributeName>cruise</attributeName>
-          <attributeDefinition>Identifier for research cruise generally including abbreviation for research vessel and voyage number</attributeDefinition>
-          <storageType>string</storageType>
-          <measurementScale>
-            <nominal>
-              <nonNumericDomain>
-                <textDomain>
-                  <definition>Identifier for research cruise generally including abbreviation for research vessel and voyage number</definition>
-                </textDomain>
-              </nonNumericDomain>
-            </nominal>
-          </measurementScale>
-          <missingValueCode>
-            <code>NaN</code>
-            <codeExplanation>Missing value</codeExplanation>
-          </missingValueCode>
-        </attribute>
-        <attribute>
-          <attributeName>date_time_utc</attributeName>
-          <attributeDefinition>Date and time in UTC when rosette bottle closed</attributeDefinition>
-          <storageType>date</storageType>
-          <measurementScale>
-            <dateTime>
-              <formatString>YYYY-MM-DD hh:mm:ss</formatString>
-              <dateTimeDomain/>
-            </dateTime>
-          </measurementScale>
-          <missingValueCode>
-            <code>NaN</code>
-            <codeExplanation>Missing value</codeExplanation>
-          </missingValueCode>
-        </attribute>
-        <attribute>
-          <attributeName>latitude</attributeName>
-          <attributeDefinition>Ship's latitude when rosette bottle closed</attributeDefinition>
-          <storageType>float</storageType>
-          <measurementScale>
-            <ratio>
-              <unit>
-                <standardUnit>degree</standardUnit>
-              </unit>
-              <numericDomain>
-                <numberType>real</numberType>
-                <bounds>
-                  <minimum exclusive="false">39.769</minimum>
-                  <maximum exclusive="false">41.203</maximum>
-                </bounds>
-              </numericDomain>
-            </ratio>
-          </measurementScale>
-          <missingValueCode>
-            <code>NaN</code>
-            <codeExplanation>Missing value</codeExplanation>
-          </missingValueCode>
-        </attribute>
-        <attribute>
-          <attributeName>longitude</attributeName>
-          <attributeDefinition>Ship's longitude when rosette bottle closed</attributeDefinition>
-          <storageType>float</storageType>
-          <measurementScale>
-            <ratio>
-              <unit>
-                <standardUnit>degree</standardUnit>
-              </unit>
-              <numericDomain>
-                <numberType>real</numberType>
-                <bounds>
-                  <minimum exclusive="false">-70.8935</minimum>
-                  <maximum exclusive="false">-70.7683</maximum>
-                </bounds>
-              </numericDomain>
-            </ratio>
-          </measurementScale>
-          <missingValueCode>
-            <code>NaN</code>
-            <codeExplanation>Missing value</codeExplanation>
-          </missingValueCode>
-        </attribute>
-        <attribute>
-          <attributeName>station</attributeName>
-          <attributeDefinition>NES-LTER standard station from which sample was collected</attributeDefinition>
-          <storageType>string</storageType>
-          <measurementScale>
-            <nominal>
-              <nonNumericDomain>
-                <textDomain>
-                  <definition>NES-LTER standard station from which sample was collected</definition>
-                </textDomain>
-              </nonNumericDomain>
-            </nominal>
-          </measurementScale>
-          <missingValueCode>
-            <code>NaN</code>
-            <codeExplanation>Missing value</codeExplanation>
-          </missingValueCode>
-        </attribute>
-        <attribute>
-          <attributeName>cast</attributeName>
-          <attributeDefinition>CTD rosette cast number chronological per cruise</attributeDefinition>
-          <storageType>float</storageType>
-          <measurementScale>
-            <ratio>
-              <unit>
-                <standardUnit>dimensionless</standardUnit>
-              </unit>
-              <numericDomain>
-                <numberType>natural</numberType>
-                <bounds>
-                  <minimum exclusive="false">1</minimum>
-                  <maximum exclusive="false">17</maximum>
-                </bounds>
-              </numericDomain>
-            </ratio>
-          </measurementScale>
-          <missingValueCode>
-            <code>NaN</code>
-            <codeExplanation>Missing value</codeExplanation>
-          </missingValueCode>
-        </attribute>
-        <attribute>
-          <attributeName>filter_size</attributeName>
-          <attributeDefinition>Size fraction with filter and when applicable prefilter pore size in micrometers</attributeDefinition>
-          <storageType>string</storageType>
-          <measurementScale>
-            <nominal>
-              <nonNumericDomain>
-                <enumeratedDomain>
-                  <codeDefinition>
-                    <code>&gt;0</code>
-                    <definition>Filtered on 0.7 micron filter</definition>
-                  </codeDefinition>
-                  <codeDefinition>
-                    <code>&gt;0&amp;&lt;20</code>
-                    <definition>Filtered on 0.7 micron filter with 20 micron prefilter</definition>
-                  </codeDefinition>
-                  <codeDefinition>
-                    <code>&gt;0&amp;&lt;5</code>
-                    <definition>Filtered on 0.7 micron filter with 5 micron prefilter</definition>
-                  </codeDefinition>
-                </enumeratedDomain>
-              </nonNumericDomain>
-            </nominal>
-          </measurementScale>
-        </attribute>
-        <attribute>
-          <attributeName>integrated_npp_mg_m2_day</attributeName>
-          <attributeDefinition>Vertically-integrated net primary productivity measured as uptake rate of carbon per unit area of water per day</attributeDefinition>
-          <storageType>float</storageType>
-          <measurementScale>
-            <ratio>
-              <unit>
-                <standardUnit>milligramPerMeterSquaredPerDay</standardUnit>
-              </unit>
-              <numericDomain>
-                <numberType>real</numberType>
-                <bounds>
-                  <minimum exclusive="false">250.578</minimum>
-                  <maximum exclusive="false">1446.826</maximum>
-                </bounds>
-              </numericDomain>
-            </ratio>
-          </measurementScale>
-        </attribute>
-        <attribute>
-          <attributeName>iode_quality_flag</attributeName>
-          <attributeDefinition>IODE Quality Flag primary level</attributeDefinition>
-          <storageType>string</storageType>
-          <measurementScale>
-            <nominal>
-              <nonNumericDomain>
-                <enumeratedDomain>
-                  <codeDefinition>
-                    <code>1</code>
-                    <definition>good</definition>
-                  </codeDefinition>
-                  <codeDefinition>
-                    <code>2</code>
-                    <definition>quality not evaluated, not available or unknown</definition>
-                  </codeDefinition>
-                  <codeDefinition>
-                    <code>3</code>
-                    <definition>questionable/suspect</definition>
-                  </codeDefinition>
-                  <codeDefinition>
-                    <code>4</code>
-                    <definition>bad</definition>
-                  </codeDefinition>
-                  <codeDefinition>
-                    <code>9</code>
-                    <definition>missing data</definition>
-                  </codeDefinition>
-                </enumeratedDomain>
-              </nonNumericDomain>
-            </nominal>
-          </measurementScale>
-        </attribute>
-        <attribute>
-          <attributeName>daytime_Y_N</attributeName>
-          <attributeDefinition>Designation for whether cast occurred during day or night</attributeDefinition>
-          <storageType>string</storageType>
-          <measurementScale>
-            <nominal>
-              <nonNumericDomain>
-                <enumeratedDomain>
-                  <codeDefinition>
-                    <code>Y</code>
-                    <definition>cast occurred during daylight</definition>
-                  </codeDefinition>
-                  <codeDefinition>
-                    <code>N</code>
-                    <definition>cast occurred at night</definition>
-                  </codeDefinition>
-                </enumeratedDomain>
-              </nonNumericDomain>
-            </nominal>
-          </measurementScale>
-        </attribute>
-        <attribute>
-          <attributeName>k_meas_per_m</attributeName>
-          <attributeDefinition>Measured light extinction coefficient</attributeDefinition>
-          <storageType>float</storageType>
-          <measurementScale>
-            <ratio>
-              <unit>
-                <customUnit>perMeter</customUnit>
-              </unit>
-              <numericDomain>
-                <numberType>real</numberType>
-                <bounds>
-                  <minimum exclusive="false">0.06</minimum>
-                  <maximum exclusive="false">0.28</maximum>
-                </bounds>
-              </numericDomain>
-            </ratio>
-          </measurementScale>
-          <missingValueCode>
-            <code>NaN</code>
-            <codeExplanation>Missing value</codeExplanation>
-          </missingValueCode>
-        </attribute>
-        <attribute>
-          <attributeName>beam_atten_0_10</attributeName>
-          <attributeDefinition>Average beam attenuation (At) measured by ship's transmissometer within the upper 10 m of  water column</attributeDefinition>
-          <storageType>float</storageType>
-          <measurementScale>
-            <ratio>
-              <unit>
-                <customUnit>perMeter</customUnit>
-              </unit>
-              <numericDomain>
-                <numberType>real</numberType>
-                <bounds>
-                  <minimum exclusive="false">0.54</minimum>
-                  <maximum exclusive="false">1.1</maximum>
-                </bounds>
-              </numericDomain>
-            </ratio>
-          </measurementScale>
-          <missingValueCode>
-            <code>NaN</code>
-            <codeExplanation>Missing value</codeExplanation>
-          </missingValueCode>
-        </attribute>
-        <attribute>
-          <attributeName>k_calc_per_m</attributeName>
-          <attributeDefinition>Light extinction coefficient calculated from the measured daytime light extinction coefficient and beam attenuation</attributeDefinition>
-          <storageType>float</storageType>
-          <measurementScale>
-            <ratio>
-              <unit>
-                <customUnit>perMeter</customUnit>
-              </unit>
-              <numericDomain>
-                <numberType>real</numberType>
-                <bounds>
-                  <minimum exclusive="false">0.06</minimum>
-                  <maximum exclusive="false">0.28</maximum>
-                </bounds>
-              </numericDomain>
-            </ratio>
-          </measurementScale>
-          <missingValueCode>
-            <code>NaN</code>
-            <codeExplanation>Missing value</codeExplanation>
-          </missingValueCode>
-        </attribute>
-      </attributeList>
-      <numberOfRecords>33</numberOfRecords>
+      <numberOfRecords>90</numberOfRecords>
     </dataTable>
     <otherEntity>
       <entityName>Raw NPP data table</entityName>
       <entityDescription>Raw data used to generate product data tables</entityDescription>
       <physical>
-        <objectName>raw_npp_data.csv</objectName>
-        <size unit="bytes">42629</size>
-        <authentication method="MD5">bb48da38beeb4724e1e974559553ebf2</authentication>
+        <objectName>raw_npp_data_version2.csv</objectName>
+        <size unit="bytes">17260</size>
+        <authentication method="MD5">b4c7777c8412cb156346405d6a21c96c</authentication>
         <dataFormat>
           <externallyDefinedFormat>
             <formatName>text/csv</formatName>

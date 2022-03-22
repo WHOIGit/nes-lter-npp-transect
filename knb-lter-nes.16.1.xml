@@ -42,7 +42,7 @@
       <userId directory="https://orcid.org">https://orcid.org/0000-0002-2903-5851</userId>
       <role>metadata Provider</role>
     </associatedParty>
-    <pubDate>2022-03-17</pubDate>
+    <pubDate>2022-03-22</pubDate>
     <abstract>
       <para>This dataset consists of primary production measurements based on uptake of carbon-13 added  as 13C-bicarbonate during 24-h deckboard incubations of seawater. Sampling occurred on cruises along the Northeast U.S. Shelf Long Term Ecological Research (NES-LTER) Transect during summer, fall, and winter, starting in summer 2019. Net primary production (NPP) was determined from particulate organic carbon (POC) content and associated stable isotope enrichment. Two data tables are included: 1. depth-specific primary productivity based on fractional light levels of the surface irradiance with reference to the profile of photosynthetically active radiation (PAR), and 2. integrated primary productivity. The tables derive from the raw data tables included as other entities. </para>
       <para/>
@@ -236,8 +236,8 @@ Sample Collection</para>
       </funding>
     </project>
     <dataTable>
-      <entityName>Discrete NPP v1</entityName>
-      <entityDescription>Discrete net primary productivity data August 2019-February 2020</entityDescription>
+      <entityName>Discrete NPP</entityName>
+      <entityDescription>Discrete net primary productivity data</entityDescription>
       <physical>
         <objectName>npp_discrete_version1.csv</objectName>
         <size unit="bytes">23079</size>
@@ -666,8 +666,8 @@ Sample Collection</para>
       <numberOfRecords>251</numberOfRecords>
     </dataTable>
     <dataTable>
-      <entityName>Integrated NPP v1</entityName>
-      <entityDescription>Integrated net primary productivity data August 2019-February 2020</entityDescription>
+      <entityName>Integrated NPP</entityName>
+      <entityDescription>Integrated net primary productivity data</entityDescription>
       <physical>
         <objectName>npp_integrated_version1.csv</objectName>
         <size unit="bytes">4602</size>
@@ -978,9 +978,9 @@ Sample Collection</para>
       <entityName>Raw NPP data table</entityName>
       <entityDescription>Raw data used to generate product data tables</entityDescription>
       <physical>
-        <objectName>raw_npp_data.csv</objectName>
-        <size unit="bytes">42629</size>
-        <authentication method="MD5">bb48da38beeb4724e1e974559553ebf2</authentication>
+        <objectName>raw_npp_data_version1.csv</objectName>
+        <size unit="bytes">26037</size>
+        <authentication method="MD5">c5f72de28de1f5f69f071a7939cb5478</authentication>
         <dataFormat>
           <externallyDefinedFormat>
             <formatName>text/csv</formatName>

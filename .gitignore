@@ -37,3 +37,9 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
+
+# Data input files
+npp_discrete.csv
+npp_integrated.csv
+raw_data_table.csv
+npp-transect-info_DF.xlsx
