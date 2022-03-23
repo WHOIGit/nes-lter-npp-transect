@@ -44,8 +44,8 @@ here("nes-lter-npp-transect")
 # identify version
 # version1 input data August 2019-February 2020
 # version2 input data July-October 2020
-version <- 'version1'
-#version <- 'v2'
+#version <- 'version1'
+version <- 'v2'
 
 if (version == 'version1') {
 npp_discrete <- read_csv(paste0('npp_discrete_', version, '.csv'), show_col_types = FALSE) 
@@ -79,6 +79,8 @@ npp_integrated$iode_quality_flag <- as.factor(npp_integrated$iode_quality_flag)
 npp_integrated$daytime_Y_N <- as.factor(npp_integrated$daytime_Y_N)
 
 npp_discrete$cruise <- as.factor(npp_discrete$cruise)
+npp_discrete$cast <- as.factor(npp_discrete$cast)
+npp_discrete$niskin <- as.factor(npp_discrete$niskin)
 npp_discrete$iode_quality_flag <- as.factor(npp_discrete$iode_quality_flag)
 npp_discrete$alternate_sample_ID <- as.factor(npp_discrete$alternate_sample_ID)
 npp_discrete$depth_category <- as.factor(npp_discrete$depth_category)
@@ -196,7 +198,7 @@ make_eml(here(),
          data.table.name = name <- c('Discrete NPP', 'Integrated NPP'),
          other.entity = other,
          other.entity.name = c('Raw NPP data table','Raw temperature data files'),
-         other.entity.description = c('Raw data used to generate product data tables', 'Raw temperature data'),
+         other.entity.description = c('Raw data used to generate product data tables', 'Raw incubation tank water temperature data'),
          temporal.coverage = temporal_coverage(append(npp_discrete$date_time_utc, npp_integrated$date_time_utc)),
          geographic.description = "NES-LTER",
          geographic.coordinates = geographic_coordinates(npp_discrete$latitude, npp_discrete$longitude),

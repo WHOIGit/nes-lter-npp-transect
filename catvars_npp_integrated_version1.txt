@@ -26,4 +26,4 @@ percent_surface_irradiance	50	50 percent surface photosynthetically active radia
 percent_surface_irradiance	65	65 percent surface photosynthetically active radiation
 percent_surface_irradiance	70	70 percent surface photosynthetically active radiation
 percent_surface_irradiance	75	75 percent surface photosynthetically active radiation
-percent_surface_irradiance	85	85percent surface photosynthetically active radiation
+percent_surface_irradiance	85	85 percent surface photosynthetically active radiation
