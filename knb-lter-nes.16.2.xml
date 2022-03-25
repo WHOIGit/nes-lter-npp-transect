@@ -42,7 +42,7 @@
       <userId directory="https://orcid.org">https://orcid.org/0000-0002-2903-5851</userId>
       <role>metadata Provider</role>
     </associatedParty>
-    <pubDate>2022-03-23</pubDate>
+    <pubDate>2022-03-25</pubDate>
     <abstract>
       <para>This dataset consists of primary production measurements based on uptake of carbon-13 added  as 13C-bicarbonate during 24-h deckboard incubations of seawater. Sampling occurred on cruises along the Northeast U.S. Shelf Long Term Ecological Research (NES-LTER) Transect during summer, fall, and winter, starting in summer 2019. Net primary production (NPP) was determined from particulate organic carbon (POC) content and associated stable isotope enrichment. Two data tables are included: 1. depth-specific primary productivity based on fractional light levels of the surface irradiance with reference to the profile of photosynthetically active radiation (PAR), and 2. integrated primary productivity. The tables derive from the raw data included as other entities. </para>
       <para/>
@@ -240,8 +240,8 @@ Sample Collection</para>
       <entityDescription>Discrete net primary productivity data</entityDescription>
       <physical>
         <objectName>nes-lter-npp-transect-discrete-v2.csv</objectName>
-        <size unit="bytes">43698</size>
-        <authentication method="MD5">49805d2ef59b3b293169946870d914fd</authentication>
+        <size unit="bytes">43704</size>
+        <authentication method="MD5">266de0b8e734e502e8a36941dea761e0</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>
@@ -403,7 +403,7 @@ Sample Collection</para>
           </missingValueCode>
         </attribute>
         <attribute>
-          <attributeName>alternate_sample_ID</attributeName>
+          <attributeName>alternate_sample_category</attributeName>
           <attributeDefinition>Identifer combining filter size with other information</attributeDefinition>
           <storageType>string</storageType>
           <measurementScale>
@@ -883,7 +883,7 @@ Sample Collection</para>
         </attribute>
         <attribute>
           <attributeName>daytime_Y_N</attributeName>
-          <attributeDefinition>Designation for whether cast occurred during day or night</attributeDefinition>
+          <attributeDefinition>Casts with surface PAR above 10 micromol photons/m/s classified as daytime</attributeDefinition>
           <storageType>string</storageType>
           <measurementScale>
             <nominal>

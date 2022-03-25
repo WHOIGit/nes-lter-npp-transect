@@ -6,7 +6,7 @@ niskin	Rosette bottle position number	numeric	dimensionless		NaN	Missing value
 latitude	Ship's latitude when rosette bottle closed	numeric	degree		NaN	Missing value
 longitude	Ship's longitude when rosette bottle closed	numeric	degree		NaN	Missing value
 depth	Depth of sample below sea surface http://vocab.nerc.ac.uk/collection/P09/current/DEPH/	numeric	meter		NaN	Missing value
-alternate_sample_ID	Identifer combining filter size with other information	character				
+alternate_sample_category	Identifer combining filter size with other information	character				
 depth_category	Category based on light extinction that describes where in water column sample was obtained	categorical				
 filter_size	Size fraction with filter and when applicable prefilter pore size in micrometers	categorical				
 replicate	Integer indicating replicate subsample drawn from the same Niskin	character			NaN	Missing value
