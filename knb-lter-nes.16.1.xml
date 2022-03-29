@@ -42,7 +42,17 @@
       <userId directory="https://orcid.org">https://orcid.org/0000-0002-2903-5851</userId>
       <role>metadata Provider</role>
     </associatedParty>
-    <pubDate>2022-03-25</pubDate>
+    <associatedParty>
+      <individualName>
+        <givenName>Pierre</givenName>
+        <surName>Marrec</surName>
+      </individualName>
+      <organizationName>Northeast U.S. Shelf LTER</organizationName>
+      <electronicMailAddress>pmarrec@uri.edu</electronicMailAddress>
+      <userId directory="https://orcid.org">https://orcid.org/0000-0002-7811-4150</userId>
+      <role>metadata Provider</role>
+    </associatedParty>
+    <pubDate>2022-03-29</pubDate>
     <abstract>
       <para>This dataset consists of primary production measurements based on uptake of carbon-13 added  as 13C-bicarbonate during 24-h deckboard incubations of seawater. Sampling occurred on cruises along the Northeast U.S. Shelf Long Term Ecological Research (NES-LTER) Transect during summer, fall, and winter, starting in summer 2019. Net primary production (NPP) was determined from particulate organic carbon (POC) content and associated stable isotope enrichment. Two data tables are included: 1. depth-specific primary productivity based on fractional light levels of the surface irradiance with reference to the profile of photosynthetically active radiation (PAR), and 2. integrated primary productivity. The tables derive from the raw data included as other entities. </para>
       <para/>
@@ -118,16 +128,16 @@
           <para>CTD Rosette Sampling on NES-LTER Transect Cruises</para>
           <para>Sampling occurred in the framework of the Northeast US Shelf Long-Term Ecological Research (NES-LTER) site seasonally during cruises on both the R/V Endeavor (summer, winter) and R/V Armstrong (fall) at the NES-LTER site. The number of stations sampled ranged from 5 to 7 per cruise. Hydrographic data were collected with a SBE911 CTD (Seabird Electronics, Inc.) equipped with sensors for chlorophyll fluorescence (WET Labs ECO-AFL/FL) and photosynthetically active radiation (PAR; Biospherical Instruments QSP2000). Water was collected at various depths with a rosette sampler (Seabird SBE32 Carousel Water Sampler). For NPP incubations, water was collected from 3-4 depths depending on the depth at the station. During collection, water was pre-filtered through 200 µm mesh into acid-washed 2 L polycarbonate bottles. </para>
           <para>Incubation</para>
-          <para>Bottles were spiked with a solution of 99% 13C-labeled sodium bicarbonate (Cambridge Isotope Laboratories, Inc.) for a final 10% enrichment of the dissolved inorganic carbon (DIC) pool and placed in various mesh bags to simulate in situ light levels. Bottles were incubated for approximately 24 hours in deckboard incubators with flow-through seawater, and Onset HOBO data loggers recorded tank water temperature. At each station, the natural abundance of 13C in the water was determined from an un-spiked sample. On 1-2 cruises per year, a spiked dark sample was collected at each station to correct for dark carbon assimilation. The corresponding light levels at collection depths were predetermined from the PAR profile during daytime CTD casts. Using daytime cast information, a relationship was established between beam attenuation (At; measured by a transmissometer) and the light extinction coefficient (K_d) for each cast. During nighttime casts, K_d was estimated from the average At in the upper 10 m using the slope and intercept from equation 1: K_d = m * At + b&#13;
+          <para>Bottles were spiked with a solution of 99% 13C-labeled sodium bicarbonate (Cambridge Isotope Laboratories, Inc.) for a final 10% enrichment of the dissolved inorganic carbon (DIC) pool and placed in various mesh bags to simulate in situ light levels. Bottles were incubated for approximately 24 hours in deckboard incubators with flow-through seawater, and Onset HOBO data loggers recorded tank water temperature. At each station, the natural abundance of 13C in the water was determined from an un-spiked sample. On 1-2 cruises per year, a spiked dark sample was collected at each station to correct for dark carbon assimilation. The corresponding light levels at collection depths were predetermined from the PAR profile during daytime CTD casts, defined as those casts on which surface PAR is above 10 micromol photons/m/s. Using daytime cast information, a relationship was established between beam attenuation (At; measured by a transmissometer) and the light extinction coefficient (K_d) for each cast. During nighttime casts, K_d was estimated from the average At in the upper 10 m using the slope and intercept from equation 1: K_d = m * At + b. Note that cast 12 on cruise EN649 is identified as daytime but does not include k_meas_per_m values, as a result of substantial ship shading. &#13;
  &#13;
 Sample Collection</para>
           <para>At the end of each incubation, bottles were filtered under low vacuum (5-10 in. Hg) over pre-combusted Whatman GF/F filters (450˚C; 6 h). Size fractionation was accomplished by pre-filtering samples through 47 mm-diameter polycarbonate filters with either 5 µm or 20 µm pore size, resulting in NPP rates from phytoplankton in the &lt;5 µm and &lt;20 µm size classes. Additionally, surface samples included a 10 µm pre-filter to obtain NPP rates from the &lt;10 µm size class, aligning filter sizes with those used to determine microzooplankton grazing rates (Menden-Deuer lab) on phytoplankton. Triplicates were collected for surface samples for the &gt;0 µm size fraction and &lt;10 µm size fraction. Filters were stored at -20˚C until further analysis on shore. </para>
           <para>Sample Analysis</para>
           <para>NPP rates were quantified by measuring the incorporation of isotopically heavy carbon into phytoplankton biomass. Prior to measuring 13C in the samples, filters were acid fumigated with concentrated hydrochloric acid in a desiccator overnight to remove inorganic carbon. They were dried in an oven at 60˚C for 24 h, individually wrapped in tin capsules and analyzed on a Carlo Erba NC2500 elemental analyzer interfaced with a Thermo Delta V+ isotope ratio mass spectrometer (EA-IRMS) at the Univ. of Maryland Central Appalachian Laboratory Stable Isotope Facility.</para>
           <para>Calculations: Discrete Estimates</para>
-          <para>NPP rates were calculated from delta13C values using equations of Hama et al., 1983. Particulate organic carbon (POC) measurements were blank corrected such that combusted filter blanks were analyzed in triplicate and the mean value was subtracted from each POC sample obtained from the EA-IRMS. Raw time-zero POC data for each station are located in the data package other entity raw_npp_data.csv, in the rows where alternate_sample_id is “NatAbun”. Calculations were completed in R. </para>
+          <para>NPP rates were calculated from delta13C values using equations of Hama et al., 1983. Particulate organic carbon (POC) measurements were blank corrected such that combusted filter blanks were analyzed in triplicate and the mean value was subtracted from each POC sample obtained from the EA-IRMS. Raw time-zero POC data for each station are located in the data package other entity raw_npp_data.csv, in the rows where alternate_sample_id is “NatAbun”. Calculations were completed in R, with documentation available at https://github.com/difontaine/EDI_npp_package. </para>
           <para>Calculations: Integrated Estimates</para>
-          <para>Discrete NPP rates were integrated by depth for each station via trapezoidal integration, with calculations completed in R. </para>
+          <para>Discrete NPP rates were integrated by depth for each station via trapezoidal integration, with calculations completed in R, with documentation available at https://github.com/difontaine/EDI_npp_package. </para>
           <para>Quality Assurance</para>
           <para>We checked differences between replicates and provided a column in the data table to indicate quality using IODE Primary Level flags 1 good; 3 questionable/suspect. Any sample with a negative NPP value is provided with a flag of 3. We assured that the geographic and temporal coverage of the clean data table were within expected ranges. Quality assurance and data package assembly were completed in R, with documentation available at https://github.com/WHOIGit/nes-lter-npp-transect. </para>
           <para>References</para>
@@ -927,7 +937,7 @@ Sample Collection</para>
         </attribute>
         <attribute>
           <attributeName>beam_atten_0_10</attributeName>
-          <attributeDefinition>Average beam attenuation (At) measured by ship's transmissometer within the upper 10 m of  water column</attributeDefinition>
+          <attributeDefinition>Average beam attenuation (At) measured by ship's transmissometer within the upper 10 m of water column</attributeDefinition>
           <storageType>float</storageType>
           <measurementScale>
             <ratio>
@@ -978,12 +988,12 @@ Sample Collection</para>
       <entityName>Raw NPP data table</entityName>
       <entityDescription>Raw data used to generate product data tables</entityDescription>
       <physical>
-        <objectName>raw_npp_data_version1.csv</objectName>
-        <size unit="bytes">26037</size>
-        <authentication method="MD5">c5f72de28de1f5f69f071a7939cb5478</authentication>
+        <objectName>raw_npp_data_version1.zip</objectName>
+        <size unit="bytes">5209</size>
+        <authentication method="MD5">d0e2783b15a4b0f088d76de0f68185db</authentication>
         <dataFormat>
           <externallyDefinedFormat>
-            <formatName>text/csv</formatName>
+            <formatName>application/zip</formatName>
           </externallyDefinedFormat>
         </dataFormat>
       </physical>
@@ -996,6 +1006,21 @@ Sample Collection</para>
         <objectName>HOBO_data.zip</objectName>
         <size unit="bytes">190881</size>
         <authentication method="MD5">51c89b4a777d13c488526c62509d384e</authentication>
+        <dataFormat>
+          <externallyDefinedFormat>
+            <formatName>application/zip</formatName>
+          </externallyDefinedFormat>
+        </dataFormat>
+      </physical>
+      <entityType>unknown</entityType>
+    </otherEntity>
+    <otherEntity>
+      <entityName>Percent surface irradiance data</entityName>
+      <entityDescription>Percent surface irradiance data for each Niskin</entityDescription>
+      <physical>
+        <objectName>light_data.zip</objectName>
+        <size unit="bytes">648</size>
+        <authentication method="MD5">b676ee5e8e92c6c7b8fb038e832a87cb</authentication>
         <dataFormat>
           <externallyDefinedFormat>
             <formatName>application/zip</formatName>
