@@ -44,8 +44,8 @@ here("nes-lter-npp-transect")
 # identify version
 # version1 input data August 2019-February 2020
 # version2 input data July-October 2020
-version <- 'version1'
-#version <- 'v2'
+#version <- 'version1'
+version <- 'v2'
 
 if (version == 'version1') {
 npp_discrete <- read_csv(paste0('npp_discrete_', version, '.csv'), show_col_types = FALSE) 
@@ -71,13 +71,6 @@ write.csv(npp_integrated, "nes-lter-npp-transect-integrated-v2.csv", row.names =
 
 ```{r}
 
-npp_integrated$cruise <- as.factor(npp_integrated$cruise)
-npp_integrated$station <- as.factor(npp_integrated$station)
-npp_integrated$cast <- as.factor(npp_integrated$cast)
-npp_integrated$filter_size <- as.factor(npp_integrated$filter_size)
-npp_integrated$iode_quality_flag <- as.factor(npp_integrated$iode_quality_flag)
-npp_integrated$daytime_Y_N <- as.factor(npp_integrated$daytime_Y_N)
-
 npp_discrete$cruise <- as.factor(npp_discrete$cruise)
 npp_discrete$cast <- as.factor(npp_discrete$cast)
 npp_discrete$niskin <- as.factor(npp_discrete$niskin)
@@ -87,14 +80,26 @@ npp_discrete$depth_category <- as.factor(npp_discrete$depth_category)
 npp_discrete$filter_size <- as.factor(npp_discrete$filter_size)
 npp_discrete$percent_surface_irradiance <- as.factor(npp_discrete$percent_surface_irradiance)
 
-summary(npp_integrated)
+npp_integrated$cruise <- as.factor(npp_integrated$cruise)
+npp_integrated$station <- as.factor(npp_integrated$station)
+npp_integrated$cast <- as.factor(npp_integrated$cast)
+npp_integrated$filter_size <- as.factor(npp_integrated$filter_size)
+npp_integrated$iode_quality_flag <- as.factor(npp_integrated$iode_quality_flag)
+npp_integrated$daytime_Y_N <- as.factor(npp_integrated$daytime_Y_N)
+
 summary(npp_discrete)
+summary(npp_integrated)
 
 ```
 
 ## Plot values to confirm flags and complete a visual inspection
 
 ```{r}
+
+ggplot(npp_discrete, aes(x=as.factor(iode_quality_flag), y=npp_rate)) + 
+   geom_boxplot() + xlab('iode_quality_flag')
+
+ggplot(npp_discrete, aes(x= date_time_utc, y = npp_rate, color = depth_category))+ geom_point()
 
 ggplot(npp_integrated, aes(x=as.factor(iode_quality_flag), y=integrated_npp_mg_m2_day)) + 
    geom_boxplot() + xlab('iode_quality_flag')
@@ -109,11 +114,6 @@ ggplot(npp_integrated, aes(x=as.factor(iode_quality_flag), y=beam_atten_0_10)) +
 
 ggplot(npp_integrated, aes(x=as.factor(iode_quality_flag), y=k_calc_per_m)) + 
    geom_boxplot() + xlab('iode_quality_flag')
-
-ggplot(npp_discrete, aes(x=as.factor(iode_quality_flag), y=npp_rate)) + 
-   geom_boxplot() + xlab('iode_quality_flag')
-
-ggplot(npp_discrete, aes(x= date_time_utc, y = npp_rate, color = depth_category))+ geom_point()
 
 
 ```
