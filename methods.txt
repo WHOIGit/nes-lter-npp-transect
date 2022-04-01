@@ -24,7 +24,7 @@ Discrete NPP rates were integrated by depth for each station via trapezoidal int
 
 Quality Assurance
 
-We checked differences between replicates and provided a column in the data table to indicate quality using IODE Primary Level flags 1 good; 3 questionable/suspect. Any sample with a negative NPP value is provided with a flag of 3. We assured that the geographic and temporal coverage of the clean data table were within expected ranges. Quality assurance and data package assembly were completed in R, with documentation available at https://github.com/WHOIGit/nes-lter-npp-transect. 
+Sample quality is indicated using IODE Primary Level flags 1 good; 3 questionable/suspect. Any sample with a negative NPP value is provided with a flag of 3. Negative NPP values in the discrete data set are included in the integrated NPP value for that station. Geographic and temporal coverage of the clean data table were confirmed to be within expected ranges. Quality assurance and data package assembly were completed in R, with documentation available at https://github.com/WHOIGit/nes-lter-npp-transect. 
 
 References
 

@@ -52,7 +52,7 @@
       <userId directory="https://orcid.org">https://orcid.org/0000-0002-7811-4150</userId>
       <role>metadata Provider</role>
     </associatedParty>
-    <pubDate>2022-03-29</pubDate>
+    <pubDate>2022-04-01</pubDate>
     <abstract>
       <para>This dataset consists of primary production measurements based on uptake of carbon-13 added  as 13C-bicarbonate during 24-h deckboard incubations of seawater. Sampling occurred on cruises along the Northeast U.S. Shelf Long Term Ecological Research (NES-LTER) Transect during summer, fall, and winter, starting in summer 2019. Net primary production (NPP) was determined from particulate organic carbon (POC) content and associated stable isotope enrichment. Two data tables are included: 1. depth-specific primary productivity based on fractional light levels of the surface irradiance with reference to the profile of photosynthetically active radiation (PAR), and 2. integrated primary productivity. The tables derive from the raw data included as other entities. </para>
       <para/>
@@ -139,7 +139,7 @@ Sample Collection</para>
           <para>Calculations: Integrated Estimates</para>
           <para>Discrete NPP rates were integrated by depth for each station via trapezoidal integration, with calculations completed in R, with documentation available at https://github.com/difontaine/EDI_npp_package. </para>
           <para>Quality Assurance</para>
-          <para>We checked differences between replicates and provided a column in the data table to indicate quality using IODE Primary Level flags 1 good; 3 questionable/suspect. Any sample with a negative NPP value is provided with a flag of 3. We assured that the geographic and temporal coverage of the clean data table were within expected ranges. Quality assurance and data package assembly were completed in R, with documentation available at https://github.com/WHOIGit/nes-lter-npp-transect. </para>
+          <para>Sample quality is indicated using IODE Primary Level flags 1 good; 3 questionable/suspect. Any sample with a negative NPP value is provided with a flag of 3. Negative NPP values in the discrete data set are included in the integrated NPP value for that station. Geographic and temporal coverage of the clean data table were confirmed to be within expected ranges. Quality assurance and data package assembly were completed in R, with documentation available at https://github.com/WHOIGit/nes-lter-npp-transect. </para>
           <para>References</para>
           <para>Hama, T.,  T. Miyazaki, Y. Ogawa, T. Iwakuma, M. Takahashi, A. Otsuki, and S. Ichimura. 1983. Measurement of photosynthetic production of a marine phytoplankton population using a stable 13C isotope. Marine Biology 73: 31-36. &#13;
 </para>
@@ -516,7 +516,7 @@ Sample Collection</para>
         </attribute>
         <attribute>
           <attributeName>percent_surface_irradiance</attributeName>
-          <attributeDefinition>Light at sample location as a percent of surface photosynthetically active radiation (PAR), calculated based on light extinction coefficient for each station</attributeDefinition>
+          <attributeDefinition>Category describing light at sample location as a percent of surface photosynthetically active radiation (PAR), calculated based on light extinction coefficient for each station</attributeDefinition>
           <storageType>string</storageType>
           <measurementScale>
             <nominal>
@@ -726,7 +726,7 @@ Sample Collection</para>
         </attribute>
         <attribute>
           <attributeName>date_time_utc</attributeName>
-          <attributeDefinition>Date and time in UTC when rosette bottle closed</attributeDefinition>
+          <attributeDefinition>Mean of bottle closure date-time for all rosette bottles included in measurement</attributeDefinition>
           <storageType>date</storageType>
           <measurementScale>
             <dateTime>
@@ -741,7 +741,7 @@ Sample Collection</para>
         </attribute>
         <attribute>
           <attributeName>latitude</attributeName>
-          <attributeDefinition>Ship's latitude when rosette bottle closed</attributeDefinition>
+          <attributeDefinition>Mean of ship's latitude when rosette bottles closed</attributeDefinition>
           <storageType>float</storageType>
           <measurementScale>
             <ratio>
@@ -764,7 +764,7 @@ Sample Collection</para>
         </attribute>
         <attribute>
           <attributeName>longitude</attributeName>
-          <attributeDefinition>Ship's longitude when rosette bottle closed</attributeDefinition>
+          <attributeDefinition>Mean of ship's longitude when rosette bottles closed</attributeDefinition>
           <storageType>float</storageType>
           <measurementScale>
             <ratio>

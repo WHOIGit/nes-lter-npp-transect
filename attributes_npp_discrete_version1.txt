@@ -10,7 +10,7 @@ alternate_sample_category	Identifer combining filter size with other information
 depth_category	Category based on light extinction that describes where in water column sample was obtained	categorical				
 filter_size	Size fraction with filter and when applicable prefilter pore size in micrometers	categorical				
 replicate	Integer indicating replicate subsample drawn from the same Niskin	character			NaN	Missing value
-percent_surface_irradiance	Light at sample location as a percent of surface photosynthetically active radiation (PAR), calculated based on light extinction coefficient for each station	categorical			NaN	Missing value
+percent_surface_irradiance	Category describing light at sample location as a percent of surface photosynthetically active radiation (PAR), calculated based on light extinction coefficient for each station	categorical			NaN	Missing value
 npp_rate	Net primary productivity in micrograms carbon per liter per day determined by uptake rate of labeled bicarbonate	numeric	microgramPerLiterPerDay		NaN	Missing value
 iode_quality_flag	IODE Quality Flag primary level	categorical			NaN	Missing value
 nearest_station	NES-LTER standard station nearest to the sample location	character			NaN	Distance greater than 2 km from NES-LTER standard station
