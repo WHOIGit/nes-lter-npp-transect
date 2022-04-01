@@ -1,0 +1,3 @@
+[submodule "EDI_npp_package"]
+	path = EDI_npp_package
+	url = https://github.com/difontaine/EDI_npp_package.git
