@@ -41,18 +41,19 @@ here("nes-lter-npp-transect")
 
 ```{r}
 
-# identify version
+# identify version: comment/uncomment below
 # version1 input data August 2019-February 2020
 # version2 input data July-October 2020
-version <- 'version1'
-#version <- 'v2'
+#version <- 'version1'
+version <- 'v2'
 
+# read in version 1 files
 if (version == 'version1') {
 npp_discrete <- read_csv(paste0('npp_discrete_', version, '.csv'), show_col_types = FALSE) 
 npp_integrated <- read_csv(paste0('npp_integrated_', version, '.csv'), show_col_types = FALSE) 
 }
 
-# combine before or after QA steps? 
+# read in verion 2 files and combine to new csvs 
 if (version == 'v2') {
 npp_discrete_1 <- read_csv(paste0('npp_discrete_version1.csv'), show_col_types = FALSE) 
 npp_discrete_2 <- read_csv(paste0('npp_discrete_version2.csv'), show_col_types = FALSE) 
@@ -130,7 +131,7 @@ map_locs(npp_discrete, colorvar = "npp_rate", region = "transect")
 
 ```{r}
 
-
+# no changes
 
 ```
 
