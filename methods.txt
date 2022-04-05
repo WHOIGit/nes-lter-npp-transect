@@ -22,7 +22,7 @@ NPP rates were calculated from delta13C values using equations of Hama et al., 1
 
 Calculations: Integrated Estimates
 
-Discrete NPP rates were integrated by depth for each station via trapezoidal integration, with calculations completed in R, with documentation available at https://github.com/difontaine/EDI_npp_package. 
+Discrete NPP rates were integrated by depth for each station via trapezoidal integration with the shallowest discrete NPP value extended to 0 m such that a rectangle was formed, with calculations completed in R, with documentation available at https://github.com/difontaine/EDI_npp_package
 
 Quality Assurance
 
