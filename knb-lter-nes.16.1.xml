@@ -128,7 +128,8 @@
           <para>CTD Rosette Sampling on NES-LTER Transect Cruises</para>
           <para>Sampling occurred in the framework of the Northeast US Shelf Long-Term Ecological Research (NES-LTER) site seasonally during cruises on both the R/V Endeavor (summer, winter) and R/V Armstrong (fall) at the NES-LTER site. The number of stations sampled ranged from 5 to 7 per cruise. Hydrographic data were collected with an SBE911 CTD (Seabird Electronics, Inc.) equipped with sensors for photosynthetically active radiation (PAR; Biospherical Instruments QSP2000) and beam attenuation (At; C-Star Transmissometer, WET Labs). Water was collected at various depths with a rosette sampler (Seabird SBE32 Carousel Water Sampler). For NPP incubations, water was collected from 3-4 depths depending on the depth at the station. During collection, water was pre-filtered through 200 µm mesh into acid-washed 2 L polycarbonate bottles.</para>
           <para>Incubation</para>
-          <para>Bottles were spiked with a solution of 99% 13C-labeled sodium bicarbonate (Cambridge Isotope Laboratories, Inc.) for a final 10% enrichment of the dissolved inorganic carbon (DIC) pool and placed in various mesh bags to simulate in situ light levels. Bottles were incubated for approximately 24 hours in deckboard incubators with flow-through seawater, and Onset HOBO data loggers recorded tank water temperature. At each station, the natural abundance of 13C in the water was determined from an un-spiked sample. On 1-2 cruises per year, a spiked dark sample was collected at each station to correct for dark carbon assimilation. The corresponding light levels at collection depths were predetermined from the PAR profile during daytime CTD casts, defined as those casts on which surface PAR is above 10 micromol photons/m/s. Using daytime cast information, a relationship was established between beam attenuation (At; measured by a transmissometer) and the light extinction coefficient (K_d) for each cast. During nighttime casts, K_d was estimated from the average At in the upper 10 m using the slope and intercept from equation 1: K_d = m * At + b. Note that cast 12 on cruise EN649 is identified as daytime but does not include k_meas_per_m values, as a result of substantial ship shading. &#13;
+          <para>Bottles were spiked with a solution of 99% 13C-labeled sodium bicarbonate (Cambridge Isotope Laboratories, Inc.) for a final 10% enrichment of the dissolved inorganic carbon (DIC) pool and placed in various mesh bags to simulate in situ light levels. Bottles were incubated for approximately 24 hours in deckboard incubators with flow-through seawater, and Onset HOBO data loggers recorded tank water temperature. At each station, the natural abundance of 13C in the water was determined from an un-spiked sample. On 1-2 cruises per year, a spiked dark sample was collected at each station to correct for dark carbon assimilation. </para>
+          <para>The light levels at collection depths were determined from the PAR profile during daytime CTD casts, defined as those casts on which surface PAR is above 10 micromol photons/m/s. Using daytime cast information, a relationship was established between beam attenuation (At; measured by a transmissometer) and the light extinction coefficient (K_d) for each cast. During nighttime casts, K_d was calculated from the average At in the upper 10 m using the slope and intercept from equation 1: K_d = m * At + b. Calculations of K_d values based on measured At values were completed in MATLAB with documentation available at https://github.com/pmarrec/nes-lter-kd-calculation. Note that on cruise AR39B, no significant linear relationship between K_d and At was obtained because of sensor issues, so no K_calc_per_m values were determined for this cruise. Additionally, note that cast 12 on cruise EN649 is identified as daytime but does not include k_meas_per_m values, as a result of substantial ship shading.&#13;
  &#13;
 Sample Collection</para>
           <para>At the end of each incubation, bottles were filtered under low vacuum (5-10 in. Hg) over pre-combusted Whatman GF/F filters (450˚C; 6 h). Size fractionation was accomplished by pre-filtering samples through 47 mm-diameter polycarbonate filters with either 5 µm or 20 µm pore size, resulting in NPP rates from phytoplankton in the &lt;5 µm and &lt;20 µm size classes. Additionally, surface samples included a 10 µm pre-filter to obtain NPP rates from the &lt;10 µm size class, aligning filter sizes with those used to determine microzooplankton grazing rates (Menden-Deuer lab) on phytoplankton. Triplicates were collected for surface samples for the &gt;0 µm size fraction and &lt;10 µm size fraction. Filters were stored at -20˚C until further analysis on shore. </para>
@@ -680,8 +681,8 @@ Sample Collection</para>
       <entityDescription>Integrated net primary productivity data</entityDescription>
       <physical>
         <objectName>npp_integrated_version1.csv</objectName>
-        <size unit="bytes">4602</size>
-        <authentication method="MD5">023fdb663d485c6f0540a03ed3cc60d9</authentication>
+        <size unit="bytes">4575</size>
+        <authentication method="MD5">eb8a4895174df08c7c1517a11fcf3ff0</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>
@@ -739,7 +740,7 @@ Sample Collection</para>
               <numericDomain>
                 <numberType>real</numberType>
                 <bounds>
-                  <minimum exclusive="false">39.758</minimum>
+                  <minimum exclusive="false">39.7581</minimum>
                   <maximum exclusive="false">41.2042</maximum>
                 </bounds>
               </numericDomain>
@@ -762,7 +763,7 @@ Sample Collection</para>
               <numericDomain>
                 <numberType>real</numberType>
                 <bounds>
-                  <minimum exclusive="false">-70.9006</minimum>
+                  <minimum exclusive="false">-70.9005</minimum>
                   <maximum exclusive="false">-70.775</maximum>
                 </bounds>
               </numericDomain>
@@ -970,8 +971,8 @@ Sample Collection</para>
               <numericDomain>
                 <numberType>real</numberType>
                 <bounds>
-                  <minimum exclusive="false">0.06</minimum>
-                  <maximum exclusive="false">0.29</maximum>
+                  <minimum exclusive="false">0.07</minimum>
+                  <maximum exclusive="false">0.23</maximum>
                 </bounds>
               </numericDomain>
             </ratio>

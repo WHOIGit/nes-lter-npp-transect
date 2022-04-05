@@ -3,6 +3,8 @@ title: "npp-transect-eml-assembly"
 author: "Kate Morkeski"
 date: "3/3/2022"
 output: html_document
+editor_options: 
+  chunk_output_type: inline
 ---
 
 ## Setup
@@ -44,7 +46,7 @@ here("nes-lter-npp-transect")
 # identify version: comment/uncomment below
 # version1 input data August 2019-February 2020
 # version2 input data July-October 2020
-#version <- 'version1'
+# version <- 'version1'
 version <- 'v2'
 
 # read in version 1 files
@@ -123,8 +125,8 @@ ggplot(npp_integrated, aes(x=as.factor(iode_quality_flag), y=k_calc_per_m)) +
 
 ```{r}
 
-map_locs(npp_integrated, colorvar = "integrated_npp_mg_m2_day", region = "transect")
 map_locs(npp_discrete, colorvar = "npp_rate", region = "transect")
+map_locs(npp_integrated, colorvar = "integrated_npp_mg_m2_day", region = "transect")
 
 ```
 ## Create package data files if any changes to csvs
