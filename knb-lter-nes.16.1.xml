@@ -52,13 +52,14 @@
       <userId directory="https://orcid.org">https://orcid.org/0000-0002-7811-4150</userId>
       <role>metadata Provider</role>
     </associatedParty>
-    <pubDate>2022-04-05</pubDate>
+    <pubDate>2022-04-06</pubDate>
     <abstract>
       <para>This dataset consists of primary production measurements based on uptake of carbon-13 added  as 13C-bicarbonate during 24-h deckboard incubations of seawater. Sampling occurred on cruises along the Northeast U.S. Shelf Long Term Ecological Research (NES-LTER) Transect during summer, fall, and winter, starting in summer 2019. Net primary production (NPP) was determined from particulate organic carbon (POC) content and associated stable isotope enrichment. Two data tables are included: 1. depth-specific primary productivity based on fractional light levels of the surface irradiance with reference to the profile of photosynthetically active radiation (PAR), and 2. integrated primary productivity. The tables derive from the raw data included as other entities. </para>
       <para/>
     </abstract>
     <keywordSet>
       <keyword>primary production</keyword>
+      <keyword>organic matter</keyword>
       <keywordThesaurus>LTER Core Research Areas</keywordThesaurus>
     </keywordSet>
     <keywordSet>
@@ -129,9 +130,8 @@
           <para>Sampling occurred in the framework of the Northeast US Shelf Long-Term Ecological Research (NES-LTER) site seasonally during cruises on both the R/V Endeavor (summer, winter) and R/V Armstrong (fall) at the NES-LTER site. The number of stations sampled ranged from 5 to 7 per cruise. Hydrographic data were collected with an SBE911 CTD (Seabird Electronics, Inc.) equipped with sensors for photosynthetically active radiation (PAR; Biospherical Instruments QSP2000) and beam attenuation (At; C-Star Transmissometer, WET Labs). Water was collected at various depths with a rosette sampler (Seabird SBE32 Carousel Water Sampler). For NPP incubations, water was collected from 3-4 depths depending on the depth at the station. During collection, water was pre-filtered through 200 µm mesh into acid-washed 2 L polycarbonate bottles.</para>
           <para>Incubation</para>
           <para>Bottles were spiked with a solution of 99% 13C-labeled sodium bicarbonate (Cambridge Isotope Laboratories, Inc.) for a final 10% enrichment of the dissolved inorganic carbon (DIC) pool and placed in various mesh bags to simulate in situ light levels. Bottles were incubated for approximately 24 hours in deckboard incubators with flow-through seawater, and Onset HOBO data loggers recorded tank water temperature. At each station, the natural abundance of 13C in the water was determined from an un-spiked sample. On 1-2 cruises per year, a spiked dark sample was collected at each station to correct for dark carbon assimilation. </para>
-          <para>The light levels at collection depths were determined from the PAR profile during daytime CTD casts, defined as those casts on which surface PAR is above 10 micromol photons/m/s. Using daytime cast information, a relationship was established between beam attenuation (At; measured by a transmissometer) and the light extinction coefficient (K_d) for each cast. During nighttime casts, K_d was calculated from the average At in the upper 10 m using the slope and intercept from equation 1: K_d = m * At + b. Calculations of K_d values based on measured At values were completed in MATLAB with documentation available at https://github.com/pmarrec/nes-lter-kd-calculation. Note that on cruise AR39B, no significant linear relationship between K_d and At was obtained because of sensor issues, so no K_calc_per_m values were determined for this cruise. Additionally, note that cast 12 on cruise EN649 is identified as daytime but does not include k_meas_per_m values, as a result of substantial ship shading.&#13;
- &#13;
-Sample Collection</para>
+          <para>The light levels at collection depths were determined from the PAR profile during daytime CTD casts, defined as those casts on which surface PAR is above 10 micromol photons/m2/s. Using daytime cast information, a relationship was established between beam attenuation (At; measured by a transmissometer) and the light extinction coefficient (K_d) for each cast. During nighttime casts, K_d was calculated from the average At in the upper 10 m using the slope and intercept from equation 1: K_d = m * At + b. Calculations of K_d values based on measured At values were completed in MATLAB with documentation available at https://github.com/pmarrec/nes-lter-kd-calculation. Note that on cruise AR39B, no significant linear relationship between K_d and At was obtained because of sensor issues, so no K_calc_per_m values were determined for this cruise. Additionally, note that cast 12 on cruise EN649 is identified as daytime but does not include k_meas_per_m values, as a result of substantial ship shading.</para>
+          <para>Sample Collection</para>
           <para>At the end of each incubation, bottles were filtered under low vacuum (5-10 in. Hg) over pre-combusted Whatman GF/F filters (450˚C; 6 h). Size fractionation was accomplished by pre-filtering samples through 47 mm-diameter polycarbonate filters with either 5 µm or 20 µm pore size, resulting in NPP rates from phytoplankton in the &lt;5 µm and &lt;20 µm size classes. Additionally, surface samples included a 10 µm pre-filter to obtain NPP rates from the &lt;10 µm size class, aligning filter sizes with those used to determine microzooplankton grazing rates (Menden-Deuer lab) on phytoplankton. Triplicates were collected for surface samples for the &gt;0 µm size fraction and &lt;10 µm size fraction. Filters were stored at -20˚C until further analysis on shore. </para>
           <para>Sample Analysis</para>
           <para>NPP rates were quantified by measuring the incorporation of isotopically heavy carbon into phytoplankton biomass. Prior to measuring 13C in the samples, filters were acid fumigated with concentrated hydrochloric acid in a desiccator overnight to remove inorganic carbon. They were dried in an oven at 60˚C for 24 h, individually wrapped in tin capsules and analyzed on a Carlo Erba NC2500 elemental analyzer interfaced with a Thermo Delta V+ isotope ratio mass spectrometer (EA-IRMS) at the Univ. of Maryland Central Appalachian Laboratory Stable Isotope Facility.</para>
@@ -894,7 +894,7 @@ Sample Collection</para>
         </attribute>
         <attribute>
           <attributeName>daytime_Y_N</attributeName>
-          <attributeDefinition>Casts with surface PAR above 10 micromol photons/m/s classified as daytime</attributeDefinition>
+          <attributeDefinition>Casts with surface PAR above 10 micromol photons/m2/s classified as daytime</attributeDefinition>
           <storageType>string</storageType>
           <measurementScale>
             <nominal>

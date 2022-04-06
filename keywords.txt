@@ -1,5 +1,6 @@
 keyword	keywordThesaurus
 primary production	LTER Core Research Areas
+organic matter	LTER Core Research Areas
 net primary production	LTER Controlled Vocabulary
 oceanography	LTER Controlled Vocabulary
 seawater	LTER Controlled Vocabulary

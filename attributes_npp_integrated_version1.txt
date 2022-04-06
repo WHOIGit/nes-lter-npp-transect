@@ -8,7 +8,7 @@ cast	CTD rosette cast number chronological per cruise	numeric	dimensionless		NaN
 filter_size	Size fraction with filter and when applicable prefilter pore size in micrometers	categorical				
 integrated_npp_mg_m2_day	Vertically-integrated net primary productivity measured as uptake rate of carbon per unit area of water per day	numeric	milligramPerMeterSquaredPerDay			
 iode_quality_flag	IODE Quality Flag primary level	categorical				
-daytime_Y_N	Casts with surface PAR above 10 micromol photons/m/s classified as daytime	categorical				
+daytime_Y_N	Casts with surface PAR above 10 micromol photons/m2/s classified as daytime	categorical				
 k_meas_per_m	Measured light extinction coefficient	numeric	perMeter		NaN	Missing value
 beam_atten_0_10	Average beam attenuation (At) measured by ship's transmissometer within the upper 10 m of water column	numeric	perMeter		NaN	Missing value
 k_calc_per_m	Light extinction coefficient calculated from the measured daytime light extinction coefficient and beam attenuation	numeric	perMeter		NaN	Missing value
