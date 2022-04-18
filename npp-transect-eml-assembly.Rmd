@@ -60,9 +60,7 @@ if (version == 'v2') {
 npp_discrete_1 <- read_csv(paste0('npp_discrete_version1.csv'), show_col_types = FALSE) 
 npp_discrete_2 <- read_csv(paste0('npp_discrete_version2.csv'), show_col_types = FALSE) 
 npp_discrete <- rbind(npp_discrete_1, npp_discrete_2)
-npp_integrated_1 <- read_csv(paste0('npp_integrated_version1.csv'), show_col_types = FALSE) 
-npp_integrated_2 <- read_csv(paste0('npp_integrated_version2.csv'), show_col_types = FALSE) 
-npp_integrated <- rbind(npp_integrated_1, npp_integrated_2) 
+npp_integrated <- read_csv(paste0('npp_integrated_version2.csv'), show_col_types = FALSE) 
 write.csv(npp_discrete, "nes-lter-npp-transect-discrete-v2.csv", row.names = FALSE)
 write.csv(npp_integrated, "nes-lter-npp-transect-integrated-v2.csv", row.names = FALSE)
 }

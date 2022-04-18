@@ -52,7 +52,7 @@
       <userId directory="https://orcid.org">https://orcid.org/0000-0002-7811-4150</userId>
       <role>metadata Provider</role>
     </associatedParty>
-    <pubDate>2022-04-06</pubDate>
+    <pubDate>2022-04-18</pubDate>
     <abstract>
       <para>This dataset consists of primary production measurements based on uptake of carbon-13 added  as 13C-bicarbonate during 24-h deckboard incubations of seawater. Sampling occurred on cruises along the Northeast U.S. Shelf Long Term Ecological Research (NES-LTER) Transect during summer, fall, and winter, starting in summer 2019. Net primary production (NPP) was determined from particulate organic carbon (POC) content and associated stable isotope enrichment. Two data tables are included: 1. depth-specific primary productivity based on fractional light levels of the surface irradiance with reference to the profile of photosynthetically active radiation (PAR), and 2. integrated primary productivity. The tables derive from the raw data included as other entities. </para>
       <para/>
@@ -694,7 +694,7 @@
       <physical>
         <objectName>nes-lter-npp-transect-integrated-v2.csv</objectName>
         <size unit="bytes">7820</size>
-        <authentication method="MD5">b72fe0f26e016776f9690fae4e085121</authentication>
+        <authentication method="MD5">569c0d068abea61b7ec80d8fa6032685</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>
