@@ -1,7 +1,7 @@
 ---
 title: "npp-transect-eml-assembly"
 author: "Kate Morkeski"
-date: "3/3/2022"
+date: "12/7/2022"
 output: html_document
 editor_options: 
   chunk_output_type: inline
@@ -39,6 +39,38 @@ here("nes-lter-npp-transect")
 
 ```
 
+## Check for differences between new and original version 1 files
+
+```{r}
+
+# Discrete
+npp_discrete_1 <- read_csv(paste0('npp_discrete_version1.csv'), show_col_types = FALSE) 
+new_discrete_1 <- read_csv("C:/Users/wanglab/Downloads/npp_discrete_version1 (1).csv", show_col_types = FALSE) 
+# two columns are different
+new_discrete_1 <- new_discrete_1 %>% 
+  select(-incub_type)  %>% 
+  rename(alternate_sample_category = alternate_sample_ID)
+
+discrete_v1_check <- compare_df(new_discrete_1, npp_discrete_1)
+create_output_table(discrete_v1_check, output_type='xlsx', file_name='discrete_v1_check.xlsx')
+# every npp_rate value is slightly different
+
+# Integrated
+npp_integrated_1 <- read_csv(paste0('npp_integrated_version1.csv'), show_col_types = FALSE) 
+new_integrated_1 <- read_csv("C:/Users/wanglab/Downloads/npp_integrated_version1 (1).csv", show_col_types = FALSE) 
+
+# original not in chronological order
+npp_integrated_1 <- npp_integrated_1[order(npp_integrated_1$date_time_utc),]
+new_integrated_1 <- new_integrated_1[order(new_integrated_1$date_time_utc),]
+
+integrated_v1_check <- compare_df(new_integrated_1, npp_integrated_1)
+create_output_table(integrated_v1_check, output_type='xlsx', file_name='integrated_v1_check.xlsx')
+# All EN644 integrated_npp values slightly different (no difference in other cruises)
+# stations designated differently, numeral only in original, L-numeral in new
+
+
+```
+
 ## Read in provided data
 
 ```{r}
@@ -55,16 +87,22 @@ npp_discrete <- read_csv(paste0('npp_discrete_', version, '.csv'), show_col_type
 npp_integrated <- read_csv(paste0('npp_integrated_', version, '.csv'), show_col_types = FALSE) 
 }
 
-# read in verion 2 files and combine to new csvs 
+# read in version 2 files and combine to new csvs 
 if (version == 'v2') {
 npp_discrete_1 <- read_csv(paste0('npp_discrete_version1.csv'), show_col_types = FALSE) 
 npp_discrete_2 <- read_csv(paste0('npp_discrete_version2.csv'), show_col_types = FALSE) 
 npp_discrete <- rbind(npp_discrete_1, npp_discrete_2)
-npp_integrated <- read_csv(paste0('npp_integrated_version2.csv'), show_col_types = FALSE) 
+npp_discrete <- npp_discrete %>% 
+    rename(alternate_sample_category = alternate_sample_ID)
+npp_discrete <- npp_discrete[order(npp_discrete$date_time_utc),]
+
+npp_integrated_1 <- read_csv(paste0('npp_integrated_version1.csv'), show_col_types = FALSE) 
+npp_integrated_2 <- read_csv(paste0('npp_integrated_version2.csv'), show_col_types = FALSE) 
+npp_integrated <- rbind(npp_integrated_1, npp_integrated_2)
+npp_integrated <- npp_integrated[order(npp_integrated$date_time_utc),]
 write.csv(npp_discrete, "nes-lter-npp-transect-discrete-v2.csv", row.names = FALSE)
 write.csv(npp_integrated, "nes-lter-npp-transect-integrated-v2.csv", row.names = FALSE)
 }
-
 
 ```
 
@@ -190,7 +228,7 @@ Generate the package and insert the parent project node into the resulting EML
 if (version == 'v2') {
   pkg_id <- 'knb-lter-nes.16.2'
   datatables <- c('nes-lter-npp-transect-discrete-v2.csv', 'nes-lter-npp-transect-integrated-v2.csv')
-  other <- c('raw_npp_data_version2.zip','HOBO_data.zip', 'light_data.zip')
+  other <- c('raw_npp_data.zip','HOBO_data.zip', 'light_data.zip')
   parent_project <- 'parent_project_LTER_RAPID.txt'
   }
 

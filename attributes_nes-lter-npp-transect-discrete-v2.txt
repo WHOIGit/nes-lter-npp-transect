@@ -15,3 +15,4 @@ npp_rate	Net primary productivity in micrograms carbon per liter per day determi
 iode_quality_flag	IODE Quality Flag primary level	categorical			NaN	Missing value
 nearest_station	NES-LTER standard station nearest to the sample location	character			NaN	Distance greater than 2 km from NES-LTER standard station
 distance	Distance from sample location to nearest NES-LTER standard station	numeric	kilometer		NaN	Distance greater than 2 km from NES-LTER standard station
+incub_type	Identifier for incubation type (either ambient or experiemental)	categorical				

@@ -52,7 +52,7 @@
       <userId directory="https://orcid.org">https://orcid.org/0000-0002-7811-4150</userId>
       <role>metadata Provider</role>
     </associatedParty>
-    <pubDate>2022-04-18</pubDate>
+    <pubDate>2022-12-07</pubDate>
     <abstract>
       <para>This dataset consists of primary production measurements based on uptake of carbon-13 added  as 13C-bicarbonate during 24-h deckboard incubations of seawater. Sampling occurred on cruises along the Northeast U.S. Shelf Long Term Ecological Research (NES-LTER) Transect during summer, fall, and winter, starting in summer 2019. Net primary production (NPP) was determined from particulate organic carbon (POC) content and associated stable isotope enrichment. Two data tables are included: 1. depth-specific primary productivity based on fractional light levels of the surface irradiance with reference to the profile of photosynthetically active radiation (PAR), and 2. integrated primary productivity. The tables derive from the raw data included as other entities. </para>
       <para/>
@@ -88,8 +88,8 @@
       <geographicCoverage>
         <geographicDescription>NES-LTER</geographicDescription>
         <boundingCoordinates>
-          <westBoundingCoordinate>-70.9017</westBoundingCoordinate>
-          <eastBoundingCoordinate>-70.7676</eastBoundingCoordinate>
+          <westBoundingCoordinate>-70.9974</westBoundingCoordinate>
+          <eastBoundingCoordinate>-70.7667</eastBoundingCoordinate>
           <northBoundingCoordinate>41.2044</northBoundingCoordinate>
           <southBoundingCoordinate>39.7576</southBoundingCoordinate>
         </boundingCoordinates>
@@ -100,7 +100,7 @@
             <calendarDate>2019-08-20</calendarDate>
           </beginDate>
           <endDate>
-            <calendarDate>2020-10-17</calendarDate>
+            <calendarDate>2022-08-02</calendarDate>
           </endDate>
         </rangeOfDates>
       </temporalCoverage>
@@ -127,9 +127,10 @@
       <methodStep>
         <description>
           <para>CTD Rosette Sampling on NES-LTER Transect Cruises</para>
-          <para>Sampling occurred in the framework of the Northeast US Shelf Long-Term Ecological Research (NES-LTER) site seasonally during cruises on both the R/V Endeavor (summer, winter) and R/V Armstrong (fall) at the NES-LTER site. The number of stations sampled ranged from 5 to 7 per cruise. Hydrographic data were collected with an SBE911 CTD (Seabird Electronics, Inc.) equipped with sensors for photosynthetically active radiation (PAR; Biospherical Instruments QSP2000) and beam attenuation (At; C-Star Transmissometer, WET Labs). Water was collected at various depths with a rosette sampler (Seabird SBE32 Carousel Water Sampler). For NPP incubations, water was collected from 3-4 depths depending on the depth at the station. During collection, water was pre-filtered through 200 µm mesh into acid-washed 2 L polycarbonate bottles.</para>
+          <para>Sampling occurred in the framework of the Northeast US Shelf Long-Term Ecological Research (NES-LTER) site seasonally during cruises on both the R/V Endeavor (summer, winter) and R/V Armstrong (fall) at the NES-LTER site. The number of stations sampled ranged from 5 to 7 per cruise. Some stations were sampled more than once per cruise. Hydrographic data were collected with an SBE911 CTD (Seabird Electronics, Inc.) equipped with sensors for photosynthetically active radiation (PAR; Biospherical Instruments QSP2000) and beam attenuation (At; C-Star Transmissometer, WET Labs). Water was collected at various depths with a rosette sampler (Seabird SBE32 Carousel Water Sampler). For NPP incubations, water was collected from 3-4 depths depending on the depth at the station. During collection, water was pre-filtered through 200 µm mesh into acid-washed 2 L polycarbonate bottles.</para>
           <para>Incubation</para>
-          <para>Bottles were spiked with a solution of 99% 13C-labeled sodium bicarbonate (Cambridge Isotope Laboratories, Inc.) for a final 10% enrichment of the dissolved inorganic carbon (DIC) pool and placed in various mesh bags to simulate in situ light levels. Bottles were incubated for approximately 24 hours in deckboard incubators with flow-through seawater, and Onset HOBO data loggers recorded tank water temperature. At each station, the natural abundance of 13C in the water was determined from an un-spiked sample. On 1-2 cruises per year, a spiked dark sample was collected at each station to correct for dark carbon assimilation. </para>
+          <para>Bottles were spiked with a solution of 99% 13C-labeled sodium bicarbonate (Cambridge Isotope Laboratories, Inc.) for a final 10% enrichment of the dissolved inorganic carbon (DIC) pool and placed in various mesh bags to simulate in situ light levels. Bottles were incubated for approximately 24 hours in deckboard incubators with flow-through seawater, and Onset HOBO data loggers recorded tank water temperature. At each station, the natural abundance of 13C in the water was determined from an un-spiked sample. On 1-2 cruises per year in 2019-2021, a spiked dark sample was collected at each station to correct for dark carbon assimilation. </para>
+          <para>Cruise EN867 included production rate experiments in which water was incubated at different temperatures, which are indicated in the discrete table column, incub_type. </para>
           <para>The light levels at collection depths were determined from the PAR profile during daytime CTD casts, defined as those casts on which surface PAR is above 10 micromol photons/m2/s. Using daytime cast information, a relationship was established between beam attenuation (At; measured by a transmissometer) and the light extinction coefficient (K_d) for each cast. During nighttime casts, K_d was calculated from the average At in the upper 10 m using the slope and intercept from equation 1: K_d = m * At + b. Calculations of K_d values based on measured At values were completed in MATLAB with documentation available at https://github.com/pmarrec/nes-lter-kd-calculation. Note that on cruise AR39B, no significant linear relationship between K_d and At was obtained because of sensor issues, so no K_calc_per_m values were determined for this cruise. Additionally, note that cast 12 on cruise EN649 is identified as daytime but does not include k_meas_per_m values, as a result of substantial ship shading.</para>
           <para>Sample Collection</para>
           <para>At the end of each incubation, bottles were filtered under low vacuum (5-10 in. Hg) over pre-combusted Whatman GF/F filters (450˚C; 6 h). Size fractionation was accomplished by pre-filtering samples through 47 mm-diameter polycarbonate filters with either 5 µm or 20 µm pore size, resulting in NPP rates from phytoplankton in the &lt;5 µm and &lt;20 µm size classes. Additionally, surface samples included a 10 µm pre-filter to obtain NPP rates from the &lt;10 µm size class, aligning filter sizes with those used to determine microzooplankton grazing rates (Menden-Deuer lab) on phytoplankton. Triplicates were collected for surface samples for the &gt;0 µm size fraction and &lt;10 µm size fraction. Filters were stored at -20˚C until further analysis on shore. </para>
@@ -141,6 +142,8 @@
           <para>Discrete NPP rates were integrated by depth for each station via trapezoidal integration with the shallowest discrete NPP value extended to 0 m such that a rectangle was formed, with calculations completed in R, with documentation available at https://github.com/difontaine/EDI_npp_package</para>
           <para>Quality Assurance</para>
           <para>Sample quality is indicated using IODE Primary Level flags 1 good; 3 questionable/suspect. Any sample with a negative NPP value is provided with a flag of 3. Negative NPP values in the discrete data set are included in the integrated NPP value for that station. Geographic and temporal coverage of the clean data table were confirmed to be within expected ranges. Quality assurance and data package assembly were completed in R, with documentation available at https://github.com/WHOIGit/nes-lter-npp-transect. </para>
+          <para>Versions of This Data Package</para>
+          <para>Version 2 includes additional, more recent cruises compared to version 1. The discrete data table now includes the new categorical variable, incub_type, reflecting incubation temperature experiments described above in section Incubation. For cruise EN644, values of npp_rate (discrete table) and integrated_npp (integrated table) have been adjusted in version 2 to reflect an updated blank correction. </para>
           <para>References</para>
           <para>Hama, T.,  T. Miyazaki, Y. Ogawa, T. Iwakuma, M. Takahashi, A. Otsuki, and S. Ichimura. 1983. Measurement of photosynthetic production of a marine phytoplankton population using a stable 13C isotope. Marine Biology 73: 31-36. &#13;
 </para>
@@ -263,8 +266,8 @@
       <entityDescription>Discrete net primary productivity data</entityDescription>
       <physical>
         <objectName>nes-lter-npp-transect-discrete-v2.csv</objectName>
-        <size unit="bytes">43704</size>
-        <authentication method="MD5">266de0b8e734e502e8a36941dea761e0</authentication>
+        <size unit="bytes">102178</size>
+        <authentication method="MD5">fb391f29b58ba45f74aa3f0f5e1a201a</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>
@@ -391,8 +394,8 @@
               <numericDomain>
                 <numberType>real</numberType>
                 <bounds>
-                  <minimum exclusive="false">-70.9017</minimum>
-                  <maximum exclusive="false">-70.7676</maximum>
+                  <minimum exclusive="false">-70.9974</minimum>
+                  <maximum exclusive="false">-70.7667</maximum>
                 </bounds>
               </numericDomain>
             </ratio>
@@ -414,7 +417,7 @@
               <numericDomain>
                 <numberType>real</numberType>
                 <bounds>
-                  <minimum exclusive="false">1.634</minimum>
+                  <minimum exclusive="false">1.283</minimum>
                   <maximum exclusive="false">112.222</maximum>
                 </bounds>
               </numericDomain>
@@ -596,8 +599,8 @@
               <numericDomain>
                 <numberType>real</numberType>
                 <bounds>
-                  <minimum exclusive="false">-0.108</minimum>
-                  <maximum exclusive="false">132.653</maximum>
+                  <minimum exclusive="false">-2.04</minimum>
+                  <maximum exclusive="false">189.814</maximum>
                 </bounds>
               </numericDomain>
             </ratio>
@@ -675,7 +678,7 @@
                 <numberType>real</numberType>
                 <bounds>
                   <minimum exclusive="false">0</minimum>
-                  <maximum exclusive="false">2.53</maximum>
+                  <maximum exclusive="false">9.69</maximum>
                 </bounds>
               </numericDomain>
             </ratio>
@@ -685,16 +688,45 @@
             <codeExplanation>Distance greater than 2 km from NES-LTER standard station</codeExplanation>
           </missingValueCode>
         </attribute>
+        <attribute>
+          <attributeName>incub_type</attributeName>
+          <attributeDefinition>Identifier for incubation type (either ambient or experiemental)</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>ambient_temp</code>
+                    <definition>incubation occurred at approximately ambient temperature</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>experiment_14deg</code>
+                    <definition>incubation occurred at 14 degrees C instead of ambient temperature</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>experiment_26deg</code>
+                    <definition>incubation occurred at 26 degrees C instead of ambient temperature</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>experiment_18deg</code>
+                    <definition>incubation occurred at 18 degrees C instead of ambient temperature</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
       </attributeList>
-      <numberOfRecords>426</numberOfRecords>
+      <numberOfRecords>870</numberOfRecords>
     </dataTable>
     <dataTable>
       <entityName>Integrated NPP</entityName>
       <entityDescription>Integrated net primary productivity data</entityDescription>
       <physical>
         <objectName>nes-lter-npp-transect-integrated-v2.csv</objectName>
-        <size unit="bytes">7820</size>
-        <authentication method="MD5">569c0d068abea61b7ec80d8fa6032685</authentication>
+        <size unit="bytes">16242</size>
+        <authentication method="MD5">bdd6dfded13977350af477fcaf3406a5</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>
@@ -775,8 +807,8 @@
               <numericDomain>
                 <numberType>real</numberType>
                 <bounds>
-                  <minimum exclusive="false">-70.9005</minimum>
-                  <maximum exclusive="false">-70.7683</maximum>
+                  <minimum exclusive="false">-70.9973</minimum>
+                  <maximum exclusive="false">-70.7672</maximum>
                 </bounds>
               </numericDomain>
             </ratio>
@@ -864,8 +896,8 @@
               <numericDomain>
                 <numberType>real</numberType>
                 <bounds>
-                  <minimum exclusive="false">42.13</minimum>
-                  <maximum exclusive="false">1845.166</maximum>
+                  <minimum exclusive="false">-53.357</minimum>
+                  <maximum exclusive="false">2543.33</maximum>
                 </bounds>
               </numericDomain>
             </ratio>
@@ -938,7 +970,7 @@
                 <numberType>real</numberType>
                 <bounds>
                   <minimum exclusive="false">0.06</minimum>
-                  <maximum exclusive="false">0.28</maximum>
+                  <maximum exclusive="false">0.52</maximum>
                 </bounds>
               </numericDomain>
             </ratio>
@@ -960,8 +992,8 @@
               <numericDomain>
                 <numberType>real</numberType>
                 <bounds>
-                  <minimum exclusive="false">0.19</minimum>
-                  <maximum exclusive="false">1.1</maximum>
+                  <minimum exclusive="false">0.06</minimum>
+                  <maximum exclusive="false">2.2</maximum>
                 </bounds>
               </numericDomain>
             </ratio>
@@ -983,8 +1015,8 @@
               <numericDomain>
                 <numberType>real</numberType>
                 <bounds>
-                  <minimum exclusive="false">0.07</minimum>
-                  <maximum exclusive="false">0.28</maximum>
+                  <minimum exclusive="false">0.06</minimum>
+                  <maximum exclusive="false">0.61</maximum>
                 </bounds>
               </numericDomain>
             </ratio>
@@ -995,15 +1027,15 @@
           </missingValueCode>
         </attribute>
       </attributeList>
-      <numberOfRecords>90</numberOfRecords>
+      <numberOfRecords>183</numberOfRecords>
     </dataTable>
     <otherEntity>
       <entityName>Raw NPP data table</entityName>
       <entityDescription>Raw data used to generate product data tables</entityDescription>
       <physical>
-        <objectName>raw_npp_data_version2.zip</objectName>
-        <size unit="bytes">3167</size>
-        <authentication method="MD5">38c259ae8211512a0d7a2fe1e6c2352b</authentication>
+        <objectName>raw_npp_data.zip</objectName>
+        <size unit="bytes">15002</size>
+        <authentication method="MD5">46334266ccf686829b2718fde624a2ca</authentication>
         <dataFormat>
           <externallyDefinedFormat>
             <formatName>application/zip</formatName>
@@ -1017,8 +1049,8 @@
       <entityDescription>Raw incubation tank water temperature data</entityDescription>
       <physical>
         <objectName>HOBO_data.zip</objectName>
-        <size unit="bytes">190881</size>
-        <authentication method="MD5">51c89b4a777d13c488526c62509d384e</authentication>
+        <size unit="bytes">386260</size>
+        <authentication method="MD5">02c50100617cc38c407c7807d2a80bf8</authentication>
         <dataFormat>
           <externallyDefinedFormat>
             <formatName>application/zip</formatName>
@@ -1032,8 +1064,8 @@
       <entityDescription>Percent surface irradiance data for each Niskin</entityDescription>
       <physical>
         <objectName>light_data.zip</objectName>
-        <size unit="bytes">648</size>
-        <authentication method="MD5">b676ee5e8e92c6c7b8fb038e832a87cb</authentication>
+        <size unit="bytes">1015</size>
+        <authentication method="MD5">96c68936c3f60edef1ca2c68333bc8d2</authentication>
         <dataFormat>
           <externallyDefinedFormat>
             <formatName>application/zip</formatName>
@@ -1053,6 +1085,14 @@
           <description>micrograms per liter per day</description>
         </unit>
       </unitList>
+    </metadata>
+  </additionalMetadata>
+  <additionalMetadata>
+    <metadata>
+      <emlEditor>
+        <app>EMLassemblyline</app>
+        <release>3.5.5</release>
+      </emlEditor>
     </metadata>
   </additionalMetadata>
 </eml:eml>

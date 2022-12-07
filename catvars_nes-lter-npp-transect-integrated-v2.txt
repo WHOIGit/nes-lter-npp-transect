@@ -27,3 +27,7 @@ percent_surface_irradiance	65	65 percent surface photosynthetically active radia
 percent_surface_irradiance	70	70 percent surface photosynthetically active radiation
 percent_surface_irradiance	75	75 percent surface photosynthetically active radiation
 percent_surface_irradiance	85	85 percent surface photosynthetically active radiation
+incub_type	ambient_temp	incubation occurred at approximately ambient temperature
+incub_type	experiment_14deg	incubation occurred at 14 degrees C instead of ambient temperature
+incub_type	experiment_26deg	incubation occurred at 26 degrees C instead of ambient temperature
+incub_type	experiment_18deg	incubation occurred at 18 degrees C instead of ambient temperature
