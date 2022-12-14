@@ -1,1 +1,3 @@
 ﻿Special thanks to Robin Paulman, CASIF Laboratory Manager, for analyzing all samples collected for this data package. 
+
+For cruises on R/V Neil Armstrong, we thank the Ocean Observatories Initiative, funded by the National Science Foundation under Cooperative Agreement No. 1743430

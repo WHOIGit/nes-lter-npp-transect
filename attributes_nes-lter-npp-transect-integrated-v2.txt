@@ -3,7 +3,7 @@ cruise	Identifier for research cruise generally including abbreviation for resea
 date_time_utc	Mean of bottle closure date-time for all rosette bottles included in measurement	Date		YYYY-MM-DD hh:mm:ss	NaN	Missing value
 latitude	Mean of ship's latitude when rosette bottles closed	numeric	degree		NaN	Missing value
 longitude	Mean of ship's longitude when rosette bottles closed	numeric	degree		NaN	Missing value
-station	NES-LTER standard station from which sample was collected	character			NaN	Missing value
+nearest_station	NES-LTER standard station nearest to the sample location	character			NA	Distance greater than 2 km from NES-LTER standard station
 cast	CTD rosette cast number chronological per cruise	numeric	dimensionless		NaN	Missing value
 filter_size	Size fraction with filter and when applicable prefilter pore size in micrometers	categorical				
 integrated_npp_mg_m2_day	Vertically-integrated net primary productivity measured as uptake rate of carbon per unit area of water per day	numeric	milligramPerMeterSquaredPerDay			
