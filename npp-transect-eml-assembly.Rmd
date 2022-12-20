@@ -1,7 +1,7 @@
 ---
 title: "npp-transect-eml-assembly"
 author: "Kate Morkeski"
-date: "12/7/2022"
+date: "12/20/2022"
 output: html_document
 editor_options: 
   chunk_output_type: inline
@@ -47,9 +47,10 @@ here("nes-lter-npp-transect")
 npp_discrete_1 <- read_csv('V1/npp_discrete_version1.csv', show_col_types = FALSE) 
 new_discrete_1 <- read_csv('npp_discrete_version1.csv', show_col_types = FALSE) 
 
-# two columns are different
+# two columns are different and datetime format is different
 new_discrete_1 <- new_discrete_1 %>% 
-  select(-incub_type) 
+  select(-station, -incub_type) 
+new_discrete_1$date_time_utc <- as.POSIXct(new_discrete_1$date_time_utc, tz = "GMT", format="%m/%d/%y %H:%M")
 
 discrete_v1_check <- compare_df(new_discrete_1, npp_discrete_1)
 create_output_table(discrete_v1_check, output_type='xlsx', file_name='discrete_v1_check.xlsx')
@@ -59,11 +60,6 @@ create_output_table(discrete_v1_check, output_type='xlsx', file_name='discrete_v
 npp_integrated_1 <- read_csv('V1/npp_integrated_version1.csv', show_col_types = FALSE) 
 new_integrated_1 <- read_csv('npp_integrated_version1.csv', show_col_types = FALSE) 
 
-# in new data table, station header is nearest_station. Rename for comparison of data tables. 
-new_integrated_1 <- new_integrated_1 %>% 
-  select(-station) %>% 
-  rename(station = nearest_station)
-
 # original not in chronological order
 npp_integrated_1 <- npp_integrated_1[order(npp_integrated_1$date_time_utc),]
 new_integrated_1 <- new_integrated_1[order(new_integrated_1$date_time_utc),]
@@ -71,7 +67,7 @@ new_integrated_1 <- new_integrated_1[order(new_integrated_1$date_time_utc),]
 integrated_v1_check <- compare_df(new_integrated_1, npp_integrated_1)
 create_output_table(integrated_v1_check, output_type='xlsx', file_name='integrated_v1_check.xlsx')
 # All EN644 integrated_npp values slightly different (no difference in other cruises)
-# On EN644, station u9a has been added and L8 data and flag now NA
+# On EN644, L8 data and flag now NA
 
 
 ```
@@ -97,27 +93,44 @@ if (version == 'v2') {
 npp_discrete_1 <- read_csv(paste0('npp_discrete_version1.csv'), show_col_types = FALSE) 
 npp_discrete_2 <- read_csv(paste0('npp_discrete_version2.csv'), show_col_types = FALSE) 
 npp_discrete <- rbind(npp_discrete_1, npp_discrete_2)
-npp_discrete <- npp_discrete # %>% 
-   # rename(alternate_sample_category = alternate_sample_ID)
+npp_discrete$date_time_utc <- as.POSIXct(npp_discrete$date_time_utc, tz = "GMT", format="%m/%d/%y %H:%M")
 npp_discrete <- npp_discrete[order(npp_discrete$date_time_utc),]
+npp_discrete <- npp_discrete %>%
+  relocate(cast, .after = station) %>%
+  relocate(latitude, .after = date_time_utc) %>%
+  relocate(longitude, .after = latitude) 
 
 npp_integrated_1 <- read_csv(paste0('npp_integrated_version1.csv'), show_col_types = FALSE) 
 npp_integrated_2 <- read_csv(paste0('npp_integrated_version2.csv'), show_col_types = FALSE) 
 npp_integrated <- rbind(npp_integrated_1, npp_integrated_2)
-npp_integrated <- npp_integrated %>% 
-    select(-station)
 npp_integrated <- npp_integrated[order(npp_integrated$date_time_utc),]
-write.csv(npp_discrete, "nes-lter-npp-transect-discrete-v2.csv", row.names = FALSE)
+
+# remove station columns that will not be in product data table (retain for QA)
+npp_discrete_edi <- npp_discrete %>% 
+  select(-nearest_station, -distance) 
+
+write.csv(npp_discrete_edi, "nes-lter-npp-transect-discrete-v2.csv", row.names = FALSE)
 write.csv(npp_integrated, "nes-lter-npp-transect-integrated-v2.csv", row.names = FALSE)
 }
 
 ```
+
+## Check station and nearest_station
+
+```{r}
+
+npp_discrete$stncheck <- ifelse(npp_discrete$station==npp_discrete$nearest_station,"TRUE","FALSE")
+unique(npp_discrete$stncheck)
+
+```
+
 
 ## Provide summary statistics
 
 ```{r}
 
 npp_discrete$cruise <- as.factor(npp_discrete$cruise)
+npp_discrete$niskin <- as.factor(npp_discrete$station)
 npp_discrete$cast <- as.factor(npp_discrete$cast)
 npp_discrete$niskin <- as.factor(npp_discrete$niskin)
 npp_discrete$iode_quality_flag <- as.factor(npp_discrete$iode_quality_flag)
@@ -127,7 +140,7 @@ npp_discrete$filter_size <- as.factor(npp_discrete$filter_size)
 npp_discrete$percent_surface_irradiance <- as.factor(npp_discrete$percent_surface_irradiance)
 
 npp_integrated$cruise <- as.factor(npp_integrated$cruise)
-npp_integrated$station <- as.factor(npp_integrated$nearest_station)
+npp_integrated$station <- as.factor(npp_integrated$station)
 npp_integrated$cast <- as.factor(npp_integrated$cast)
 npp_integrated$filter_size <- as.factor(npp_integrated$filter_size)
 npp_integrated$iode_quality_flag <- as.factor(npp_integrated$iode_quality_flag)
@@ -169,9 +182,9 @@ ggplot(npp_integrated, aes(x=as.factor(iode_quality_flag), y=k_calc_per_m)) +
 ```{r}
 
 map_locs(npp_discrete, colorvar = "npp_rate", region = "transect")
+map_locs(npp_discrete, colorvar = "cruise", region = "transect")
 map_locs(npp_integrated, colorvar = "integrated_npp_mg_m2_day", region = "transect")
-# en644 <- npp_integrated %>% filter(cruise = EN644)
-# map_locs(npp_integrated, colorvar = "integrated_npp_mg_m2_day", region = "transect")
+map_locs(npp_integrated, colorvar = "cruise", region = "transect")
 
 ```
 ## Create package data files if any changes to csvs

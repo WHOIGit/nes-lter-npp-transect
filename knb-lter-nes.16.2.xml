@@ -52,7 +52,7 @@
       <userId directory="https://orcid.org">https://orcid.org/0000-0002-7811-4150</userId>
       <role>metadata Provider</role>
     </associatedParty>
-    <pubDate>2022-12-14</pubDate>
+    <pubDate>2022-12-20</pubDate>
     <abstract>
       <para>This dataset consists of primary production measurements based on uptake of carbon-13 added  as 13C-bicarbonate during 24-h deckboard incubations of seawater. Sampling occurred on cruises along the Northeast U.S. Shelf Long Term Ecological Research (NES-LTER) Transect during summer, fall, and winter, starting in summer 2019. Net primary production (NPP) was determined from particulate organic carbon (POC) content and associated stable isotope enrichment. Two data tables are included: 1. depth-specific primary productivity based on fractional light levels of the surface irradiance with reference to the profile of photosynthetically active radiation (PAR), and 2. integrated primary productivity. The tables derive from the raw data included as other entities. </para>
       <para/>
@@ -132,7 +132,7 @@
           <para>Incubation</para>
           <para>Bottles were spiked with a solution of 99% 13C-labeled sodium bicarbonate (Cambridge Isotope Laboratories, Inc.) for a final 10% enrichment of the dissolved inorganic carbon (DIC) pool and placed in various mesh bags to simulate in situ light levels. Bottles were incubated for approximately 24 hours in deckboard incubators with flow-through seawater, and Onset HOBO data loggers recorded tank water temperature. At each station, the natural abundance of 13C in the water was determined from an un-spiked sample. On 1-2 cruises per year in 2019-2021, a spiked dark sample was collected at each station to correct for dark carbon assimilation. </para>
           <para>Cruise EN687 included production rate experiments in which water was incubated at different temperatures, which are indicated in the discrete table column, incub_type. </para>
-          <para>The light levels at collection depths were determined from the PAR profile during daytime CTD casts, defined as those casts on which surface PAR is above 10 micromol photons/m2/s. Using daytime cast information, a relationship was established between beam attenuation (At; measured by a transmissometer) and the light extinction coefficient (K_d) for each cast. During nighttime casts, K_d was calculated from the average At in the upper 10 m using the slope and intercept from equation 1: K_d = m * At + b. Calculations of K_d values based on measured At values were completed in MATLAB with documentation available at https://github.com/pmarrec/nes-lter-kd-calculation. Note that on cruise AR39B, no significant linear relationship between K_d and At was obtained because of sensor issues, so no K_calc_per_m values were determined for this cruise. Additionally, note that cast 12 on cruise EN649 is identified as daytime but does not include k_meas_per_m values, as a result of substantial ship shading.</para>
+          <para>The light levels at collection depths were determined from the PAR profile during daytime CTD casts, defined as those casts on which surface PAR is above 10 micromol photons/m2/s. Using daytime cast information, a relationship was established between beam attenuation (At; measured by a transmissometer) and the light extinction coefficient (K_d) for each cast. During nighttime casts, K_d was calculated from the average At in the upper 10 m using the slope and intercept from equation 1: K_d = m * At + b. Calculations of K_d values based on measured At values were completed in MATLAB with documentation available at https://github.com/pmarrec/nes-lter-kd-calculation/tree/f49dc83851bd615ca7ce3ede54f4cd599c6a5eb5. Note that on cruise AR39B, no significant linear relationship between K_d and At was obtained because of sensor issues, so no K_calc_per_m values were determined for this cruise. Additionally, note that cast 12 on cruise EN649 is identified as daytime but does not include k_meas_per_m values, as a result of substantial ship shading.</para>
           <para>Sample Collection</para>
           <para>At the end of each incubation, bottles were filtered under low vacuum (5-10 in. Hg) over pre-combusted Whatman GF/F filters (450˚C; 6 h). Size fractionation was accomplished by pre-filtering samples through 47 mm-diameter polycarbonate filters with either 5 µm or 20 µm pore size, resulting in NPP rates from phytoplankton in the &lt;5 µm and &lt;20 µm size classes. Additionally, surface samples included a 10 µm pre-filter to obtain NPP rates from the &lt;10 µm size class, aligning filter sizes with those used to determine microzooplankton grazing rates (Menden-Deuer lab) on phytoplankton. Triplicates were collected for surface samples for the &gt;0 µm size fraction and &lt;10 µm size fraction. Filters were stored at -20˚C until further analysis on shore. </para>
           <para>Sample Analysis</para>
@@ -142,9 +142,9 @@
           <para>Calculations: Integrated Estimates</para>
           <para>Discrete NPP rates were integrated by depth for each station via trapezoidal integration with the shallowest discrete NPP value extended to 0 m such that a rectangle was formed, with calculations completed in R, and documentation available at https://github.com/difontaine/EDI_npp_package</para>
           <para>Quality Assurance</para>
-          <para>Sample quality is indicated using IODE Primary Level flags 1 good; 3 questionable/suspect; 9 missing. Any sample with a negative NPP value is provided with a flag of 3. Negative NPP values in the discrete data set are included in the integrated NPP value for that station. If integrated data are not expected for a discrete sampling location (e.g. when only one depth was sampled), the corresponding integrated NPP value and quality flag are provided as NA. Geographic and temporal coverage of the clean data table were confirmed to be within expected ranges. Quality assurance and data package assembly were completed in R, with documentation available at https://github.com/WHOIGit/nes-lter-npp-transect. </para>
+          <para>Sample quality is indicated using IODE Primary Level flags 1 good; 3 questionable/suspect; 4 bad; 9 missing. Any sample with a negative NPP value is provided with a flag of 3. Negative NPP values in the discrete data set are included in the integrated NPP value for that station. Any discrete sample with a flag of 4 is excluded from the calculation of the corresponding integrated value. If integrated data are not expected for a discrete sampling location (e.g. where only one depth was sampled), the corresponding integrated NPP value and quality flag are provided as NA. Geographic and temporal coverage of the clean data table were confirmed to be within expected ranges. The distance to the nearest standard station was checked against provided station. Ship drift on long-duration casts, particularly for the R/V Endeavor and where stations were close together, sometimes resulted in bottles being collected closer to a different station than at the start of the cast. In such cases, they are identified with the station at the start of the cast. Quality assurance and data package assembly were completed in R, with documentation available at https://github.com/WHOIGit/nes-lter-npp-transect. </para>
           <para>Differences From Previous Version</para>
-          <para>Version 2 includes additional, more recent cruises compared to version 1. The discrete data table now includes the new categorical variable, incub_type, reflecting incubation temperature experiments described above in section Incubation. The integrated data table's station identifier has been updated to nearest_station, sourced from and identical to nearest_station in the discrete table. For cruise EN644, values of npp_rate (discrete table) and integrated_npp (integrated table) have been adjusted in version 2 to reflect an updated blank correction. </para>
+          <para>Version 2 includes additional, more recent cruises compared to version 1. The discrete data table now includes the new categorical variable, incub_type, reflecting incubation temperature experiments described above in section Incubation. The discrete data table's station identifier has been updated to station, matching the integrated table, and the distance column has been eliminated from the distance table. For cruise EN644, values of npp_rate (discrete table) and integrated_npp (integrated table) have been adjusted in version 2 to reflect an updated blank correction. </para>
           <para>References</para>
           <para>Hama, T.,  T. Miyazaki, Y. Ogawa, T. Iwakuma, M. Takahashi, A. Otsuki, and S. Ichimura. 1983. Measurement of photosynthetic production of a marine phytoplankton population using a stable 13C isotope. Marine Biology 73: 31-36. &#13;
 </para>
@@ -267,8 +267,8 @@
       <entityDescription>Discrete net primary productivity data</entityDescription>
       <physical>
         <objectName>nes-lter-npp-transect-discrete-v2.csv</objectName>
-        <size unit="bytes">102056</size>
-        <authentication method="MD5">97886d5c8a34484a21ff905dffbab5a8</authentication>
+        <size unit="bytes">97822</size>
+        <authentication method="MD5">0e1e5e2af7beec33c971a3be099d462f</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>
@@ -315,52 +315,6 @@
           </missingValueCode>
         </attribute>
         <attribute>
-          <attributeName>cast</attributeName>
-          <attributeDefinition>CTD rosette cast number chronological per cruise</attributeDefinition>
-          <storageType>float</storageType>
-          <measurementScale>
-            <ratio>
-              <unit>
-                <standardUnit>dimensionless</standardUnit>
-              </unit>
-              <numericDomain>
-                <numberType>natural</numberType>
-                <bounds>
-                  <minimum exclusive="false">1</minimum>
-                  <maximum exclusive="false">23</maximum>
-                </bounds>
-              </numericDomain>
-            </ratio>
-          </measurementScale>
-          <missingValueCode>
-            <code>NA</code>
-            <codeExplanation>Missing value</codeExplanation>
-          </missingValueCode>
-        </attribute>
-        <attribute>
-          <attributeName>niskin</attributeName>
-          <attributeDefinition>Rosette bottle position number</attributeDefinition>
-          <storageType>float</storageType>
-          <measurementScale>
-            <ratio>
-              <unit>
-                <standardUnit>dimensionless</standardUnit>
-              </unit>
-              <numericDomain>
-                <numberType>natural</numberType>
-                <bounds>
-                  <minimum exclusive="false">2</minimum>
-                  <maximum exclusive="false">23</maximum>
-                </bounds>
-              </numericDomain>
-            </ratio>
-          </measurementScale>
-          <missingValueCode>
-            <code>NA</code>
-            <codeExplanation>Missing value</codeExplanation>
-          </missingValueCode>
-        </attribute>
-        <attribute>
           <attributeName>latitude</attributeName>
           <attributeDefinition>Ship's latitude when rosette bottle closed</attributeDefinition>
           <storageType>float</storageType>
@@ -397,6 +351,70 @@
                 <bounds>
                   <minimum exclusive="false">-70.9974</minimum>
                   <maximum exclusive="false">-70.7667</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>station</attributeName>
+          <attributeDefinition>NES-LTER standard station from which sample was collected</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>NES-LTER standard station from which sample was collected</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>Distance greater than 2 km from NES-LTER standard station</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>cast</attributeName>
+          <attributeDefinition>CTD rosette cast number chronological per cruise</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>natural</numberType>
+                <bounds>
+                  <minimum exclusive="false">1</minimum>
+                  <maximum exclusive="false">23</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>niskin</attributeName>
+          <attributeDefinition>Rosette bottle position number</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>natural</numberType>
+                <bounds>
+                  <minimum exclusive="false">2</minimum>
+                  <maximum exclusive="false">23</maximum>
                 </bounds>
               </numericDomain>
             </ratio>
@@ -649,47 +667,6 @@
           </missingValueCode>
         </attribute>
         <attribute>
-          <attributeName>nearest_station</attributeName>
-          <attributeDefinition>NES-LTER standard station nearest to the sample location</attributeDefinition>
-          <storageType>string</storageType>
-          <measurementScale>
-            <nominal>
-              <nonNumericDomain>
-                <textDomain>
-                  <definition>NES-LTER standard station nearest to the sample location</definition>
-                </textDomain>
-              </nonNumericDomain>
-            </nominal>
-          </measurementScale>
-          <missingValueCode>
-            <code>NA</code>
-            <codeExplanation>Distance greater than 2 km from NES-LTER standard station</codeExplanation>
-          </missingValueCode>
-        </attribute>
-        <attribute>
-          <attributeName>distance</attributeName>
-          <attributeDefinition>Distance from sample location to nearest NES-LTER standard station</attributeDefinition>
-          <storageType>float</storageType>
-          <measurementScale>
-            <ratio>
-              <unit>
-                <standardUnit>kilometer</standardUnit>
-              </unit>
-              <numericDomain>
-                <numberType>real</numberType>
-                <bounds>
-                  <minimum exclusive="false">0</minimum>
-                  <maximum exclusive="false">3.94</maximum>
-                </bounds>
-              </numericDomain>
-            </ratio>
-          </measurementScale>
-          <missingValueCode>
-            <code>NA</code>
-            <codeExplanation>Distance greater than 2 km from NES-LTER standard station</codeExplanation>
-          </missingValueCode>
-        </attribute>
-        <attribute>
           <attributeName>incub_type</attributeName>
           <attributeDefinition>Identifier for incubation type (either ambient or experiemental)</attributeDefinition>
           <storageType>string</storageType>
@@ -726,8 +703,8 @@
       <entityDescription>Integrated net primary productivity data</entityDescription>
       <physical>
         <objectName>nes-lter-npp-transect-integrated-v2.csv</objectName>
-        <size unit="bytes">16780</size>
-        <authentication method="MD5">17bbbc5b38557b862386a8e7457f97c2</authentication>
+        <size unit="bytes">16520</size>
+        <authentication method="MD5">cb6fa560565f49204d25ff1f22bb1a36</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>
@@ -754,7 +731,7 @@
             </nominal>
           </measurementScale>
           <missingValueCode>
-            <code>NaN</code>
+            <code>NA</code>
             <codeExplanation>Missing value</codeExplanation>
           </missingValueCode>
         </attribute>
@@ -769,7 +746,7 @@
             </dateTime>
           </measurementScale>
           <missingValueCode>
-            <code>NaN</code>
+            <code>NA</code>
             <codeExplanation>Missing value</codeExplanation>
           </missingValueCode>
         </attribute>
@@ -792,7 +769,7 @@
             </ratio>
           </measurementScale>
           <missingValueCode>
-            <code>NaN</code>
+            <code>NA</code>
             <codeExplanation>Missing value</codeExplanation>
           </missingValueCode>
         </attribute>
@@ -815,26 +792,26 @@
             </ratio>
           </measurementScale>
           <missingValueCode>
-            <code>NaN</code>
+            <code>NA</code>
             <codeExplanation>Missing value</codeExplanation>
           </missingValueCode>
         </attribute>
         <attribute>
-          <attributeName>nearest_station</attributeName>
-          <attributeDefinition>NES-LTER standard station nearest to the sample location</attributeDefinition>
+          <attributeName>station</attributeName>
+          <attributeDefinition>NES-LTER standard station from which sample was collected</attributeDefinition>
           <storageType>string</storageType>
           <measurementScale>
             <nominal>
               <nonNumericDomain>
                 <textDomain>
-                  <definition>NES-LTER standard station nearest to the sample location</definition>
+                  <definition>NES-LTER standard station from which sample was collected</definition>
                 </textDomain>
               </nonNumericDomain>
             </nominal>
           </measurementScale>
           <missingValueCode>
             <code>NA</code>
-            <codeExplanation>Distance greater than 2 km from NES-LTER standard station</codeExplanation>
+            <codeExplanation>Missing value</codeExplanation>
           </missingValueCode>
         </attribute>
         <attribute>
@@ -856,7 +833,7 @@
             </ratio>
           </measurementScale>
           <missingValueCode>
-            <code>NaN</code>
+            <code>NA</code>
             <codeExplanation>Missing value</codeExplanation>
           </missingValueCode>
         </attribute>
@@ -977,7 +954,7 @@
             </ratio>
           </measurementScale>
           <missingValueCode>
-            <code>NaN</code>
+            <code>NA</code>
             <codeExplanation>Missing value</codeExplanation>
           </missingValueCode>
         </attribute>
@@ -1000,7 +977,7 @@
             </ratio>
           </measurementScale>
           <missingValueCode>
-            <code>NaN</code>
+            <code>NA</code>
             <codeExplanation>Missing value</codeExplanation>
           </missingValueCode>
         </attribute>
@@ -1023,20 +1000,20 @@
             </ratio>
           </measurementScale>
           <missingValueCode>
-            <code>NaN</code>
+            <code>NA</code>
             <codeExplanation>Missing value</codeExplanation>
           </missingValueCode>
         </attribute>
       </attributeList>
-      <numberOfRecords>189</numberOfRecords>
+      <numberOfRecords>186</numberOfRecords>
     </dataTable>
     <otherEntity>
       <entityName>Raw NPP data table</entityName>
       <entityDescription>Raw data used to generate product data tables</entityDescription>
       <physical>
         <objectName>raw_npp_data.zip</objectName>
-        <size unit="bytes">15005</size>
-        <authentication method="MD5">3fe8a0686f31ed8d9bdb60440445875d</authentication>
+        <size unit="bytes">15876</size>
+        <authentication method="MD5">4e9a33d70e8a26ae09c69977843772de</authentication>
         <dataFormat>
           <externallyDefinedFormat>
             <formatName>application/zip</formatName>
