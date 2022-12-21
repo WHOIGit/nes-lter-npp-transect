@@ -122,6 +122,9 @@ write.csv(npp_integrated, "nes-lter-npp-transect-integrated-v2.csv", row.names =
 npp_discrete$stncheck <- ifelse(npp_discrete$station==npp_discrete$nearest_station,"TRUE","FALSE")
 unique(npp_discrete$stncheck)
 
+npp_discrete_stncheck <- npp_discrete %>% filter (stncheck == "FALSE")
+# only differences in station identifier are as expected, where EN644 L8 cast 9 drifted into station u9a
+
 ```
 
 

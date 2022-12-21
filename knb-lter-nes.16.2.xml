@@ -142,7 +142,7 @@
           <para>Calculations: Integrated Estimates</para>
           <para>Discrete NPP rates were integrated by depth for each station via trapezoidal integration with the shallowest discrete NPP value extended to 0 m such that a rectangle was formed, with calculations completed in R, and documentation available at https://github.com/difontaine/EDI_npp_package</para>
           <para>Quality Assurance</para>
-          <para>Sample quality is indicated using IODE Primary Level flags 1 good; 3 questionable/suspect; 4 bad; 9 missing. Any sample with a negative NPP value is provided with a flag of 3. Negative NPP values in the discrete data set are included in the integrated NPP value for that station. Any discrete npp value with a flag of 4 is converted to NA and is excluded from the calculation of the corresponding integrated value. If integrated data are not expected for a discrete sampling location (e.g. where only one depth was sampled), the corresponding integrated NPP value and quality flag are provided as NA. Geographic and temporal coverage of the clean data table were confirmed to be within expected ranges. The distance to the nearest standard station was checked against provided station. Ship drift on long-duration casts, particularly for the R/V Endeavor and where stations were close together, sometimes resulted in bottles being collected closer to a different station than at the start of the cast. In such cases, they are identified with the station at the start of the cast. Quality assurance and data package assembly were completed in R, with documentation available at https://github.com/WHOIGit/nes-lter-npp-transect. </para>
+          <para>Sample quality is indicated using IODE Primary Level flags 1 good; 3 questionable/suspect; 4 bad; 9 missing. Any sample with a negative NPP value is provided with a flag of 3. Negative NPP values in the discrete data set are included in the integrated NPP value for that station. Any discrete NPP value with a flag of 4 is converted to NA and is excluded from the calculation of the corresponding integrated value. If integrated data are not expected for a discrete sampling location (e.g. where only one depth was sampled), the corresponding integrated NPP value and quality flag are provided as NA. Geographic and temporal coverage of the clean data table were confirmed to be within expected ranges. The distance to the nearest standard station was checked against provided station. Ship drift on long-duration casts, particularly for the R/V Endeavor and where stations were close together, sometimes resulted in bottles being collected closer to a different station than from where cast began. In such cases, they are identified with the station at the start of the cast. Quality assurance and data package assembly were completed in R, with documentation available at https://github.com/WHOIGit/nes-lter-npp-transect. </para>
           <para>Differences From Previous Version</para>
           <para>Version 2 includes additional, more recent cruises compared to version 1. The discrete data table now includes the new categorical variable, incub_type, reflecting incubation temperature experiments described above in section Incubation. The discrete data table's station identifier has been updated to station, matching the integrated table, and the distance column has been eliminated from the distance table. For cruise EN644, values of npp_rate (discrete table) and integrated_npp (integrated table) have been adjusted in version 2 to reflect an updated blank correction. </para>
           <para>References</para>
@@ -268,7 +268,7 @@
       <physical>
         <objectName>nes-lter-npp-transect-discrete-v2.csv</objectName>
         <size unit="bytes">97822</size>
-        <authentication method="MD5">0e1e5e2af7beec33c971a3be099d462f</authentication>
+        <authentication method="MD5">e1d2cf64938907e0411c42b6904a8d95</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>
@@ -704,7 +704,7 @@
       <physical>
         <objectName>nes-lter-npp-transect-integrated-v2.csv</objectName>
         <size unit="bytes">16520</size>
-        <authentication method="MD5">cb6fa560565f49204d25ff1f22bb1a36</authentication>
+        <authentication method="MD5">87c1a97921e6f42140a78a168eccf328</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>
@@ -1013,7 +1013,7 @@
       <physical>
         <objectName>raw_npp_data.zip</objectName>
         <size unit="bytes">15876</size>
-        <authentication method="MD5">4e9a33d70e8a26ae09c69977843772de</authentication>
+        <authentication method="MD5">1cc2b31675294ee4a4ba7f4fa1552c1b</authentication>
         <dataFormat>
           <externallyDefinedFormat>
             <formatName>application/zip</formatName>
@@ -1042,8 +1042,8 @@
       <entityDescription>Percent surface irradiance data for each Niskin</entityDescription>
       <physical>
         <objectName>light_data.zip</objectName>
-        <size unit="bytes">1020</size>
-        <authentication method="MD5">5a27c06d0c18cfdb7c05d8cae030e3dd</authentication>
+        <size unit="bytes">1019</size>
+        <authentication method="MD5">cc4e0b48da65d0556a191048d4f3dac2</authentication>
         <dataFormat>
           <externallyDefinedFormat>
             <formatName>application/zip</formatName>
