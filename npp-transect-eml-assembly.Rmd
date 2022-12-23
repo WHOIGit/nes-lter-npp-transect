@@ -91,7 +91,6 @@ npp_integrated <- read_csv(paste0('npp_integrated_', version, '.csv'), show_col_
 # read in version 2 files and combine to new csvs 
 if (version == 'v2') {
 npp_discrete_1 <- read_csv(paste0('npp_discrete_version1.csv'), show_col_types = FALSE) 
-npp_discrete_1$date_time_utc <- as.POSIXct(npp_discrete_1$date_time_utc, tz = "GMT", format="%m/%d/%y %H:%M")
 npp_discrete_2 <- read_csv(paste0('npp_discrete_version2.csv'), show_col_types = FALSE) 
 npp_discrete <- rbind(npp_discrete_1, npp_discrete_2)
 npp_discrete <- npp_discrete[order(npp_discrete$date_time_utc),]
