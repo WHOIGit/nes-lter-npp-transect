@@ -32,7 +32,7 @@ Sample quality is indicated using IODE Primary Level flags 1 good; 3 questionabl
 
 Differences From Previous Version
 
-Version 2 includes additional, more recent cruises compared to version 1. The discrete data table now includes the new categorical variable, incub_type, reflecting incubation temperature experiments described above in section Incubation. The discrete data table's station identifier has been updated to station, matching the integrated table, and the distance column has been eliminated from the distance table. For cruise EN644, values of npp_rate (discrete table) and integrated_npp (integrated table) have been adjusted in version 2 to reflect an updated blank correction. 
+Version 2 includes additional, more recent cruises compared to version 1. The discrete data table now includes the new categorical variable, incub_type, reflecting incubation temperature experiments described above in section Incubation. The discrete data table's station identifier has been updated to station, matching the integrated table, and the distance column has been eliminated from the discrete table. For cruise EN644, values of npp_rate (discrete table) and integrated_npp (integrated table) have been adjusted in version 2 to reflect an updated blank correction. 
 
 References
 
