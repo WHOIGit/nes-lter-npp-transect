@@ -267,7 +267,7 @@
       <entityName>Discrete NPP</entityName>
       <entityDescription>Discrete net primary productivity data</entityDescription>
       <physical>
-        <objectName>nes-lter-npp-transect-discrete-v3.csv</objectName>
+        <objectName>nes-lter-npp-transect-discrete-v2.csv</objectName>
         <size unit="bytes">97822</size>
         <authentication method="MD5">654dc9b1f8701e432cabf990297bd169</authentication>
         <dataFormat>
@@ -703,7 +703,7 @@
       <entityName>Integrated NPP</entityName>
       <entityDescription>Integrated net primary productivity data</entityDescription>
       <physical>
-        <objectName>nes-lter-npp-transect-integrated-v3.csv</objectName>
+        <objectName>nes-lter-npp-transect-integrated-v2.csv</objectName>
         <size unit="bytes">16520</size>
         <authentication method="MD5">87c1a97921e6f42140a78a168eccf328</authentication>
         <dataFormat>

@@ -199,8 +199,8 @@ if (version == 'v3') {
 npp_discrete <- read_csv(paste0('nes-lter-npp-transect-discrete-v2.csv'), show_col_types = FALSE) 
 npp_integrated <- read_csv(paste0('nes-lter-npp-transect-integrated-v2.csv'), show_col_types = FALSE) 
 
-write.csv(npp_discrete, "nes-lter-npp-transect-discrete-v3.csv", row.names = FALSE)
-write.csv(npp_integrated, "nes-lter-npp-transect-integrated-v3.csv", row.names = FALSE)
+# no need to write new data tables for version change
+
 }
 
 ```
@@ -266,7 +266,7 @@ if (version == 'v2') {
 
 if (version == 'v3') {
   pkg_id <- 'knb-lter-nes.16.3'
-  datatables <- c('nes-lter-npp-transect-discrete-v3.csv', 'nes-lter-npp-transect-integrated-v3.csv')
+  datatables <- c('nes-lter-npp-transect-discrete-v2.csv', 'nes-lter-npp-transect-integrated-v2.csv')
   other <- c('raw_npp_data.zip','HOBO_data.zip', 'light_data.zip')
   parent_project <- 'parent_project_LTER_RAPID.txt'
 }
