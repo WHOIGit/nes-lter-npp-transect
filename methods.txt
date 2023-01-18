@@ -34,6 +34,8 @@ Differences From Previous Version
 
 Version 2 includes additional, more recent cruises compared to version 1. The discrete data table now includes the new categorical variable, incub_type, reflecting incubation temperature experiments described above in section Incubation. The discrete data table's station identifier has been updated to station, matching the integrated table, and the distance column has been eliminated from the discrete table. For cruise EN644, values of npp_rate (discrete table) and integrated_npp (integrated table) have been adjusted in version 2 to reflect an updated blank correction. 
 
+Version 3 updates are comprised of a change of author order. No changes to data were made since version 2. 
+
 References
 
 Hama, T.,  T. Miyazaki, Y. Ogawa, T. Iwakuma, M. Takahashi, A. Otsuki, and S. Ichimura. 1983. Measurement of photosynthetic production of a marine phytoplankton population using a stable 13C isotope. Marine Biology 73: 31-36. 

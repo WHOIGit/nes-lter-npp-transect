@@ -1,0 +1,1077 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml xmlns:eml="https://eml.ecoinformatics.org/eml-2.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.2" packageId="knb-lter-nes.16.3" xsi:schemaLocation="https://eml.ecoinformatics.org/eml-2.2.0/eml.xsd https://eml.ecoinformatics.org/eml-2.2.0/eml.xsd" system="edi">
+  <access authSystem="https://pasta.edirepository.org/authentication" order="allowFirst" scope="document">
+    <allow>
+      <principal>uid=NES,o=LTER,dc=ecoinformatics,dc=org</principal>
+      <permission>all</permission>
+    </allow>
+    <allow>
+      <principal>public</principal>
+      <permission>read</permission>
+    </allow>
+  </access>
+  <dataset>
+    <title>Size-fractionated net primary productivity (NPP) estimates based on 13C uptake during cruises along the Northeast U.S. Shelf Long Term Ecological Research (NES-LTER) Transect, ongoing since 2019</title>
+    <creator>
+      <individualName>
+        <givenName>Diana</givenName>
+        <givenName>N</givenName>
+        <surName>Fontaine</surName>
+      </individualName>
+      <organizationName>Northeast U.S. Shelf LTER</organizationName>
+      <electronicMailAddress>fontained@uri.edu</electronicMailAddress>
+      <userId directory="https://orcid.org">https://orcid.org/0000-0001-9172-6904</userId>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Tatiana</givenName>
+        <givenName>A</givenName>
+        <surName>Rynearson</surName>
+      </individualName>
+      <organizationName>Northeast U.S. Shelf LTER</organizationName>
+      <electronicMailAddress>rynearson@uri.edu</electronicMailAddress>
+      <userId directory="https://orcid.org">https://orcid.org/0000-0003-2951-0066</userId>
+    </creator>
+    <associatedParty>
+      <individualName>
+        <givenName>Kate</givenName>
+        <surName>Morkeski</surName>
+      </individualName>
+      <organizationName>Northeast U.S. Shelf LTER</organizationName>
+      <electronicMailAddress>kmorkeski@whoi.edu</electronicMailAddress>
+      <userId directory="https://orcid.org">https://orcid.org/0000-0002-2903-5851</userId>
+      <role>metadata Provider</role>
+    </associatedParty>
+    <associatedParty>
+      <individualName>
+        <givenName>Pierre</givenName>
+        <surName>Marrec</surName>
+      </individualName>
+      <organizationName>Northeast U.S. Shelf LTER</organizationName>
+      <electronicMailAddress>pmarrec@uri.edu</electronicMailAddress>
+      <userId directory="https://orcid.org">https://orcid.org/0000-0002-7811-4150</userId>
+      <role>metadata Provider</role>
+    </associatedParty>
+    <pubDate>2023-01-18</pubDate>
+    <abstract>
+      <para>This dataset consists of primary production measurements based on uptake of carbon-13 added  as 13C-bicarbonate during 24-h deckboard incubations of seawater. Sampling occurred on cruises along the Northeast U.S. Shelf Long Term Ecological Research (NES-LTER) Transect during summer, fall, and winter, starting in summer 2019. Net primary production (NPP) was determined from particulate organic carbon (POC) content and associated stable isotope enrichment. Two data tables are included: 1. depth-specific primary productivity based on fractional light levels of the surface irradiance with reference to the profile of photosynthetically active radiation (PAR), and 2. integrated primary productivity. The tables derive from the raw data included as other entities. </para>
+      <para/>
+    </abstract>
+    <keywordSet>
+      <keyword>primary production</keyword>
+      <keyword>organic matter</keyword>
+      <keywordThesaurus>LTER Core Research Areas</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>net primary production</keyword>
+      <keyword>oceanography</keyword>
+      <keyword>seawater</keyword>
+      <keyword>stable isotopes</keyword>
+      <keyword>tracers</keyword>
+      <keyword>phytoplankton</keyword>
+      <keyword>particulate organic carbon</keyword>
+      <keywordThesaurus>LTER Controlled Vocabulary</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword>Northeast U.S. Continental Shelf</keyword>
+      <keywordThesaurus>NOAA Large Marine Ecosystems</keywordThesaurus>
+    </keywordSet>
+    <additionalInfo>
+      <para>Special thanks to Robin Paulman, CASIF Laboratory Manager, for analyzing all samples collected for this data package. </para>
+      <para>For cruises on R/V Neil Armstrong, we thank the Ocean Observatories Initiative, funded by the National Science Foundation under Cooperative Agreement No. 1743430&#13;
+</para>
+    </additionalInfo>
+    <intellectualRights>
+      <para>This information is released under the Creative Commons license - Attribution - CC BY (https://creativecommons.org/licenses/by/4.0/). The consumer of these data ("Data User" herein) is required to cite it appropriately in any publication that results from its use. The Data User should realize that these data may be actively used by others for ongoing research and that coordination may be necessary to prevent duplicate publication. The Data User is urged to contact the authors of these data if any questions about methodology or results occur. Where appropriate, the Data User is encouraged to consider collaboration or co-authorship with the authors. The Data User should realize that misinterpretation of data may occur if used out of context of the original study. While substantial efforts are made to ensure the accuracy of data and associated documentation, complete accuracy of data sets cannot be guaranteed. All data are made available "as is." The Data User should be aware, however, that data are updated periodically and it is the responsibility of the Data User to check for new versions of the data. The data authors and the repository where these data were obtained shall not be liable for damages resulting from any use or misinterpretation of the data. Thank you.
+</para>
+    </intellectualRights>
+    <coverage>
+      <geographicCoverage>
+        <geographicDescription>NES-LTER Transect</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-70.9974</westBoundingCoordinate>
+          <eastBoundingCoordinate>-70.7667</eastBoundingCoordinate>
+          <northBoundingCoordinate>41.2044</northBoundingCoordinate>
+          <southBoundingCoordinate>39.7576</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <temporalCoverage>
+        <rangeOfDates>
+          <beginDate>
+            <calendarDate>2019-08-20</calendarDate>
+          </beginDate>
+          <endDate>
+            <calendarDate>2022-08-02</calendarDate>
+          </endDate>
+        </rangeOfDates>
+      </temporalCoverage>
+    </coverage>
+    <maintenance>
+      <description>ongoing</description>
+    </maintenance>
+    <contact>
+      <individualName>
+        <givenName>Diana</givenName>
+        <givenName>N</givenName>
+        <surName>Fontaine</surName>
+      </individualName>
+      <organizationName>Northeast U.S. Shelf LTER</organizationName>
+      <electronicMailAddress>fontained@uri.edu</electronicMailAddress>
+      <userId directory="https://orcid.org">https://orcid.org/0000-0001-9172-6904</userId>
+    </contact>
+    <contact>
+      <organizationName>Northeast U.S. Shelf LTER</organizationName>
+      <positionName>Nes-Lter Information Manager</positionName>
+      <electronicMailAddress>lter-nes-info@whoi.edu</electronicMailAddress>
+    </contact>
+    <methods>
+      <methodStep>
+        <description>
+          <para>CTD Rosette Sampling on NES-LTER Transect Cruises</para>
+          <para>Sampling occurred in the framework of the Northeast US Shelf Long-Term Ecological Research (NES-LTER) site seasonally during cruises on the R/V Endeavor (summer, winter), R/V Neil Armstrong (fall), and the R/V Atlantis (one winter cruise) at the NES-LTER site. The number of stations sampled ranged from 5 to 7 per cruise. Some stations were sampled more than once per cruise. Hydrographic data were collected with an SBE911 CTD (Seabird Electronics, Inc.) equipped with sensors for photosynthetically active radiation (PAR; Biospherical Instruments QSP2000) and beam attenuation (At; C-Star Transmissometer, WET Labs). Water was collected at various depths with a rosette sampler (Seabird SBE32 Carousel Water Sampler). For NPP incubations, water was collected from 3-4 depths depending on the depth at the station. During collection, water was pre-filtered through 200 µm mesh into acid-washed 2 L polycarbonate bottles.</para>
+          <para>Incubation</para>
+          <para>Bottles were spiked with a solution of 99% 13C-labeled sodium bicarbonate (Cambridge Isotope Laboratories, Inc.) for a final 10% enrichment of the dissolved inorganic carbon (DIC) pool and placed in various mesh bags to simulate in situ light levels. Bottles were incubated for approximately 24 hours in deckboard incubators with flow-through seawater, and Onset HOBO data loggers recorded tank water temperature. At each station, the natural abundance of 13C in the water was determined from an un-spiked sample. On 1-2 cruises per year in 2019-2021, a spiked dark sample was collected at each station to correct for dark carbon assimilation. </para>
+          <para>Cruise EN687 included production rate experiments in which water was incubated at different temperatures, which are indicated in the discrete table column, incub_type. </para>
+          <para>The light levels at collection depths were determined from the PAR profile during daytime CTD casts, defined as those casts on which surface PAR is above 10 micromol photons/m2/s. Using daytime cast information, a relationship was established between beam attenuation (At; measured by a transmissometer) and the light extinction coefficient (K_d) for each cast. During nighttime casts, K_d was calculated from the average At in the upper 10 m using the slope and intercept from equation 1: K_d = m * At + b. Calculations of K_d values based on measured At values were completed in MATLAB with documentation available at https://github.com/pmarrec/nes-lter-kd-calculation/tree/f49dc83851bd615ca7ce3ede54f4cd599c6a5eb5. Note that on cruise AR39B, no significant linear relationship between K_d and At was obtained because of sensor issues, so no K_calc_per_m values were determined for this cruise. Additionally, note that cast 12 on cruise EN649 is identified as daytime but does not include k_meas_per_m values, as a result of substantial ship shading.</para>
+          <para>Sample Collection</para>
+          <para>At the end of each incubation, bottles were filtered under low vacuum (5-10 in. Hg) over pre-combusted Whatman GF/F filters (450˚C; 6 h). Size fractionation was accomplished by pre-filtering samples through 47 mm-diameter polycarbonate filters with either 5 µm or 20 µm pore size, resulting in NPP rates from phytoplankton in the &lt;5 µm and &lt;20 µm size classes. Additionally, some samples included a 10 µm pre-filter to obtain NPP rates from the &lt;10 µm size class, aligning filter sizes with those used to determine microzooplankton grazing rates (Menden-Deuer lab) on phytoplankton. Triplicates were collected for surface samples for the &gt;0 µm size fraction and &lt;10 µm size fraction. Filters were stored at -20˚C until further analysis on shore. </para>
+          <para>Sample Analysis</para>
+          <para>NPP rates were quantified by measuring the incorporation of isotopically heavy carbon into phytoplankton biomass. Prior to measuring 13C in the samples, filters were acid fumigated with concentrated hydrochloric acid in a desiccator overnight to remove inorganic carbon. They were dried in an oven at 60˚C for 24 h, individually wrapped in tin capsules and analyzed on a Carlo Erba NC2500 elemental analyzer interfaced with a Thermo Delta V+ isotope ratio mass spectrometer (EA-IRMS) at the Univ. of Maryland Central Appalachian Laboratory Stable Isotope Facility.</para>
+          <para>Calculations: Discrete Estimates</para>
+          <para>NPP rates were calculated from delta13C values using equations of Hama et al., 1983. Particulate organic carbon (POC) measurements were blank corrected such that combusted filter blanks were analyzed in triplicate and the mean value was subtracted from each POC sample obtained from the EA-IRMS. Raw time-zero POC data for each station are located in the data package other entity raw_npp_data.zip, in the rows where alternate_sample_id is “NatAbun”. Calculations were completed in R, with documentation available at https://github.com/difontaine/EDI_npp_package. </para>
+          <para>Calculations: Integrated Estimates</para>
+          <para>Discrete NPP rates were integrated by depth for each station via trapezoidal integration with the shallowest discrete NPP value extended to 0 m such that a rectangle was formed, with calculations completed in R, and documentation available at https://github.com/difontaine/EDI_npp_package</para>
+          <para>Quality Assurance</para>
+          <para>Sample quality is indicated using IODE Primary Level flags 1 good; 3 questionable/suspect; 4 bad; 9 missing. Any sample with a negative NPP value is provided with a flag of 3. Negative NPP values in the discrete data set are included in the integrated NPP value for that station. Any discrete NPP value with a flag of 4 is converted to NA and is excluded from the calculation of the corresponding integrated value. If integrated data are not expected for a discrete sampling location (e.g. where only one depth was sampled), the corresponding integrated NPP value and quality flag are provided as NA. Geographic and temporal coverage of the clean data table were confirmed to be within expected ranges. The distance to the nearest standard station was checked against provided station. Ship drift on long-duration casts, particularly for the R/V Endeavor and where stations were close together, sometimes resulted in bottles being collected closer to a different station than from where cast began. In such cases, they are identified with the station at the start of the cast. Quality assurance and data package assembly were completed in R, with documentation available at https://github.com/WHOIGit/nes-lter-npp-transect. </para>
+          <para>Differences From Previous Version</para>
+          <para>Version 2 includes additional, more recent cruises compared to version 1. The discrete data table now includes the new categorical variable, incub_type, reflecting incubation temperature experiments described above in section Incubation. The discrete data table's station identifier has been updated to station, matching the integrated table, and the distance column has been eliminated from the discrete table. For cruise EN644, values of npp_rate (discrete table) and integrated_npp (integrated table) have been adjusted in version 2 to reflect an updated blank correction. </para>
+          <para>Version 3 updates are comprised of a change of author order. No changes to data were made since version 2. </para>
+          <para>References</para>
+          <para>Hama, T.,  T. Miyazaki, Y. Ogawa, T. Iwakuma, M. Takahashi, A. Otsuki, and S. Ichimura. 1983. Measurement of photosynthetic production of a marine phytoplankton population using a stable 13C isotope. Marine Biology 73: 31-36. &#13;
+</para>
+        </description>
+      </methodStep>
+    </methods>
+    <project>
+      <title>Northeast U.S. Shelf LTER</title>
+      <personnel>
+        <individualName>
+          <givenName>Heidi</givenName>
+          <surName>Sosik</surName>
+        </individualName>
+        <electronicMailAddress>hsosik@whoi.edu</electronicMailAddress>
+        <userId directory="https://orcid.org">https://orcid.org/0000-0002-4591-2842</userId>
+        <role>Principal Investigator</role>
+      </personnel>
+      <personnel>
+        <individualName>
+          <givenName>Stace</givenName>
+          <surName>Beaulieu</surName>
+        </individualName>
+        <electronicMailAddress>sbeaulieu@whoi.edu</electronicMailAddress>
+        <userId directory="https://orcid.org">https://orcid.org/0000-0002-2609-5453</userId>
+        <role>Co-Principal Investigator</role>
+      </personnel>
+      <personnel>
+        <individualName>
+          <givenName>Changsheng</givenName>
+          <surName>Chen</surName>
+        </individualName>
+        <electronicMailAddress>c1chen@umassd.edu</electronicMailAddress>
+        <userId directory="https://orcid.org">https://orcid.org/0000-0001-8715-6101</userId>
+        <role>Co-Principal Investigator</role>
+      </personnel>
+      <personnel>
+        <individualName>
+          <givenName>Rubao</givenName>
+          <surName>Ji</surName>
+        </individualName>
+        <electronicMailAddress>rji@whoi.edu</electronicMailAddress>
+        <userId directory="https://orcid.org">https://orcid.org/0000-0002-8839-5427</userId>
+        <role>Co-Principal Investigator</role>
+      </personnel>
+      <personnel>
+        <individualName>
+          <givenName>Steven</givenName>
+          <surName>Lentz</surName>
+        </individualName>
+        <electronicMailAddress>slentz@whoi.edu</electronicMailAddress>
+        <userId directory="https://orcid.org">https://orcid.org/0000-0001-7498-0281</userId>
+        <role>Co-Principal Investigator</role>
+      </personnel>
+      <personnel>
+        <individualName>
+          <givenName>Joel</givenName>
+          <surName>Llopiz</surName>
+        </individualName>
+        <electronicMailAddress>jllopiz@whoi.edu</electronicMailAddress>
+        <userId directory="https://orcid.org">https://orcid.org/0000-0002-7584-7471</userId>
+        <role>Co-Principal Investigator</role>
+      </personnel>
+      <personnel>
+        <individualName>
+          <givenName>Susanne</givenName>
+          <surName>Menden-Deuer</surName>
+        </individualName>
+        <electronicMailAddress>smenden@uri.edu</electronicMailAddress>
+        <userId directory="https://orcid.org">https://orcid.org/0000-0002-8434-4251</userId>
+        <role>Co-Principal Investigator</role>
+      </personnel>
+      <personnel>
+        <individualName>
+          <givenName>Michael</givenName>
+          <surName>Neubert</surName>
+        </individualName>
+        <electronicMailAddress>mneubert@whoi.edu</electronicMailAddress>
+        <userId directory="https://orcid.org">https://orcid.org/0000-0001-8820-5008</userId>
+        <role>Co-Principal Investigator</role>
+      </personnel>
+      <personnel>
+        <individualName>
+          <givenName>Tatiana</givenName>
+          <surName>Rynearson</surName>
+        </individualName>
+        <electronicMailAddress>rynearson@uri.edu</electronicMailAddress>
+        <userId directory="https://orcid.org">https://orcid.org/0000-0003-2951-0066</userId>
+        <role>Co-Principal Investigator</role>
+      </personnel>
+      <personnel>
+        <individualName>
+          <givenName>Rachel</givenName>
+          <surName>Stanley</surName>
+        </individualName>
+        <electronicMailAddress>rstanle2@wellesley.edu</electronicMailAddress>
+        <userId directory="https://orcid.org">https://orcid.org/0000-0003-4860-2476</userId>
+        <role>Co-Principal Investigator</role>
+      </personnel>
+      <abstract>
+        <para>The Northeast U.S. Shelf (NES) Long-Term Ecological Research (LTER) project integrates observations, experiments, and models to understand and predict how planktonic food webs are changing, and how those changes impact the productivity of higher trophic levels. The NES-LTER is co-located with the Northeast U.S. Continental Shelf Large Marine Ecosystem, spanning the Middle Atlantic Bight and Gulf of Maine. Our focal cross-shelf transect extends about 150 km southward from Martha’s Vineyard, MA, to just beyond the shelf break. Our overarching question is: How is climate change impacting the pelagic NES ecosystem and, in particular, affecting the relationship between compositional (e.g., species diversity and size structure) and aggregate (e.g., rates of primary production, and transfer of energy to important forage fish species) variability?</para>
+      </abstract>
+      <funding>
+        <para>NSF Award OCE-1655686</para>
+      </funding>
+      <relatedProject>
+        <title>RAPID: Collaborative Research: Autumn transition in plankton ecology during an ocean heatwave on the Northeast U.S. Shelf</title>
+        <personnel>
+          <individualName>
+            <givenName>Heidi</givenName>
+            <surName>Sosik</surName>
+          </individualName>
+          <electronicMailAddress>hsosik@whoi.edu</electronicMailAddress>
+          <role>Principal Investigator</role>
+        </personnel>
+        <funding>NSF Award OCE-2102434</funding>
+      </relatedProject>
+    </project>
+    <dataTable>
+      <entityName>Discrete NPP</entityName>
+      <entityDescription>Discrete net primary productivity data</entityDescription>
+      <physical>
+        <objectName>nes-lter-npp-transect-discrete-v3.csv</objectName>
+        <size unit="bytes">97822</size>
+        <authentication method="MD5">654dc9b1f8701e432cabf990297bd169</authentication>
+        <dataFormat>
+          <textFormat>
+            <numHeaderLines>1</numHeaderLines>
+            <recordDelimiter>\r\n</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>cruise</attributeName>
+          <attributeDefinition>Identifier for research cruise generally including abbreviation for research vessel and voyage number</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Identifier for research cruise generally including abbreviation for research vessel and voyage number</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>date_time_utc</attributeName>
+          <attributeDefinition>Date and time in UTC when rosette bottle closed</attributeDefinition>
+          <storageType>date</storageType>
+          <measurementScale>
+            <dateTime>
+              <formatString>YYYY-MM-DD hh:mm:ss</formatString>
+              <dateTimeDomain/>
+            </dateTime>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>latitude</attributeName>
+          <attributeDefinition>Ship's latitude when rosette bottle closed</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>degree</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">39.7576</minimum>
+                  <maximum exclusive="false">41.2044</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>longitude</attributeName>
+          <attributeDefinition>Ship's longitude when rosette bottle closed</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>degree</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">-70.9974</minimum>
+                  <maximum exclusive="false">-70.7667</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>station</attributeName>
+          <attributeDefinition>NES-LTER standard station from which sample was collected</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>NES-LTER standard station from which sample was collected</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>Distance greater than 2 km from NES-LTER standard station</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>cast</attributeName>
+          <attributeDefinition>CTD rosette cast number chronological per cruise</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>natural</numberType>
+                <bounds>
+                  <minimum exclusive="false">1</minimum>
+                  <maximum exclusive="false">23</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>niskin</attributeName>
+          <attributeDefinition>Rosette bottle position number</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>natural</numberType>
+                <bounds>
+                  <minimum exclusive="false">2</minimum>
+                  <maximum exclusive="false">23</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>depth</attributeName>
+          <attributeDefinition>Depth of sample below sea surface http://vocab.nerc.ac.uk/collection/P09/current/DEPH/</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>meter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">1.283</minimum>
+                  <maximum exclusive="false">112.222</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>alternate_sample_category</attributeName>
+          <attributeDefinition>Identifer combining filter size with other information</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Identifer combining filter size with other information</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>depth_category</attributeName>
+          <attributeDefinition>Category based on light extinction that describes where in water column sample was obtained</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>Dark</code>
+                    <definition>samples collected from dark amber bottles to observe any light-independent carbon fixation</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>D1</code>
+                    <definition>deepest depth sampled based on light extinction</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>D2</code>
+                    <definition>second-deepest depth sampled based on light extinction</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>D3</code>
+                    <definition>where three depths are sampled at a station, the category for shallowest samples; where four depths are sampled, the category for second-shallowest samples</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>D4</code>
+                    <definition>where four depths are sampled at a station, the category for the shallowest samples</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>filter_size</attributeName>
+          <attributeDefinition>Size fraction with filter and when applicable prefilter pore size in micrometers</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>&gt;0</code>
+                    <definition>Filtered on 0.7 micron filter</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>&gt;0&amp;&lt;20</code>
+                    <definition>Filtered on 0.7 micron filter with 20 micron prefilter</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>&gt;0&amp;&lt;5</code>
+                    <definition>Filtered on 0.7 micron filter with 5 micron prefilter</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>replicate</attributeName>
+          <attributeDefinition>Integer indicating replicate subsample drawn from the same Niskin</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Integer indicating replicate subsample drawn from the same Niskin</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>percent_surface_irradiance</attributeName>
+          <attributeDefinition>Category describing light at sample location as a percent of surface photosynthetically active radiation (PAR), calculated based on light extinction coefficient for each station</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>0.1</code>
+                    <definition>0.1 percent surface photosynthetically active radiation</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>1</code>
+                    <definition>1 percent surface photosynthetically active radiation</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>5</code>
+                    <definition>5 percent surface photosynthetically active radiation</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>10</code>
+                    <definition>10 percent surface photosynthetically active radiation</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>15</code>
+                    <definition>15 percent surface photosynthetically active radiation</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>20</code>
+                    <definition>20 percent surface photosynthetically active radiation</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>30</code>
+                    <definition>30 percent surface photosynthetically active radiation</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>40</code>
+                    <definition>40 percent surface photosynthetically active radiation</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>50</code>
+                    <definition>50 percent surface photosynthetically active radiation</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>65</code>
+                    <definition>65 percent surface photosynthetically active radiation</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>70</code>
+                    <definition>70 percent surface photosynthetically active radiation</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>75</code>
+                    <definition>75 percent surface photosynthetically active radiation</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>85</code>
+                    <definition>85 percent surface photosynthetically active radiation</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>npp_rate</attributeName>
+          <attributeDefinition>Net primary productivity in micrograms carbon per liter per day determined by uptake rate of labeled bicarbonate</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>microgramPerLiterPerDay</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">-2.04</minimum>
+                  <maximum exclusive="false">189.814</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>iode_quality_flag</attributeName>
+          <attributeDefinition>IODE Quality Flag primary level</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>1</code>
+                    <definition>good</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>2</code>
+                    <definition>quality not evaluated, not available or unknown</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>3</code>
+                    <definition>questionable/suspect</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>4</code>
+                    <definition>bad</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>9</code>
+                    <definition>missing data</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>incub_type</attributeName>
+          <attributeDefinition>Identifier for incubation type (either ambient or experiemental)</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>ambient_temp</code>
+                    <definition>incubation occurred at approximately ambient temperature</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>experiment_14deg</code>
+                    <definition>incubation occurred at 14 degrees C instead of ambient temperature</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>experiment_26deg</code>
+                    <definition>incubation occurred at 26 degrees C instead of ambient temperature</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>experiment_18deg</code>
+                    <definition>incubation occurred at 18 degrees C instead of ambient temperature</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+      <numberOfRecords>869</numberOfRecords>
+    </dataTable>
+    <dataTable>
+      <entityName>Integrated NPP</entityName>
+      <entityDescription>Integrated net primary productivity data</entityDescription>
+      <physical>
+        <objectName>nes-lter-npp-transect-integrated-v3.csv</objectName>
+        <size unit="bytes">16520</size>
+        <authentication method="MD5">87c1a97921e6f42140a78a168eccf328</authentication>
+        <dataFormat>
+          <textFormat>
+            <numHeaderLines>1</numHeaderLines>
+            <recordDelimiter>\r\n</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>cruise</attributeName>
+          <attributeDefinition>Identifier for research cruise generally including abbreviation for research vessel and voyage number</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Identifier for research cruise generally including abbreviation for research vessel and voyage number</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>date_time_utc</attributeName>
+          <attributeDefinition>Mean of bottle closure date-time for all rosette bottles included in measurement</attributeDefinition>
+          <storageType>date</storageType>
+          <measurementScale>
+            <dateTime>
+              <formatString>YYYY-MM-DD hh:mm:ss</formatString>
+              <dateTimeDomain/>
+            </dateTime>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>latitude</attributeName>
+          <attributeDefinition>Mean of ship's latitude when rosette bottles closed</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>degree</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">39.7581</minimum>
+                  <maximum exclusive="false">41.2042</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>longitude</attributeName>
+          <attributeDefinition>Mean of ship's longitude when rosette bottles closed</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>degree</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">-70.9973</minimum>
+                  <maximum exclusive="false">-70.7672</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>station</attributeName>
+          <attributeDefinition>NES-LTER standard station from which sample was collected</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>NES-LTER standard station from which sample was collected</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>cast</attributeName>
+          <attributeDefinition>CTD rosette cast number chronological per cruise</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>natural</numberType>
+                <bounds>
+                  <minimum exclusive="false">1</minimum>
+                  <maximum exclusive="false">23</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>filter_size</attributeName>
+          <attributeDefinition>Size fraction with filter and when applicable prefilter pore size in micrometers</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>&gt;0</code>
+                    <definition>Filtered on 0.7 micron filter</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>&gt;0&amp;&lt;20</code>
+                    <definition>Filtered on 0.7 micron filter with 20 micron prefilter</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>&gt;0&amp;&lt;5</code>
+                    <definition>Filtered on 0.7 micron filter with 5 micron prefilter</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>integrated_npp_mg_m2_day</attributeName>
+          <attributeDefinition>Vertically-integrated net primary productivity measured as uptake rate of carbon per unit area of water per day</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>milligramPerMeterSquaredPerDay</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">-53.357</minimum>
+                  <maximum exclusive="false">2543.33</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>iode_quality_flag</attributeName>
+          <attributeDefinition>IODE Quality Flag primary level</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>1</code>
+                    <definition>good</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>2</code>
+                    <definition>quality not evaluated, not available or unknown</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>3</code>
+                    <definition>questionable/suspect</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>4</code>
+                    <definition>bad</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>9</code>
+                    <definition>missing data</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>daytime_Y_N</attributeName>
+          <attributeDefinition>Casts with surface PAR above 10 micromol photons/m2/s classified as daytime</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>Y</code>
+                    <definition>cast occurred during daylight</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>N</code>
+                    <definition>cast occurred at night</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>k_meas_per_m</attributeName>
+          <attributeDefinition>Measured light extinction coefficient</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>perMeter</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0.06</minimum>
+                  <maximum exclusive="false">0.52</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>beam_atten_0_10</attributeName>
+          <attributeDefinition>Average beam attenuation (At) measured by ship's transmissometer within the upper 10 m of water column</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>perMeter</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0.06</minimum>
+                  <maximum exclusive="false">2.2</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>k_calc_per_m</attributeName>
+          <attributeDefinition>Light extinction coefficient calculated from the measured daytime light extinction coefficient and beam attenuation</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>perMeter</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0.06</minimum>
+                  <maximum exclusive="false">0.61</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+      </attributeList>
+      <numberOfRecords>186</numberOfRecords>
+    </dataTable>
+    <otherEntity>
+      <entityName>Raw NPP data table</entityName>
+      <entityDescription>Raw data used to generate product data tables</entityDescription>
+      <physical>
+        <objectName>raw_npp_data.zip</objectName>
+        <size unit="bytes">15876</size>
+        <authentication method="MD5">1cc2b31675294ee4a4ba7f4fa1552c1b</authentication>
+        <dataFormat>
+          <externallyDefinedFormat>
+            <formatName>application/zip</formatName>
+          </externallyDefinedFormat>
+        </dataFormat>
+      </physical>
+      <entityType>unknown</entityType>
+    </otherEntity>
+    <otherEntity>
+      <entityName>Raw temperature data files</entityName>
+      <entityDescription>Raw incubation tank water temperature data</entityDescription>
+      <physical>
+        <objectName>HOBO_data.zip</objectName>
+        <size unit="bytes">386260</size>
+        <authentication method="MD5">02c50100617cc38c407c7807d2a80bf8</authentication>
+        <dataFormat>
+          <externallyDefinedFormat>
+            <formatName>application/zip</formatName>
+          </externallyDefinedFormat>
+        </dataFormat>
+      </physical>
+      <entityType>unknown</entityType>
+    </otherEntity>
+    <otherEntity>
+      <entityName>Percent surface irradiance data</entityName>
+      <entityDescription>Percent surface irradiance data for each Niskin</entityDescription>
+      <physical>
+        <objectName>light_data.zip</objectName>
+        <size unit="bytes">1019</size>
+        <authentication method="MD5">cc4e0b48da65d0556a191048d4f3dac2</authentication>
+        <dataFormat>
+          <externallyDefinedFormat>
+            <formatName>application/zip</formatName>
+          </externallyDefinedFormat>
+        </dataFormat>
+      </physical>
+      <entityType>unknown</entityType>
+    </otherEntity>
+  </dataset>
+  <additionalMetadata>
+    <metadata>
+      <unitList>
+        <unit id="perMeter" multiplierToSI="1^-1" name="perMeter" parentSI="Meter" unitType="rate">
+          <description>attenuation rate</description>
+        </unit>
+        <unit id="microgramPerLiterPerDay" multiplierToSI="1e-06" name="microgramPerLiterPerDay" parentSI="gramPerDayPerLiter" unitType="volumetricMassDensityRate">
+          <description>micrograms per liter per day</description>
+        </unit>
+      </unitList>
+    </metadata>
+  </additionalMetadata>
+  <additionalMetadata>
+    <metadata>
+      <emlEditor>
+        <app>EMLassemblyline</app>
+        <release>3.5.5</release>
+      </emlEditor>
+    </metadata>
+  </additionalMetadata>
+</eml:eml>
