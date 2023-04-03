@@ -43,31 +43,31 @@ here("nes-lter-npp-transect")
 
 ```{r}
 
-# Discrete
-npp_discrete_1 <- read_csv('V1/npp_discrete_version1.csv', show_col_types = FALSE) 
-new_discrete_1 <- read_csv('npp_discrete_version1.csv', show_col_types = FALSE) 
-
-# two columns are different and datetime format is different
-new_discrete_1 <- new_discrete_1 %>% 
-  select(-station, -incub_type) 
-new_discrete_1$date_time_utc <- as.POSIXct(new_discrete_1$date_time_utc, tz = "GMT", format="%m/%d/%y %H:%M")
-
-discrete_v1_check <- compare_df(new_discrete_1, npp_discrete_1)
-create_output_table(discrete_v1_check, output_type='xlsx', file_name='discrete_v1_check.xlsx')
-# every EN644 npp_rate value is slightly different
-
-# Integrated
-npp_integrated_1 <- read_csv('V1/npp_integrated_version1.csv', show_col_types = FALSE) 
-new_integrated_1 <- read_csv('npp_integrated_version1.csv', show_col_types = FALSE) 
-
-# original not in chronological order
-npp_integrated_1 <- npp_integrated_1[order(npp_integrated_1$date_time_utc),]
-new_integrated_1 <- new_integrated_1[order(new_integrated_1$date_time_utc),]
-
-integrated_v1_check <- compare_df(new_integrated_1, npp_integrated_1)
-create_output_table(integrated_v1_check, output_type='xlsx', file_name='integrated_v1_check.xlsx')
-# All EN644 integrated_npp values slightly different (no difference in other cruises)
-# On EN644, L8 data and flag now NA
+# # Discrete
+# npp_discrete_1 <- read_csv('V1/npp_discrete_version1.csv', show_col_types = FALSE) 
+# new_discrete_1 <- read_csv('npp_discrete_version1.csv', show_col_types = FALSE) 
+# 
+# # two columns are different and datetime format is different
+# new_discrete_1 <- new_discrete_1 %>% 
+#   select(-station, -incub_type) 
+# new_discrete_1$date_time_utc <- as.POSIXct(new_discrete_1$date_time_utc, tz = "GMT", format="%m/%d/%y %H:%M")
+# 
+# discrete_v1_check <- compare_df(new_discrete_1, npp_discrete_1)
+# create_output_table(discrete_v1_check, output_type='xlsx', file_name='discrete_v1_check.xlsx')
+# # every EN644 npp_rate value is slightly different
+# 
+# # Integrated
+# npp_integrated_1 <- read_csv('V1/npp_integrated_version1.csv', show_col_types = FALSE) 
+# new_integrated_1 <- read_csv('npp_integrated_version1.csv', show_col_types = FALSE) 
+# 
+# # original not in chronological order
+# npp_integrated_1 <- npp_integrated_1[order(npp_integrated_1$date_time_utc),]
+# new_integrated_1 <- new_integrated_1[order(new_integrated_1$date_time_utc),]
+# 
+# integrated_v1_check <- compare_df(new_integrated_1, npp_integrated_1)
+# create_output_table(integrated_v1_check, output_type='xlsx', file_name='integrated_v1_check.xlsx')
+# # All EN644 integrated_npp values slightly different (no difference in other cruises)
+# # On EN644, L8 data and flag now NA
 
 
 ```
@@ -82,7 +82,8 @@ create_output_table(integrated_v1_check, output_type='xlsx', file_name='integrat
 # version3 data identical to version2, only change is author order
 # version <- 'version1'
 #version <- 'v2'
-version <- 'v3'
+#version <- 'v3'
+version <- 'v4' #version 4 corrections to integrated data and one flag change in discrete 
 
 # read in version 1 files
 if (version == 'version1') {
@@ -90,8 +91,8 @@ npp_discrete <- read_csv(paste0('npp_discrete_', version, '.csv'), show_col_type
 npp_integrated <- read_csv(paste0('npp_integrated_', version, '.csv'), show_col_types = FALSE) 
 }
 
-# read in version 2 files and combine to new csvs 
-if (version == 'v2') {
+# read in version 1 & 2 files and combine to new csvs 
+if (version == 'v4') {
 npp_discrete_1 <- read_csv(paste0('npp_discrete_version1.csv'), show_col_types = FALSE) 
 npp_discrete_2 <- read_csv(paste0('npp_discrete_version2.csv'), show_col_types = FALSE) 
 npp_discrete <- rbind(npp_discrete_1, npp_discrete_2)
@@ -110,9 +111,23 @@ npp_integrated <- npp_integrated[order(npp_integrated$date_time_utc),]
 npp_discrete_edi <- npp_discrete %>% 
   select(-nearest_station, -distance) 
 
-write.csv(npp_discrete_edi, "nes-lter-npp-transect-discrete-v2.csv", row.names = FALSE)
-write.csv(npp_integrated, "nes-lter-npp-transect-integrated-v2.csv", row.names = FALSE)
+write.csv(npp_discrete_edi, paste0("nes-lter-npp-transect-discrete-", version, ".csv"), row.names = FALSE)
+write.csv(npp_integrated, paste0("nes-lter-npp-transect-integrated-", version, ".csv"), row.names = FALSE)
 }
+
+```
+## Check for differences between versions
+
+```{r}
+# Discrete
+npp_discrete_v2 <- read_csv('nes-lter-npp-transect-discrete-v2.csv', show_col_types = FALSE) 
+discrete_check <- compare_df(npp_discrete_edi, npp_discrete_v2)
+create_output_table(discrete_check, output_type='xlsx', file_name='discrete_v4_check.xlsx')
+
+# Integrated
+npp_integrated_v2 <- read_csv('nes-lter-npp-transect-integrated-v2.csv', show_col_types = FALSE) 
+integrated_check <- compare_df(npp_integrated, npp_integrated_v2)
+create_output_table(integrated_check, output_type='xlsx', file_name='integrated_v4_check.xlsx')
 
 ```
 
