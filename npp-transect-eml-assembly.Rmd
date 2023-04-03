@@ -83,7 +83,10 @@ here("nes-lter-npp-transect")
 # version <- 'version1'
 #version <- 'v2'
 #version <- 'v3'
+#<<<<<<< HEAD
 version <- 'v4' #version 4 corrections to integrated data and one flag change in discrete 
+
+#>>>>>>> ef7290c2034f7fa23a67aff1cb9b4bc52342a9ca
 
 # read in version 1 files
 if (version == 'version1') {
@@ -210,7 +213,7 @@ map_locs(npp_integrated, colorvar = "cruise", region = "transect")
 
 ```{r}
 
-if (version == 'v3') {
+if (version == 'v3' || version == 'v4') {
 npp_discrete <- read_csv(paste0('nes-lter-npp-transect-discrete-v2.csv'), show_col_types = FALSE) 
 npp_integrated <- read_csv(paste0('nes-lter-npp-transect-integrated-v2.csv'), show_col_types = FALSE) 
 
@@ -238,7 +241,7 @@ sheet_to_tsv(excel_template, 'CategoricalVariables', paste0('catvars_npp_discret
 sheet_to_tsv(excel_template, 'CategoricalVariables', paste0('catvars_npp_integrated_', version, '.txt'))
 }
 
-if (version == 'v2' | version == 'v3') {
+if (version == 'v2' | version == 'v3' | version == 'v4') {
 sheet_to_tsv(excel_template, 'ColumnHeadersDiscrete', paste0('attributes_nes-lter-npp-transect-discrete-', version, '.txt'))  
 sheet_to_tsv(excel_template, 'ColumnHeadersIntegrated', paste0('attributes_nes-lter-npp-transect-integrated-', version, '.txt'))
 sheet_to_tsv(excel_template, 'CategoricalVariables', paste0('catvars_nes-lter-npp-transect-discrete-', version, '.txt'))
@@ -286,6 +289,12 @@ if (version == 'v3') {
   parent_project <- 'parent_project_LTER_RAPID.txt'
 }
 
+if (version == 'v4') {
+  pkg_id <- 'knb-lter-nes.16.4'
+  datatables <- c('nes-lter-npp-transect-discrete-v4.csv', 'nes-lter-npp-transect-integrated-v4.csv')
+  other <- c('raw_npp_data.zip','HOBO_data.zip', 'light_data.zip')
+  parent_project <- 'parent_project_LTER_RAPID.txt'
+}
 
 make_eml(here(),
          dataset.title='Size-fractionated net primary productivity (NPP) estimates based on 13C uptake during cruises along the Northeast U.S. Shelf Long Term Ecological Research (NES-LTER) Transect, ongoing since 2019', 
