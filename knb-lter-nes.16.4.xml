@@ -52,7 +52,7 @@
       <userId directory="https://orcid.org">https://orcid.org/0000-0002-7811-4150</userId>
       <role>metadata Provider</role>
     </associatedParty>
-    <pubDate>2023-04-03</pubDate>
+    <pubDate>2023-04-04</pubDate>
     <abstract>
       <para>This dataset consists of primary production measurements based on uptake of carbon-13 added  as 13C-bicarbonate during 24-h deckboard incubations of seawater. Sampling occurred on cruises along the Northeast U.S. Shelf Long Term Ecological Research (NES-LTER) Transect during summer, fall, and winter, starting in summer 2019. Net primary production (NPP) was determined from particulate organic carbon (POC) content and associated stable isotope enrichment. Two data tables are included: 1. depth-specific primary productivity based on fractional light levels of the surface irradiance with reference to the profile of photosynthetically active radiation (PAR), and 2. integrated primary productivity. The tables derive from the raw data included as other entities. </para>
       <para/>
@@ -136,7 +136,7 @@
           <para>Sample Collection</para>
           <para>At the end of each incubation, bottles were filtered under low vacuum (5-10 in. Hg) over pre-combusted Whatman GF/F filters (450˚C; 6 h). Size fractionation was accomplished by pre-filtering samples through 47 mm-diameter polycarbonate filters with either 5 µm or 20 µm pore size, resulting in NPP rates from phytoplankton in the &lt;5 µm and &lt;20 µm size classes. Additionally, some samples included a 10 µm pre-filter to obtain NPP rates from the &lt;10 µm size class, aligning filter sizes with those used to determine microzooplankton grazing rates (Menden-Deuer lab) on phytoplankton. Triplicates were collected for surface samples for the &gt;0 µm size fraction and &lt;10 µm size fraction. Filters were stored at -20˚C until further analysis on shore. </para>
           <para>Sample Analysis</para>
-          <para>NPP rates were quantified by measuring the incorporation of isotopically heavy carbon into phytoplankton biomass. Prior to measuring 13C in the samples, filters were acid fumigated with concentrated hydrochloric acid in a desiccator overnight to remove inorganic carbon. They were dried in an oven at 60˚C for 24 h, individually wrapped in tin capsules and analyzed on a Carlo Erba NC2500 elemental analyzer interfaced with a Thermo Delta V+ isotope ratio mass spectrometer (EA-IRMS) at the Univ. of Maryland Central Appalachian Laboratory Stable Isotope Facility.</para>
+          <para>NPP rates were quantified by measuring the incorporation of isotopically heavy carbon into phytoplankton biomass. Prior to measuring bulk carbon and 13C in the samples, filters were acid fumigated with concentrated hydrochloric acid in a desiccator overnight to remove inorganic carbon. They were dried in an oven at 60˚C for 24 h, individually wrapped in tin capsules and analyzed on a Carlo Erba NC2500 elemental analyzer interfaced with a Thermo Delta V+ isotope ratio mass spectrometer (EA-IRMS) at the Univ. of Maryland Central Appalachian Laboratory Stable Isotope Facility.</para>
           <para>Calculations: Discrete Estimates</para>
           <para>NPP rates were calculated from delta13C values using equations of Hama et al., 1983. Particulate organic carbon (POC) measurements were blank corrected such that combusted filter blanks were analyzed in triplicate and the mean value was subtracted from each POC sample obtained from the EA-IRMS. Raw time-zero POC data for each station are located in the data package other entity raw_npp_data.zip, in the rows where alternate_sample_id is “NatAbun”. Calculations were completed in R, with documentation available at https://github.com/difontaine/EDI_npp_package. </para>
           <para>Calculations: Integrated Estimates</para>
@@ -144,8 +144,13 @@
           <para>Quality Assurance</para>
           <para>Sample quality is indicated using IODE Primary Level flags 1 good; 3 questionable/suspect; 4 bad; 9 missing. Any sample with a negative NPP value is provided with a flag of 3. Negative NPP values in the discrete data set are included in the integrated NPP value for that station. Any discrete NPP value with a flag of 4 is converted to NA and is excluded from the calculation of the corresponding integrated value. If integrated data are not expected for a discrete sampling location (e.g. where only one depth was sampled), the corresponding integrated NPP value and quality flag are provided as NA. Geographic and temporal coverage of the clean data table were confirmed to be within expected ranges. The distance to the nearest standard station was checked against provided station. Ship drift on long-duration casts, particularly for the R/V Endeavor and where stations were close together, sometimes resulted in bottles being collected closer to a different station than from where cast began. In such cases, they are identified with the station at the start of the cast. Quality assurance and data package assembly were completed in R, with documentation available at https://github.com/WHOIGit/nes-lter-npp-transect. </para>
           <para>Differences From Previous Version</para>
+          <para>In version 4: &#13;
+1. Particulate organic carbon concentration data from the natural abundance samples are provided in a table separate from the NPP data. 2. Corrections are made to the integrated NPP table for stations that were sampled repeatedly during a cruise, namely station L1 on EN661 and L4 on AT46. &#13;
+3. Corrections was made to the identifcation of a Niskin (and associated depth) on EN668. &#13;
+4. corrections were made to the time collected for some samples. </para>
+          <para>Version 3 updates are comprised of a change of author order. No changes to data were made since version 2.</para>
           <para>Version 2 includes additional, more recent cruises compared to version 1. The discrete data table now includes the new categorical variable, incub_type, reflecting incubation temperature experiments described above in section Incubation. The discrete data table's station identifier has been updated to station, matching the integrated table, and the distance column has been eliminated from the discrete table. For cruise EN644, values of npp_rate (discrete table) and integrated_npp (integrated table) have been adjusted in version 2 to reflect an updated blank correction. </para>
-          <para>Version 3 updates are comprised of a change of author order. No changes to data were made since version 2. </para>
+          <para> </para>
           <para>References</para>
           <para>Hama, T.,  T. Miyazaki, Y. Ogawa, T. Iwakuma, M. Takahashi, A. Otsuki, and S. Ichimura. 1983. Measurement of photosynthetic production of a marine phytoplankton population using a stable 13C isotope. Marine Biology 73: 31-36. &#13;
 </para>
@@ -1008,13 +1013,250 @@
       </attributeList>
       <numberOfRecords>186</numberOfRecords>
     </dataTable>
+    <dataTable>
+      <entityName>POC</entityName>
+      <entityDescription>Particulate organic carbon data</entityDescription>
+      <physical>
+        <objectName>nes-lter-npp-transect-poc.csv</objectName>
+        <size unit="bytes">5619</size>
+        <authentication method="MD5">297c7d3d1ad215ecec8b710f4416fa27</authentication>
+        <dataFormat>
+          <textFormat>
+            <numHeaderLines>1</numHeaderLines>
+            <recordDelimiter>\r\n</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>cruise</attributeName>
+          <attributeDefinition>Identifier for research cruise generally including abbreviation for research vessel and voyage number</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Identifier for research cruise generally including abbreviation for research vessel and voyage number</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>date_time_utc</attributeName>
+          <attributeDefinition>Date and time in UTC when rosette bottle closed</attributeDefinition>
+          <storageType>date</storageType>
+          <measurementScale>
+            <dateTime>
+              <formatString>YYYY-MM-DD hh:mm:ss</formatString>
+              <dateTimeDomain/>
+            </dateTime>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>latitude</attributeName>
+          <attributeDefinition>Ship's latitude when rosette bottle closed</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>degree</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">39.758</minimum>
+                  <maximum exclusive="false">41.204</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>longitude</attributeName>
+          <attributeDefinition>Ship's longitude when rosette bottle closed</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>degree</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">-70.997</minimum>
+                  <maximum exclusive="false">-70.767</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>station</attributeName>
+          <attributeDefinition>NES-LTER standard station from which sample was collected</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>NES-LTER standard station from which sample was collected</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>Distance greater than 2 km from NES-LTER standard station</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>cast</attributeName>
+          <attributeDefinition>CTD rosette cast number chronological per cruise</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>natural</numberType>
+                <bounds>
+                  <minimum exclusive="false">1</minimum>
+                  <maximum exclusive="false">23</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>niskin</attributeName>
+          <attributeDefinition>Rosette bottle position number</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>natural</numberType>
+                <bounds>
+                  <minimum exclusive="false">2</minimum>
+                  <maximum exclusive="false">20</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>depth</attributeName>
+          <attributeDefinition>Depth of sample below sea surface http://vocab.nerc.ac.uk/collection/P09/current/DEPH/</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>meter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">1.851</minimum>
+                  <maximum exclusive="false">62.213</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>alternate_sample_category</attributeName>
+          <attributeDefinition>Identifer combining filter size with other information</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Identifer combining filter size with other information</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>filter_size</attributeName>
+          <attributeDefinition>Size fraction with filter and when applicable prefilter pore size in micrometers</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>&gt;0</code>
+                    <definition>Filtered on 0.7 micron filter</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>&gt;0&amp;&lt;20</code>
+                    <definition>Filtered on 0.7 micron filter with 20 micron prefilter</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>&gt;0&amp;&lt;5</code>
+                    <definition>Filtered on 0.7 micron filter with 5 micron prefilter</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>vol_filt_L</attributeName>
+          <attributeDefinition>Volume of seawater filtered to obtain POC sample</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>liter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0.6</minimum>
+                  <maximum exclusive="false">1.2</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>POC_ug_L</attributeName>
+          <attributeDefinition>Particulate organic carbon http://vocab.nerc.ac.uk/collection/P09/current/POCP/</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>microgramsPerLiter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">28.407</minimum>
+                  <maximum exclusive="false">692.43</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+      <numberOfRecords>62</numberOfRecords>
+    </dataTable>
     <otherEntity>
       <entityName>Raw NPP data table</entityName>
       <entityDescription>Raw data used to generate product data tables</entityDescription>
       <physical>
         <objectName>raw_npp_data.zip</objectName>
-        <size unit="bytes">15876</size>
-        <authentication method="MD5">1cc2b31675294ee4a4ba7f4fa1552c1b</authentication>
+        <size unit="bytes">22003</size>
+        <authentication method="MD5">6f74d995c65b9db82dd76fba715a3960</authentication>
         <dataFormat>
           <externallyDefinedFormat>
             <formatName>application/zip</formatName>

@@ -26,49 +26,13 @@ library(here)
 library(tidyverse)
 library(readxl)
 library(lubridate)
-#library(devtools)
 library(EML)
 library(maps)
 library(xml2)
-#library(geosphere)
-#library(httr)
 library(compareDF)
 
 # Set path to root of project
 here("nes-lter-npp-transect")
-
-```
-
-## Check for differences between new and original version 1 files
-
-```{r}
-
-# # Discrete
-# npp_discrete_1 <- read_csv('V1/npp_discrete_version1.csv', show_col_types = FALSE) 
-# new_discrete_1 <- read_csv('npp_discrete_version1.csv', show_col_types = FALSE) 
-# 
-# # two columns are different and datetime format is different
-# new_discrete_1 <- new_discrete_1 %>% 
-#   select(-station, -incub_type) 
-# new_discrete_1$date_time_utc <- as.POSIXct(new_discrete_1$date_time_utc, tz = "GMT", format="%m/%d/%y %H:%M")
-# 
-# discrete_v1_check <- compare_df(new_discrete_1, npp_discrete_1)
-# create_output_table(discrete_v1_check, output_type='xlsx', file_name='discrete_v1_check.xlsx')
-# # every EN644 npp_rate value is slightly different
-# 
-# # Integrated
-# npp_integrated_1 <- read_csv('V1/npp_integrated_version1.csv', show_col_types = FALSE) 
-# new_integrated_1 <- read_csv('npp_integrated_version1.csv', show_col_types = FALSE) 
-# 
-# # original not in chronological order
-# npp_integrated_1 <- npp_integrated_1[order(npp_integrated_1$date_time_utc),]
-# new_integrated_1 <- new_integrated_1[order(new_integrated_1$date_time_utc),]
-# 
-# integrated_v1_check <- compare_df(new_integrated_1, npp_integrated_1)
-# create_output_table(integrated_v1_check, output_type='xlsx', file_name='integrated_v1_check.xlsx')
-# # All EN644 integrated_npp values slightly different (no difference in other cruises)
-# # On EN644, L8 data and flag now NA
-
 
 ```
 
@@ -87,32 +51,32 @@ version <- 'v4' #version 4 corrections to integrated data and one flag and one N
 
 # read in version 1 files
 if (version == 'version1') {
-npp_discrete <- read_csv(paste0('npp_discrete_', version, '.csv'), show_col_types = FALSE) 
-npp_integrated <- read_csv(paste0('npp_integrated_', version, '.csv'), show_col_types = FALSE) 
+  npp_discrete <- read_csv(paste0('npp_discrete_', version, '.csv'), show_col_types = FALSE) 
+  npp_integrated <- read_csv(paste0('npp_integrated_', version, '.csv'), show_col_types = FALSE) 
 }
 
 # read in version 1 & 2 files and combine to new csvs 
 if (version == 'v4') {
-npp_discrete_1 <- read_csv(paste0('npp_discrete_version1.csv'), show_col_types = FALSE) 
-npp_discrete_2 <- read_csv(paste0('npp_discrete_version2.csv'), show_col_types = FALSE) 
-npp_discrete <- rbind(npp_discrete_1, npp_discrete_2)
-npp_discrete <- npp_discrete[order(npp_discrete$date_time_utc),]
-npp_discrete <- npp_discrete %>%
-  relocate(cast, .after = station) %>%
-  relocate(latitude, .after = date_time_utc) %>%
-  relocate(longitude, .after = latitude) 
-
-npp_integrated_1 <- read_csv(paste0('npp_integrated_version1.csv'), show_col_types = FALSE) 
-npp_integrated_2 <- read_csv(paste0('npp_integrated_version2.csv'), show_col_types = FALSE) 
-npp_integrated <- rbind(npp_integrated_1, npp_integrated_2)
-npp_integrated <- npp_integrated[order(npp_integrated$date_time_utc),]
-
-# remove station columns that will not be in product data table (retain for QA)
-npp_discrete_edi <- npp_discrete %>% 
-  select(-nearest_station, -distance) 
-
-write.csv(npp_discrete_edi, paste0("nes-lter-npp-transect-discrete-", version, ".csv"), row.names = FALSE)
-write.csv(npp_integrated, paste0("nes-lter-npp-transect-integrated-", version, ".csv"), row.names = FALSE)
+  npp_discrete_1 <- read_csv(paste0('npp_discrete_version1.csv'), show_col_types = FALSE) 
+  npp_discrete_2 <- read_csv(paste0('npp_discrete_version2.csv'), show_col_types = FALSE) 
+  npp_discrete <- rbind(npp_discrete_1, npp_discrete_2)
+  npp_discrete <- npp_discrete[order(npp_discrete$date_time_utc),]
+  npp_discrete <- npp_discrete %>%
+    relocate(cast, .after = station) %>%
+    relocate(latitude, .after = date_time_utc) %>%
+    relocate(longitude, .after = latitude) 
+  
+  npp_integrated_1 <- read_csv(paste0('npp_integrated_version1.csv'), show_col_types = FALSE) 
+  npp_integrated_2 <- read_csv(paste0('npp_integrated_version2.csv'), show_col_types = FALSE) 
+  npp_integrated <- rbind(npp_integrated_1, npp_integrated_2)
+  npp_integrated <- npp_integrated[order(npp_integrated$date_time_utc),]
+  
+  # remove station columns that will not be in product data table (retain for QA)
+  npp_discrete_edi <- npp_discrete %>% 
+    select(-nearest_station, -distance) 
+  
+  write.csv(npp_discrete_edi, paste0("nes-lter-npp-transect-discrete-", version, ".csv"), row.names = FALSE)
+  write.csv(npp_integrated, paste0("nes-lter-npp-transect-integrated-", version, ".csv"), row.names = FALSE)
 }
 
 ```
@@ -175,24 +139,30 @@ summary(npp_integrated)
 ```{r}
 
 ggplot(npp_discrete, aes(x=as.factor(iode_quality_flag), y=npp_rate)) + 
-   geom_boxplot() + xlab('iode_quality_flag')
+  geom_boxplot() + xlab('iode_quality_flag')
+ggsave("npp-discrete-by-flag.png")
 
 ggplot(npp_discrete, aes(x= date_time_utc, y = npp_rate, color = depth_category))+ geom_point()
+ggsave("npp-discrete-by-date.png")
 
 ggplot(npp_integrated, aes(x=as.factor(iode_quality_flag), y=integrated_npp_mg_m2_day)) + 
-   geom_boxplot() + xlab('iode_quality_flag')
+  geom_boxplot() + xlab('iode_quality_flag')
+ggsave("npp-integrated-by-flag.png")
 
 ggplot(npp_integrated, aes(x= date_time_utc, y = integrated_npp_mg_m2_day, color = daytime_Y_N))+ geom_point()
+ggsave("npp-integrated-by-date.png")
 
 ggplot(npp_integrated, aes(x=as.factor(iode_quality_flag), y=k_meas_per_m)) + 
-   geom_boxplot() + xlab('iode_quality_flag')
+  geom_boxplot() + xlab('iode_quality_flag')
+ggsave("k-meas-by-flag.png")
 
 ggplot(npp_integrated, aes(x=as.factor(iode_quality_flag), y=beam_atten_0_10)) + 
-   geom_boxplot() + xlab('iode_quality_flag')
+  geom_boxplot() + xlab('iode_quality_flag')
+ggsave("beam-atten-by-flag.png")
 
 ggplot(npp_integrated, aes(x=as.factor(iode_quality_flag), y=k_calc_per_m)) + 
-   geom_boxplot() + xlab('iode_quality_flag')
-
+  geom_boxplot() + xlab('iode_quality_flag')
+ggsave("k-calc-by-flag.png")
 
 ```
 
@@ -206,17 +176,58 @@ map_locs(npp_integrated, colorvar = "integrated_npp_mg_m2_day", region = "transe
 map_locs(npp_integrated, colorvar = "cruise", region = "transect")
 
 ```
+## Particulate Organic Carbon
+
+## Read in POC data
+
+```{r}
+
+poc <- read_csv('POC_Rynearson.csv', show_col_types = FALSE)
+
+# rename date column
+names(poc)[2] <- "date_time_utc"
+
+# reorder columns: 
+headers <- c("cruise", "date_time_utc", "latitude", "longitude", "station", "cast", "niskin", "depth", "alternate_sample_category",
+"filter_size", "vol_filt_L", "POC_ug_L")
+poc <- poc[, headers]
+
+# export csv with new name
+write.csv(poc, paste0("nes-lter-npp-transect-poc.csv"), row.names = FALSE)
+# include version?
+#write.csv(poc, paste0("nes-lter-npp-transect-poc-", version, ".csv"), row.names = FALSE)
+
+```
+# Plot POC data
+
+```{r}
+
+ggplot(poc, aes(x= date_time_utc, y = POC_ug_L, color = depth))+ geom_point()
+ggsave("poc-by-date-depth.png")
+ggplot(poc, aes(x= date_time_utc, y = -depth, color = POC_ug_L))+ geom_point()
+ggsave("depth-by-date-poc.png")
+
+# view maps
+map_locs(poc, colorvar = "POC_ug_L", region = "transect")
+map_locs(poc, colorvar = "cruise", region = "transect")
+
+# save maps
+png("map-poc-conc.png")
+map_locs(poc, colorvar = "POC_ug_L", region = "transect")
+dev.off()
+
+png("map-poc-cruises.png")
+map_locs(poc, colorvar = "cruise", region = "transect")
+dev.off()
+
+```
+
+
 ## Create package data files if any changes to csvs
 
 ```{r}
 
-# if (version == 'v3') {
-# npp_discrete <- read_csv(paste0('nes-lter-npp-transect-discrete-v2.csv'), show_col_types = FALSE) 
-# npp_integrated <- read_csv(paste0('nes-lter-npp-transect-integrated-v2.csv'), show_col_types = FALSE) 
-# 
-# # no need to write new data tables for version change
-# 
-# }
+# no changes
 
 ```
 
@@ -232,17 +243,26 @@ map_locs(npp_integrated, colorvar = "cruise", region = "transect")
 excel_template <- 'npp-transect-info.xlsx'
 
 if (version == 'version1') {
-sheet_to_tsv(excel_template, 'ColumnHeadersDiscrete', paste0('attributes_npp_discrete_', version, '.txt'))  
-sheet_to_tsv(excel_template, 'ColumnHeadersIntegrated', paste0('attributes_npp_integrated_', version, '.txt'))
-sheet_to_tsv(excel_template, 'CategoricalVariables', paste0('catvars_npp_discrete_', version, '.txt'))
-sheet_to_tsv(excel_template, 'CategoricalVariables', paste0('catvars_npp_integrated_', version, '.txt'))
+  sheet_to_tsv(excel_template, 'ColumnHeadersDiscrete', paste0('attributes_npp_discrete_', version, '.txt'))  
+  sheet_to_tsv(excel_template, 'ColumnHeadersIntegrated', paste0('attributes_npp_integrated_', version, '.txt'))
+  sheet_to_tsv(excel_template, 'CategoricalVariables', paste0('catvars_npp_discrete_', version, '.txt'))
+  sheet_to_tsv(excel_template, 'CategoricalVariables', paste0('catvars_npp_integrated_', version, '.txt'))
 }
 
-if (version == 'v2' | version == 'v3' | version == 'v4') {
-sheet_to_tsv(excel_template, 'ColumnHeadersDiscrete', paste0('attributes_nes-lter-npp-transect-discrete-', version, '.txt'))  
-sheet_to_tsv(excel_template, 'ColumnHeadersIntegrated', paste0('attributes_nes-lter-npp-transect-integrated-', version, '.txt'))
-sheet_to_tsv(excel_template, 'CategoricalVariables', paste0('catvars_nes-lter-npp-transect-discrete-', version, '.txt'))
-sheet_to_tsv(excel_template, 'CategoricalVariables', paste0('catvars_nes-lter-npp-transect-integrated-', version, '.txt'))
+if (version == 'v2' | version == 'v3') {
+  sheet_to_tsv(excel_template, 'ColumnHeadersDiscrete', paste0('attributes_nes-lter-npp-transect-discrete-', version, '.txt'))  
+  sheet_to_tsv(excel_template, 'ColumnHeadersIntegrated', paste0('attributes_nes-lter-npp-transect-integrated-', version, '.txt'))
+  sheet_to_tsv(excel_template, 'CategoricalVariables', paste0('catvars_nes-lter-npp-transect-discrete-', version, '.txt'))
+  sheet_to_tsv(excel_template, 'CategoricalVariables', paste0('catvars_nes-lter-npp-transect-integrated-', version, '.txt'))
+}
+
+if (version == 'v4') {
+  sheet_to_tsv(excel_template, 'ColumnHeadersDiscrete', paste0('attributes_nes-lter-npp-transect-discrete-', version, '.txt'))  
+  sheet_to_tsv(excel_template, 'ColumnHeadersIntegrated', paste0('attributes_nes-lter-npp-transect-integrated-', version, '.txt'))
+  sheet_to_tsv(excel_template, 'ColumnHeadersPOC', 'attributes_nes-lter-npp-transect-poc.txt')
+  sheet_to_tsv(excel_template, 'CategoricalVariables', paste0('catvars_nes-lter-npp-transect-discrete-', version, '.txt'))
+  sheet_to_tsv(excel_template, 'CategoricalVariables', paste0('catvars_nes-lter-npp-transect-integrated-', version, '.txt'))
+  sheet_to_tsv(excel_template, 'CategoricalVariables', paste0('catvars_nes-lter-npp-transect-poc.txt')) 
 }
 
 sheet_to_tsv(excel_template, 'Personnel', 'personnel.txt')
@@ -265,12 +285,12 @@ Generate the package and insert the parent project node into the resulting EML
 
 ```{r}
 
- if (version == 'version1') {
-   pkg_id <- 'knb-lter-nes.16.1'
-   datatables <- c('npp_discrete_version1.csv', 'npp_integrated_version1.csv')
-   other <- c('raw_npp_data_version1.zip','HOBO_data.zip', 'light_data.zip')
-   parent_project <- 'parent_project_LTER.txt'
-   } 
+if (version == 'version1') {
+  pkg_id <- 'knb-lter-nes.16.1'
+  datatables <- c('npp_discrete_version1.csv', 'npp_integrated_version1.csv')
+  other <- c('raw_npp_data_version1.zip','HOBO_data.zip', 'light_data.zip')
+  parent_project <- 'parent_project_LTER.txt'
+} 
 
 if (version == 'v2') {
   pkg_id <- 'knb-lter-nes.16.2'
@@ -288,7 +308,9 @@ if (version == 'v3') {
 
 if (version == 'v4') {
   pkg_id <- 'knb-lter-nes.16.4'
-  datatables <- c('nes-lter-npp-transect-discrete-v4.csv', 'nes-lter-npp-transect-integrated-v4.csv')
+  datatables <- c('nes-lter-npp-transect-discrete-v4.csv', 'nes-lter-npp-transect-integrated-v4.csv', 'nes-lter-npp-transect-poc.csv')
+  descriptions <- c('Discrete net primary productivity data', 'Integrated net primary productivity data', 'Particulate organic carbon data')
+  tablenames <- c('Discrete NPP', 'Integrated NPP', 'POC')
   other <- c('raw_npp_data.zip','HOBO_data.zip', 'light_data.zip')
   parent_project <- 'parent_project_LTER_RAPID.txt'
 }
@@ -296,8 +318,8 @@ if (version == 'v4') {
 make_eml(here(),
          dataset.title='Size-fractionated net primary productivity (NPP) estimates based on 13C uptake during cruises along the Northeast U.S. Shelf Long Term Ecological Research (NES-LTER) Transect, ongoing since 2019', 
          data.table= datatables,  
-         data.table.description= c('Discrete net primary productivity data', 'Integrated net primary productivity data'),
-         data.table.name = name <- c('Discrete NPP', 'Integrated NPP'),
+         data.table.description = descriptions,
+         data.table.name = tablenames,
          other.entity = other,
          other.entity.name = c('Raw NPP data table','Raw temperature data files', 'Percent surface irradiance data'),
          other.entity.description = c('Raw data used to generate product data tables', 'Raw incubation tank water temperature data', 'Percent surface irradiance data for each Niskin'),
@@ -308,7 +330,9 @@ make_eml(here(),
          user.id = "NES",
          user.domain = "LTER",
          package.id = pkg_id)
- 
+
 project_insert(pkg_id, parent_project)
+
+issues()
 
 ```
