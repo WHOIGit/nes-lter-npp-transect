@@ -52,7 +52,7 @@
       <userId directory="https://orcid.org">https://orcid.org/0000-0002-7811-4150</userId>
       <role>metadata Provider</role>
     </associatedParty>
-    <pubDate>2023-03-30</pubDate>
+    <pubDate>2023-04-03</pubDate>
     <abstract>
       <para>This dataset consists of primary production measurements based on uptake of carbon-13 added  as 13C-bicarbonate during 24-h deckboard incubations of seawater. Sampling occurred on cruises along the Northeast U.S. Shelf Long Term Ecological Research (NES-LTER) Transect during summer, fall, and winter, starting in summer 2019. Net primary production (NPP) was determined from particulate organic carbon (POC) content and associated stable isotope enrichment. Two data tables are included: 1. depth-specific primary productivity based on fractional light levels of the surface irradiance with reference to the profile of photosynthetically active radiation (PAR), and 2. integrated primary productivity. The tables derive from the raw data included as other entities. </para>
       <para/>
@@ -78,7 +78,7 @@
     </keywordSet>
     <additionalInfo>
       <para>Special thanks to Robin Paulman, CASIF Laboratory Manager, for analyzing all samples collected for this data package. </para>
-      <para>For cruises on R/V Neil Armstrong, we thank the Ocean Observatories Initiative, funded by the National Science Foundation under Cooperative Agreement No. 1743430
+      <para>For cruises on R/V Neil Armstrong, we thank the Ocean Observatories Initiative, funded by the National Science Foundation under Cooperative Agreement No. 1743430&#13;
 </para>
     </additionalInfo>
     <intellectualRights>
@@ -147,7 +147,7 @@
           <para>Version 2 includes additional, more recent cruises compared to version 1. The discrete data table now includes the new categorical variable, incub_type, reflecting incubation temperature experiments described above in section Incubation. The discrete data table's station identifier has been updated to station, matching the integrated table, and the distance column has been eliminated from the discrete table. For cruise EN644, values of npp_rate (discrete table) and integrated_npp (integrated table) have been adjusted in version 2 to reflect an updated blank correction. </para>
           <para>Version 3 updates are comprised of a change of author order. No changes to data were made since version 2. </para>
           <para>References</para>
-          <para>Hama, T.,  T. Miyazaki, Y. Ogawa, T. Iwakuma, M. Takahashi, A. Otsuki, and S. Ichimura. 1983. Measurement of photosynthetic production of a marine phytoplankton population using a stable 13C isotope. Marine Biology 73: 31-36. 
+          <para>Hama, T.,  T. Miyazaki, Y. Ogawa, T. Iwakuma, M. Takahashi, A. Otsuki, and S. Ichimura. 1983. Measurement of photosynthetic production of a marine phytoplankton population using a stable 13C isotope. Marine Biology 73: 31-36. &#13;
 </para>
         </description>
       </methodStep>
@@ -267,9 +267,9 @@
       <entityName>Discrete NPP</entityName>
       <entityDescription>Discrete net primary productivity data</entityDescription>
       <physical>
-        <objectName>nes-lter-npp-transect-discrete-v2.csv</objectName>
-        <size unit="bytes">97822</size>
-        <authentication method="MD5">654dc9b1f8701e432cabf990297bd169</authentication>
+        <objectName>nes-lter-npp-transect-discrete-v4.csv</objectName>
+        <size unit="bytes">97824</size>
+        <authentication method="MD5">7b53ae8f80d86a44d034e60b7001ec11</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>
@@ -703,9 +703,9 @@
       <entityName>Integrated NPP</entityName>
       <entityDescription>Integrated net primary productivity data</entityDescription>
       <physical>
-        <objectName>nes-lter-npp-transect-integrated-v2.csv</objectName>
-        <size unit="bytes">16520</size>
-        <authentication method="MD5">87c1a97921e6f42140a78a168eccf328</authentication>
+        <objectName>nes-lter-npp-transect-integrated-v4.csv</objectName>
+        <size unit="bytes">16523</size>
+        <authentication method="MD5">680ede37ecb2515affb198bdc3448d40</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>

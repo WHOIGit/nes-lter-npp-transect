@@ -1,7 +1,7 @@
 ---
 title: "npp-transect-eml-assembly"
 author: "Kate Morkeski"
-date: "12/20/2022"
+date: "`r Sys.Date()`"
 output: html_document
 editor_options: 
   chunk_output_type: inline
@@ -83,10 +83,7 @@ here("nes-lter-npp-transect")
 # version <- 'version1'
 #version <- 'v2'
 #version <- 'v3'
-#<<<<<<< HEAD
-version <- 'v4' #version 4 corrections to integrated data and one flag change in discrete 
-
-#>>>>>>> ef7290c2034f7fa23a67aff1cb9b4bc52342a9ca
+version <- 'v4' #version 4 corrections to integrated data and one flag and one Niskin change in discrete 
 
 # read in version 1 files
 if (version == 'version1') {
@@ -213,13 +210,13 @@ map_locs(npp_integrated, colorvar = "cruise", region = "transect")
 
 ```{r}
 
-if (version == 'v3' || version == 'v4') {
-npp_discrete <- read_csv(paste0('nes-lter-npp-transect-discrete-v2.csv'), show_col_types = FALSE) 
-npp_integrated <- read_csv(paste0('nes-lter-npp-transect-integrated-v2.csv'), show_col_types = FALSE) 
-
-# no need to write new data tables for version change
-
-}
+# if (version == 'v3') {
+# npp_discrete <- read_csv(paste0('nes-lter-npp-transect-discrete-v2.csv'), show_col_types = FALSE) 
+# npp_integrated <- read_csv(paste0('nes-lter-npp-transect-integrated-v2.csv'), show_col_types = FALSE) 
+# 
+# # no need to write new data tables for version change
+# 
+# }
 
 ```
 
