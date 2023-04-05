@@ -1,6 +1,6 @@
 CTD Rosette Sampling on NES-LTER Transect Cruises
 
-Sampling occurred in the framework of the Northeast US Shelf Long-Term Ecological Research (NES-LTER) site seasonally during cruises on the R/V Endeavor (summer, winter), R/V Neil Armstrong (fall), and the R/V Atlantis (one winter cruise) at the NES-LTER site. The number of stations sampled ranged from 5 to 7 per cruise. Some stations were sampled more than once per cruise. Hydrographic data were collected with an SBE911 CTD (Seabird Electronics, Inc.) equipped with sensors for photosynthetically active radiation (PAR; Biospherical Instruments QSP2000) and beam attenuation (At; C-Star Transmissometer, WET Labs). Water was collected at various depths with a rosette sampler (Seabird SBE32 Carousel Water Sampler). For NPP incubations, water was collected from 3-4 depths depending on the depth at the station. During collection, water was pre-filtered through 200 µm mesh into acid-washed 2 L polycarbonate bottles.
+Sampling occurred in the framework of the Northeast US Shelf Long-Term Ecological Research (NES-LTER) site seasonally during cruises on the R/V Endeavor (summer, winter), R/V Neil Armstrong (fall), and the R/V Atlantis (one winter cruise) at the NES-LTER site. The number of stations sampled ranged from 4 to 7 per cruise. Some stations were sampled more than once per cruise. Hydrographic data were collected with an SBE911 CTD (Seabird Electronics, Inc.) equipped with sensors for photosynthetically active radiation (PAR; Biospherical Instruments QSP2000) and beam attenuation (At; C-Star Transmissometer, WET Labs). Water was collected at various depths with a rosette sampler (Seabird SBE32 Carousel Water Sampler). For NPP incubations, water was collected from 3-4 depths depending on the depth at the station. During collection, water was pre-filtered through 200 µm mesh into acid-washed 2 L polycarbonate bottles.
 
 Incubation
 
@@ -33,15 +33,21 @@ Sample quality is indicated using IODE Primary Level flags 1 good; 3 questionabl
 Differences From Previous Version
 
 In version 4: 
-1. Particulate organic carbon concentration data from the natural abundance samples are provided in a table separate from the NPP data. 2. Corrections are made to the integrated NPP table for stations that were sampled repeatedly during a cruise, namely station L1 on EN661 and L4 on AT46. 
-3. Corrections was made to the identifcation of a Niskin (and associated depth) on EN668. 
-4. corrections were made to the time collected for some samples. 
+1. Particulate organic carbon concentration data from the natural abundance samples are provided for the first time in a table separate from the NPP data. 
+2. Corrections have been made to the integrated NPP table for stations that were sampled repeatedly during a cruise, namely station L1 on EN661 and L4 on AT46. 
+3. Correction has been made to the identifcation of a Niskin (and associated depth) on EN668. 
+4. corrections have been made to the time collected for some samples. 
+5. The Abstract and Methods have been updated. 
 
 Version 3 updates are comprised of a change of author order. No changes to data were made since version 2.
 
 Version 2 includes additional, more recent cruises compared to version 1. The discrete data table now includes the new categorical variable, incub_type, reflecting incubation temperature experiments described above in section Incubation. The discrete data table's station identifier has been updated to station, matching the integrated table, and the distance column has been eliminated from the discrete table. For cruise EN644, values of npp_rate (discrete table) and integrated_npp (integrated table) have been adjusted in version 2 to reflect an updated blank correction. 
 
- 
+Related packages
+
+Additional NES-LTER transect POC data, along with particulate organic nitrogen, are published in the following ongoing package: 
+
+Sosik, H.M., E.T. Crockford, and E. Peacock. 2023. Particulate organic carbon (POC) and nitrogen (PON) from Northeast U.S. Shelf Long Term Ecological Research (NES-LTER) Transect cruises, ongoing since 2017 ver 2. Environmental Data Initiative. https://doi.org/10.6073/pasta/40a30d0473a6c12c986d2d44eae294a5 (Accessed 2023-04-05).
 
 References
 
