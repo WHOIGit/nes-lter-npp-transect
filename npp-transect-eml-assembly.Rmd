@@ -184,12 +184,13 @@ map_locs(npp_integrated, colorvar = "cruise", region = "transect")
 
 poc <- read_csv('POC_Rynearson.csv', show_col_types = FALSE)
 
-# rename date column
+# rename date and POC columns
 names(poc)[2] <- "date_time_utc"
+names(poc)[12] <- "POC_microg_perL"
 
 # reorder columns: 
 headers <- c("cruise", "date_time_utc", "latitude", "longitude", "station", "cast", "niskin", "depth", "alternate_sample_category",
-"filter_size", "vol_filt_L", "POC_ug_L")
+"filter_size", "vol_filt_L", "POC_microg_perL")
 poc <- poc[, headers]
 
 # export csv with new name
@@ -202,18 +203,18 @@ write.csv(poc, paste0("nes-lter-npp-transect-poc.csv"), row.names = FALSE)
 
 ```{r}
 
-ggplot(poc, aes(x= date_time_utc, y = POC_ug_L, color = depth))+ geom_point()
+ggplot(poc, aes(x= date_time_utc, y = POC_microg_perL, color = depth))+ geom_point()
 ggsave("poc-by-date-depth.png")
-ggplot(poc, aes(x= date_time_utc, y = -depth, color = POC_ug_L))+ geom_point()
+ggplot(poc, aes(x= date_time_utc, y = -depth, color = POC_microg_perL))+ geom_point()
 ggsave("depth-by-date-poc.png")
 
 # view maps
-map_locs(poc, colorvar = "POC_ug_L", region = "transect")
+map_locs(poc, colorvar = "POC_microg_perL", region = "transect")
 map_locs(poc, colorvar = "cruise", region = "transect")
 
 # save maps
 png("map-poc-conc.png")
-map_locs(poc, colorvar = "POC_ug_L", region = "transect")
+map_locs(poc, colorvar = "POC_microg_perL", region = "transect")
 dev.off()
 
 png("map-poc-cruises.png")

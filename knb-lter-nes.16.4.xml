@@ -52,7 +52,7 @@
       <userId directory="https://orcid.org">https://orcid.org/0000-0002-7811-4150</userId>
       <role>metadata Provider</role>
     </associatedParty>
-    <pubDate>2023-04-05</pubDate>
+    <pubDate>2023-04-06</pubDate>
     <abstract>
       <para>This dataset consists of primary production measurements based on uptake of carbon-13 added as 13C-bicarbonate during 24-h deckboard incubations of seawater. Sampling occurred on cruises along the Northeast U.S. Shelf Long Term Ecological Research (NES-LTER) Transect during summer, fall, and winter, starting in summer 2019. Net primary production (NPP) was determined from particulate organic carbon (POC) content and associated stable isotope enrichment. Three data tables are included: 1. Depth-specific primary productivity based on fractional light levels of the surface irradiance with reference to the profile of photosynthetically active radiation (PAR). 2. Integrated primary productivity. 3. Natural abundance POC. The tables derive from the raw data included as other entities.  </para>
       <para/>
@@ -890,6 +890,10 @@
               </numericDomain>
             </ratio>
           </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
         </attribute>
         <attribute>
           <attributeName>iode_quality_flag</attributeName>
@@ -923,6 +927,10 @@
               </nonNumericDomain>
             </nominal>
           </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>Missing value</codeExplanation>
+          </missingValueCode>
         </attribute>
         <attribute>
           <attributeName>daytime_Y_N</attributeName>
@@ -1022,8 +1030,8 @@
       <entityDescription>Particulate organic carbon data</entityDescription>
       <physical>
         <objectName>nes-lter-npp-transect-poc.csv</objectName>
-        <size unit="bytes">5619</size>
-        <authentication method="MD5">297c7d3d1ad215ecec8b710f4416fa27</authentication>
+        <size unit="bytes">5626</size>
+        <authentication method="MD5">788179732ec9ecea78fb2d47ed1a3d3f</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>
@@ -1233,8 +1241,8 @@
           </measurementScale>
         </attribute>
         <attribute>
-          <attributeName>POC_ug_L</attributeName>
-          <attributeDefinition>Particulate organic carbon http://vocab.nerc.ac.uk/collection/P01/current/CORGCAP1/</attributeDefinition>
+          <attributeName>POC_microg_perL</attributeName>
+          <attributeDefinition>Particulate organic carbon in micrograms per liter http://vocab.nerc.ac.uk/collection/P01/current/CORGCAP1/</attributeDefinition>
           <storageType>float</storageType>
           <measurementScale>
             <ratio>
