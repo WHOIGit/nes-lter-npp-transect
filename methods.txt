@@ -20,7 +20,7 @@ NPP rates were quantified by measuring the incorporation of isotopically heavy c
 
 Calculations: Discrete Estimates
 
-NPP rates were calculated from delta13C values using equations of Hama et al., 1983. Particulate organic carbon (POC) measurements were blank corrected such that combusted filter blanks were analyzed in triplicate and the mean value was subtracted from each POC sample obtained from the EA-IRMS. Raw time-zero POC data for each station are located in the data package other entity raw_npp_data.zip, in the rows where alternate_sample_id is “NatAbun”. Calculations were completed in R, with documentation available at https://github.com/difontaine/EDI_npp_package. 
+NPP rates were calculated from delta13C values using equations of Hama et al., 1983. Particulate organic carbon (POC) measurements were blank corrected such that combusted filter blanks were analyzed in triplicate and the mean value was subtracted from each POC sample obtained from the EA-IRMS. Time-zero POC data in micrograms per liter for each station are located in the data table nes-lter-npp-transect-poc.csv. Raw per-filter mass of POC data are located in the package other entity raw_npp_data.zip, in the rows where alternate_sample_id is “NatAbun”. Calculations were completed in R, with documentation available at https://github.com/difontaine/EDI_npp_package. 
 
 Calculations: Integrated Estimates
 
@@ -34,10 +34,11 @@ Differences From Previous Version
 
 In version 4: 
 1. Particulate organic carbon concentration data from the natural abundance samples are provided for the first time in a table separate from the NPP data. 
-2. Corrections have been made to the integrated NPP table for stations that were sampled repeatedly during a cruise, namely station L1 on EN661 and L4 on AT46. 
+2. Corrections have been made to the integrated NPP values for stations that were sampled repeatedly during a cruise, namely stations L1 on EN661 and L4 on AT46. 
 3. Correction has been made to the identifcation of a Niskin (and associated depth) on EN668. 
-4. corrections have been made to the time collected for some samples. 
-5. The Abstract and Methods have been updated. 
+4. Corrections have been made to the time collected for some samples. 
+5. Column metadata: The previous filter size category >0 has been updated to >0&<200. The definition for integrated NPP has been updated to include phase. The missing value code for IODE quality flag has been updated.
+6. The Abstract and Methods have been updated. 
 
 Version 3 updates are comprised of a change of author order. No changes to data were made since version 2.
 

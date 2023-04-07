@@ -75,8 +75,16 @@ if (version == 'v4') {
   npp_discrete_edi <- npp_discrete %>% 
     select(-nearest_station, -distance) 
   
+  # add prefilter to >0 category
+  npp_discrete_edi <-  npp_discrete_edi %>%
+    mutate(filter_size = case_when(filter_size == ">0" ~ ">0&<200",
+                                 TRUE ~ filter_size))
+  npp_integrated_edi <-  npp_integrated %>%
+    mutate(filter_size = case_when(filter_size == ">0" ~ ">0&<200",
+                                 TRUE ~ filter_size))
+  
   write.csv(npp_discrete_edi, paste0("nes-lter-npp-transect-discrete-", version, ".csv"), row.names = FALSE)
-  write.csv(npp_integrated, paste0("nes-lter-npp-transect-integrated-", version, ".csv"), row.names = FALSE)
+  write.csv(npp_integrated_edi, paste0("nes-lter-npp-transect-integrated-", version, ".csv"), row.names = FALSE)
 }
 
 ```
@@ -112,25 +120,25 @@ npp_discrete_stncheck <- npp_discrete %>% filter (stncheck == "FALSE")
 
 ```{r}
 
-npp_discrete$cruise <- as.factor(npp_discrete$cruise)
-npp_discrete$niskin <- as.factor(npp_discrete$station)
-npp_discrete$cast <- as.factor(npp_discrete$cast)
-npp_discrete$niskin <- as.factor(npp_discrete$niskin)
-npp_discrete$iode_quality_flag <- as.factor(npp_discrete$iode_quality_flag)
-npp_discrete$alternate_sample_category <- as.factor(npp_discrete$alternate_sample_category)
-npp_discrete$depth_category <- as.factor(npp_discrete$depth_category)
-npp_discrete$filter_size <- as.factor(npp_discrete$filter_size)
-npp_discrete$percent_surface_irradiance <- as.factor(npp_discrete$percent_surface_irradiance)
+npp_discrete_edi$cruise <- as.factor(npp_discrete_edi$cruise)
+npp_discrete_edi$niskin <- as.factor(npp_discrete_edi$station)
+npp_discrete_edi$cast <- as.factor(npp_discrete_edi$cast)
+npp_discrete_edi$niskin <- as.factor(npp_discrete_edi$niskin)
+npp_discrete_edi$iode_quality_flag <- as.factor(npp_discrete_edi$iode_quality_flag)
+npp_discrete_edi$alternate_sample_category <- as.factor(npp_discrete_edi$alternate_sample_category)
+npp_discrete_edi$depth_category <- as.factor(npp_discrete_edi$depth_category)
+npp_discrete_edi$filter_size <- as.factor(npp_discrete_edi$filter_size)
+npp_discrete_edi$percent_surface_irradiance <- as.factor(npp_discrete_edi$percent_surface_irradiance)
 
-npp_integrated$cruise <- as.factor(npp_integrated$cruise)
-npp_integrated$station <- as.factor(npp_integrated$station)
-npp_integrated$cast <- as.factor(npp_integrated$cast)
-npp_integrated$filter_size <- as.factor(npp_integrated$filter_size)
-npp_integrated$iode_quality_flag <- as.factor(npp_integrated$iode_quality_flag)
-npp_integrated$daytime_Y_N <- as.factor(npp_integrated$daytime_Y_N)
+npp_integrated_edi$cruise <- as.factor(npp_integrated_edi$cruise)
+npp_integrated_edi$station <- as.factor(npp_integrated_edi$station)
+npp_integrated_edi$cast <- as.factor(npp_integrated_edi$cast)
+npp_integrated_edi$filter_size <- as.factor(npp_integrated_edi$filter_size)
+npp_integrated_edi$iode_quality_flag <- as.factor(npp_integrated_edi$iode_quality_flag)
+npp_integrated_edi$daytime_Y_N <- as.factor(npp_integrated_edi$daytime_Y_N)
 
-summary(npp_discrete)
-summary(npp_integrated)
+summary(npp_discrete_edi)
+summary(npp_integrated_edi)
 
 ```
 
@@ -138,29 +146,35 @@ summary(npp_integrated)
 
 ```{r}
 
-ggplot(npp_discrete, aes(x=as.factor(iode_quality_flag), y=npp_rate)) + 
+ggplot(npp_discrete_edi, aes(x=as.factor(iode_quality_flag), y=npp_rate)) + 
   geom_boxplot() + xlab('iode_quality_flag')
 ggsave("npp-discrete-by-flag.png")
 
-ggplot(npp_discrete, aes(x= date_time_utc, y = npp_rate, color = depth_category))+ geom_point()
+ggplot(npp_discrete_edi, aes(x= date_time_utc, y = npp_rate, color = depth_category))+ geom_point()
 ggsave("npp-discrete-by-date.png")
 
-ggplot(npp_integrated, aes(x=as.factor(iode_quality_flag), y=integrated_npp_mg_m2_day)) + 
+ggplot(npp_discrete_edi, aes(x= date_time_utc, y = npp_rate, color = filter_size))+ geom_point()
+ggsave("npp-discrete-by-size.png")
+
+ggplot(npp_integrated_edi, aes(x=as.factor(iode_quality_flag), y=integrated_npp_mg_m2_day)) + 
   geom_boxplot() + xlab('iode_quality_flag')
 ggsave("npp-integrated-by-flag.png")
 
-ggplot(npp_integrated, aes(x= date_time_utc, y = integrated_npp_mg_m2_day, color = daytime_Y_N))+ geom_point()
+ggplot(npp_integrated_edi, aes(x= date_time_utc, y = integrated_npp_mg_m2_day, color = daytime_Y_N))+ geom_point()
 ggsave("npp-integrated-by-date.png")
 
-ggplot(npp_integrated, aes(x=as.factor(iode_quality_flag), y=k_meas_per_m)) + 
+ggplot(npp_integrated_edi, aes(x= date_time_utc, y = integrated_npp_mg_m2_day, color = filter_size))+ geom_point()
+ggsave("npp-integrated-by-size.png")
+
+ggplot(npp_integrated_edi, aes(x=as.factor(iode_quality_flag), y=k_meas_per_m)) + 
   geom_boxplot() + xlab('iode_quality_flag')
 ggsave("k-meas-by-flag.png")
 
-ggplot(npp_integrated, aes(x=as.factor(iode_quality_flag), y=beam_atten_0_10)) + 
+ggplot(npp_integrated_edi, aes(x=as.factor(iode_quality_flag), y=beam_atten_0_10)) + 
   geom_boxplot() + xlab('iode_quality_flag')
 ggsave("beam-atten-by-flag.png")
 
-ggplot(npp_integrated, aes(x=as.factor(iode_quality_flag), y=k_calc_per_m)) + 
+ggplot(npp_integrated_edi, aes(x=as.factor(iode_quality_flag), y=k_calc_per_m)) + 
   geom_boxplot() + xlab('iode_quality_flag')
 ggsave("k-calc-by-flag.png")
 
@@ -170,10 +184,26 @@ ggsave("k-calc-by-flag.png")
 
 ```{r}
 
-map_locs(npp_discrete, colorvar = "npp_rate", region = "transect")
-map_locs(npp_discrete, colorvar = "cruise", region = "transect")
-map_locs(npp_integrated, colorvar = "integrated_npp_mg_m2_day", region = "transect")
-map_locs(npp_integrated, colorvar = "cruise", region = "transect")
+map_locs(npp_discrete_edi, colorvar = "npp_rate", region = "transect")
+map_locs(npp_discrete_edi, colorvar = "cruise", region = "transect")
+map_locs(npp_integrated_edi, colorvar = "integrated_npp_mg_m2_day", region = "transect")
+map_locs(npp_integrated_edi, colorvar = "cruise", region = "transect")
+
+png("map-npp-discrete.png")
+map_locs(npp_discrete_edi, colorvar = "npp_rate", region = "transect")
+dev.off()
+
+png("map-npp-discrete-cruises.png")
+map_locs(npp_discrete_edi, colorvar = "cruise", region = "transect")
+dev.off()
+
+png("map-npp-integrated.png")
+map_locs(npp_integrated_edi, colorvar = "integrated_npp_mg_m2_day", region = "transect")
+dev.off()
+
+png("map-npp-integrated-cruises.png")
+map_locs(npp_integrated_edi, colorvar = "cruise", region = "transect")
+dev.off()
 
 ```
 ## Particulate Organic Carbon
@@ -187,6 +217,11 @@ poc <- read_csv('POC_Rynearson.csv', show_col_types = FALSE)
 # rename date and POC columns
 names(poc)[2] <- "date_time_utc"
 names(poc)[12] <- "POC_microg_perL"
+
+# add prefilter to >0 category
+poc <-  poc %>%
+    mutate(filter_size = case_when(filter_size == ">0" ~ ">0&<200",
+                                 TRUE ~ filter_size))
 
 # reorder columns: 
 headers <- c("cruise", "date_time_utc", "latitude", "longitude", "station", "cast", "niskin", "depth", "alternate_sample_category",

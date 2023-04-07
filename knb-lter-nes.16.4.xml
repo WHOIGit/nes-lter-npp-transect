@@ -52,7 +52,7 @@
       <userId directory="https://orcid.org">https://orcid.org/0000-0002-7811-4150</userId>
       <role>metadata Provider</role>
     </associatedParty>
-    <pubDate>2023-04-06</pubDate>
+    <pubDate>2023-04-07</pubDate>
     <abstract>
       <para>This dataset consists of primary production measurements based on uptake of carbon-13 added as 13C-bicarbonate during 24-h deckboard incubations of seawater. Sampling occurred on cruises along the Northeast U.S. Shelf Long Term Ecological Research (NES-LTER) Transect during summer, fall, and winter, starting in summer 2019. Net primary production (NPP) was determined from particulate organic carbon (POC) content and associated stable isotope enrichment. Three data tables are included: 1. Depth-specific primary productivity based on fractional light levels of the surface irradiance with reference to the profile of photosynthetically active radiation (PAR). 2. Integrated primary productivity. 3. Natural abundance POC. The tables derive from the raw data included as other entities.  </para>
       <para/>
@@ -138,7 +138,7 @@
           <para>Sample Analysis</para>
           <para>NPP rates were quantified by measuring the incorporation of isotopically heavy carbon into phytoplankton biomass. Prior to measuring bulk carbon and 13C in the samples, filters were acid fumigated with concentrated hydrochloric acid in a desiccator overnight to remove inorganic carbon. They were dried in an oven at 60˚C for 24 h, individually wrapped in tin capsules and analyzed on a Carlo Erba NC2500 elemental analyzer interfaced with a Thermo Delta V+ isotope ratio mass spectrometer (EA-IRMS) at the Univ. of Maryland Central Appalachian Laboratory Stable Isotope Facility.</para>
           <para>Calculations: Discrete Estimates</para>
-          <para>NPP rates were calculated from delta13C values using equations of Hama et al., 1983. Particulate organic carbon (POC) measurements were blank corrected such that combusted filter blanks were analyzed in triplicate and the mean value was subtracted from each POC sample obtained from the EA-IRMS. Raw time-zero POC data for each station are located in the data package other entity raw_npp_data.zip, in the rows where alternate_sample_id is “NatAbun”. Calculations were completed in R, with documentation available at https://github.com/difontaine/EDI_npp_package. </para>
+          <para>NPP rates were calculated from delta13C values using equations of Hama et al., 1983. Particulate organic carbon (POC) measurements were blank corrected such that combusted filter blanks were analyzed in triplicate and the mean value was subtracted from each POC sample obtained from the EA-IRMS. Time-zero POC data in micrograms per liter for each station are located in the data table nes-lter-npp-transect-poc.csv. Raw per-filter mass of POC data are located in the package other entity raw_npp_data.zip, in the rows where alternate_sample_id is “NatAbun”. Calculations were completed in R, with documentation available at https://github.com/difontaine/EDI_npp_package. </para>
           <para>Calculations: Integrated Estimates</para>
           <para>Discrete NPP rates were integrated by depth for each station via trapezoidal integration with the shallowest discrete NPP value extended to 0 m such that a rectangle was formed, with calculations completed in R, and documentation available at https://github.com/difontaine/EDI_npp_package</para>
           <para>Quality Assurance</para>
@@ -146,10 +146,11 @@
           <para>Differences From Previous Version</para>
           <para>In version 4: &#13;
 1. Particulate organic carbon concentration data from the natural abundance samples are provided for the first time in a table separate from the NPP data. &#13;
-2. Corrections have been made to the integrated NPP table for stations that were sampled repeatedly during a cruise, namely station L1 on EN661 and L4 on AT46. &#13;
+2. Corrections have been made to the integrated NPP values for stations that were sampled repeatedly during a cruise, namely stations L1 on EN661 and L4 on AT46. &#13;
 3. Correction has been made to the identifcation of a Niskin (and associated depth) on EN668. &#13;
-4. corrections have been made to the time collected for some samples. &#13;
-5. The Abstract and Methods have been updated. </para>
+4. Corrections have been made to the time collected for some samples. &#13;
+5. Column metadata: The previous filter size category &gt;0 has been updated to &gt;0&amp;&lt;200. The definition for integrated NPP has been updated to include phase. The missing value code for IODE quality flag has been updated.&#13;
+6. The Abstract and Methods have been updated. </para>
           <para>Version 3 updates are comprised of a change of author order. No changes to data were made since version 2.</para>
           <para>Version 2 includes additional, more recent cruises compared to version 1. The discrete data table now includes the new categorical variable, incub_type, reflecting incubation temperature experiments described above in section Incubation. The discrete data table's station identifier has been updated to station, matching the integrated table, and the distance column has been eliminated from the discrete table. For cruise EN644, values of npp_rate (discrete table) and integrated_npp (integrated table) have been adjusted in version 2 to reflect an updated blank correction. </para>
           <para>Related packages</para>
@@ -277,8 +278,8 @@
       <entityDescription>Discrete net primary productivity data</entityDescription>
       <physical>
         <objectName>nes-lter-npp-transect-discrete-v4.csv</objectName>
-        <size unit="bytes">97824</size>
-        <authentication method="MD5">7b53ae8f80d86a44d034e60b7001ec11</authentication>
+        <size unit="bytes">99394</size>
+        <authentication method="MD5">12cec9013e318238ffe6b3dd04e69047</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>
@@ -506,19 +507,23 @@
         </attribute>
         <attribute>
           <attributeName>filter_size</attributeName>
-          <attributeDefinition>Size fraction with filter and when applicable prefilter pore size in micrometers</attributeDefinition>
+          <attributeDefinition>Size fraction with filter and prefilter pore size in micrometers</attributeDefinition>
           <storageType>string</storageType>
           <measurementScale>
             <nominal>
               <nonNumericDomain>
                 <enumeratedDomain>
                   <codeDefinition>
-                    <code>&gt;0</code>
-                    <definition>Filtered on 0.7 micron filter</definition>
+                    <code>&gt;0&amp;&lt;200</code>
+                    <definition>Filtered on 0.7 micron filter with 200 micron prefilter</definition>
                   </codeDefinition>
                   <codeDefinition>
                     <code>&gt;0&amp;&lt;20</code>
                     <definition>Filtered on 0.7 micron filter with 20 micron prefilter</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>&gt;0&amp;&lt;10</code>
+                    <definition>Filtered on 0.7 micron filter with 10 micron prefilter</definition>
                   </codeDefinition>
                   <codeDefinition>
                     <code>&gt;0&amp;&lt;5</code>
@@ -671,10 +676,6 @@
               </nonNumericDomain>
             </nominal>
           </measurementScale>
-          <missingValueCode>
-            <code>NA</code>
-            <codeExplanation>Missing value</codeExplanation>
-          </missingValueCode>
         </attribute>
         <attribute>
           <attributeName>incub_type</attributeName>
@@ -713,8 +714,8 @@
       <entityDescription>Integrated net primary productivity data</entityDescription>
       <physical>
         <objectName>nes-lter-npp-transect-integrated-v4.csv</objectName>
-        <size unit="bytes">16523</size>
-        <authentication method="MD5">680ede37ecb2515affb198bdc3448d40</authentication>
+        <size unit="bytes">16833</size>
+        <authentication method="MD5">3643772bfbf3537c61846f6162fb1d80</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>
@@ -849,19 +850,23 @@
         </attribute>
         <attribute>
           <attributeName>filter_size</attributeName>
-          <attributeDefinition>Size fraction with filter and when applicable prefilter pore size in micrometers</attributeDefinition>
+          <attributeDefinition>Size fraction with filter and prefilter pore size in micrometers</attributeDefinition>
           <storageType>string</storageType>
           <measurementScale>
             <nominal>
               <nonNumericDomain>
                 <enumeratedDomain>
                   <codeDefinition>
-                    <code>&gt;0</code>
-                    <definition>Filtered on 0.7 micron filter</definition>
+                    <code>&gt;0&amp;&lt;200</code>
+                    <definition>Filtered on 0.7 micron filter with 200 micron prefilter</definition>
                   </codeDefinition>
                   <codeDefinition>
                     <code>&gt;0&amp;&lt;20</code>
                     <definition>Filtered on 0.7 micron filter with 20 micron prefilter</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>&gt;0&amp;&lt;10</code>
+                    <definition>Filtered on 0.7 micron filter with 10 micron prefilter</definition>
                   </codeDefinition>
                   <codeDefinition>
                     <code>&gt;0&amp;&lt;5</code>
@@ -874,7 +879,7 @@
         </attribute>
         <attribute>
           <attributeName>integrated_npp_mg_m2_day</attributeName>
-          <attributeDefinition>Vertically-integrated net primary productivity measured as uptake rate of carbon per unit area of water per day</attributeDefinition>
+          <attributeDefinition>Vertically-integrated net primary productivity measured as uptake rate of carbon per unit area of the water body [particulate &gt;0.7um phase] per day</attributeDefinition>
           <storageType>float</storageType>
           <measurementScale>
             <ratio>
@@ -929,7 +934,7 @@
           </measurementScale>
           <missingValueCode>
             <code>NA</code>
-            <codeExplanation>Missing value</codeExplanation>
+            <codeExplanation>Value not expected</codeExplanation>
           </missingValueCode>
         </attribute>
         <attribute>
@@ -1030,8 +1035,8 @@
       <entityDescription>Particulate organic carbon data</entityDescription>
       <physical>
         <objectName>nes-lter-npp-transect-poc.csv</objectName>
-        <size unit="bytes">5626</size>
-        <authentication method="MD5">788179732ec9ecea78fb2d47ed1a3d3f</authentication>
+        <size unit="bytes">5936</size>
+        <authentication method="MD5">1056732d0d43e295ea34a32ac0a4380f</authentication>
         <dataFormat>
           <textFormat>
             <numHeaderLines>1</numHeaderLines>
@@ -1198,19 +1203,23 @@
         </attribute>
         <attribute>
           <attributeName>filter_size</attributeName>
-          <attributeDefinition>Size fraction with filter and when applicable prefilter pore size in micrometers</attributeDefinition>
+          <attributeDefinition>Size fraction with filter and prefilter pore size in micrometers</attributeDefinition>
           <storageType>string</storageType>
           <measurementScale>
             <nominal>
               <nonNumericDomain>
                 <enumeratedDomain>
                   <codeDefinition>
-                    <code>&gt;0</code>
-                    <definition>Filtered on 0.7 micron filter</definition>
+                    <code>&gt;0&amp;&lt;200</code>
+                    <definition>Filtered on 0.7 micron filter with 200 micron prefilter</definition>
                   </codeDefinition>
                   <codeDefinition>
                     <code>&gt;0&amp;&lt;20</code>
                     <definition>Filtered on 0.7 micron filter with 20 micron prefilter</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>&gt;0&amp;&lt;10</code>
+                    <definition>Filtered on 0.7 micron filter with 10 micron prefilter</definition>
                   </codeDefinition>
                   <codeDefinition>
                     <code>&gt;0&amp;&lt;5</code>
@@ -1267,8 +1276,8 @@
       <entityDescription>Raw data used to generate product data tables</entityDescription>
       <physical>
         <objectName>raw_npp_data.zip</objectName>
-        <size unit="bytes">22003</size>
-        <authentication method="MD5">6f74d995c65b9db82dd76fba715a3960</authentication>
+        <size unit="bytes">15004</size>
+        <authentication method="MD5">1dca75f61b4694335a594aa3aad11f87</authentication>
         <dataFormat>
           <externallyDefinedFormat>
             <formatName>application/zip</formatName>
