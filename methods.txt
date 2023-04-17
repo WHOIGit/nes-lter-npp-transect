@@ -20,7 +20,7 @@ NPP rates were quantified by measuring the incorporation of isotopically heavy c
 
 Calculations: Discrete Estimates
 
-NPP rates were calculated from delta13C values using equations of Hama et al., 1983. Particulate organic carbon (POC) measurements were blank corrected such that combusted filter blanks were analyzed in triplicate and the mean value was subtracted from each POC sample obtained from the EA-IRMS. Time-zero POC data in micrograms per liter for each station are located in the data table nes-lter-npp-transect-poc.csv. Raw per-filter mass of POC data are located in the package other entity raw_npp_data.zip, in the rows where alternate_sample_id is “NatAbun”. Calculations were completed in R, with documentation available at https://github.com/difontaine/EDI_npp_package. 
+NPP rates were calculated from delta13C values using equations of Hama et al., 1983. Particulate organic carbon (POC) measurements were blank corrected such that combusted filter blanks were analyzed in triplicate and the mean value was subtracted from each POC sample mass. Time-zero POC data in micrograms per liter for each station are located in the data table nes-lter-npp-transect-poc.csv. Raw POC data (mg C per filter) are located in the package other entity raw_npp_data.zip. Calculations were completed in R, with documentation available at https://github.com/difontaine/EDI_npp_package. 
 
 Calculations: Integrated Estimates
 

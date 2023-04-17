@@ -121,7 +121,7 @@ npp_discrete_stncheck <- npp_discrete %>% filter (stncheck == "FALSE")
 ```{r}
 
 npp_discrete_edi$cruise <- as.factor(npp_discrete_edi$cruise)
-npp_discrete_edi$niskin <- as.factor(npp_discrete_edi$station)
+npp_discrete_edi$station <- as.factor(npp_discrete_edi$station)
 npp_discrete_edi$cast <- as.factor(npp_discrete_edi$cast)
 npp_discrete_edi$niskin <- as.factor(npp_discrete_edi$niskin)
 npp_discrete_edi$iode_quality_flag <- as.factor(npp_discrete_edi$iode_quality_flag)
@@ -259,11 +259,13 @@ dev.off()
 ```
 
 
-## Create package data files if any changes to csvs
+## Read in csvs if regenerating xml without data changes
 
 ```{r}
 
-# no changes
+# needed for coverage # run setup chunk and next line to set version
+npp_discrete_edi <- read_csv(paste0("nes-lter-npp-transect-discrete-", version, ".csv"), show_col_types = FALSE) 
+npp_integrated_edi <- read_csv(paste0("nes-lter-npp-transect-integrated-", version, ".csv"), show_col_types = FALSE)
 
 ```
 
@@ -359,9 +361,9 @@ make_eml(here(),
          other.entity = other,
          other.entity.name = c('Raw NPP data table','Raw temperature data files', 'Percent surface irradiance data'),
          other.entity.description = c('Raw data used to generate product data tables', 'Raw incubation tank water temperature data', 'Percent surface irradiance data for each Niskin'),
-         temporal.coverage = temporal_coverage(append(npp_discrete$date_time_utc, npp_integrated$date_time_utc)), 
+         temporal.coverage = temporal_coverage(append(npp_discrete_edi$date_time_utc, npp_integrated_edi$date_time_utc)), 
          geographic.description = "NES-LTER Transect",
-         geographic.coordinates = geographic_coordinates(npp_discrete$latitude, npp_discrete$longitude),
+         geographic.coordinates = geographic_coordinates(npp_discrete_edi$latitude, npp_discrete_edi$longitude),
          maintenance.description = "ongoing",
          user.id = "NES",
          user.domain = "LTER",
