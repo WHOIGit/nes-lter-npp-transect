@@ -47,7 +47,8 @@ here("nes-lter-npp-transect")
 # version <- 'version1'
 #version <- 'v2'
 #version <- 'v3'
-version <- 'v4' #version 4 corrections to integrated data and one flag and one Niskin change in discrete 
+#version <- 'v4' #version 4 corrections to integrated data and one flag and one Niskin change in discrete 
+version <- 'v5' #version 5 
 
 # read in version 1 files
 if (version == 'version1') {
@@ -347,6 +348,15 @@ if (version == 'v3') {
 if (version == 'v4') {
   pkg_id <- 'knb-lter-nes.16.4'
   datatables <- c('nes-lter-npp-transect-discrete-v4.csv', 'nes-lter-npp-transect-integrated-v4.csv', 'nes-lter-npp-transect-poc.csv')
+  descriptions <- c('Discrete net primary productivity data', 'Integrated net primary productivity data', 'Particulate organic carbon data')
+  tablenames <- c('Discrete NPP', 'Integrated NPP', 'POC')
+  other <- c('raw_npp_data.zip','HOBO_data.zip', 'light_data.zip')
+  parent_project <- 'parent_project_LTER_RAPID.txt'
+}
+
+if (version == 'v5') {
+  pkg_id <- 'knb-lter-nes.16.5'
+  datatables <- c('nes-lter-npp-transect-discrete-v5.csv', 'nes-lter-npp-transect-integrated-v5.csv', 'nes-lter-npp-transect-poc.csv')
   descriptions <- c('Discrete net primary productivity data', 'Integrated net primary productivity data', 'Particulate organic carbon data')
   tablenames <- c('Discrete NPP', 'Integrated NPP', 'POC')
   other <- c('raw_npp_data.zip','HOBO_data.zip', 'light_data.zip')
